@@ -1,0 +1,1 @@
+Read the skill at .claude/skills/validate-topic.md and execute it against the current project.
