@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" fill="none">
+  
+  <path d="M15 4L4 8v12c0 9 5.5 14 11 16C26.5 34 32 29 32 20V8L15 4z" fill="#133844"></path>
+  <path d="M15 7L7 10v10c0 7 4 11 8 13 4-2 8-6 8-13V10L15 7z" fill="#8EE8D8"></path>
+  <path d="M15 10L9 12.5v7.5c0 5 3 8 6 9 3-1 6-4 6-9V12.5L15 10z" fill="#133844"></path>
+  <rect x="13.5" y="13" width="3" height="9" rx="0.5" fill="#8EE8D8"></rect>
+  <rect x="10" y="16.5" width="10" height="3" rx="0.5" fill="#8EE8D8"></rect>
+  
+  <text x="44" y="24" font-family="&#39;Open Sans&#39;, sans-serif" font-size="17" font-weight="700" fill="#133844">Cambridge</text>
+  <text x="44" y="40" font-family="&#39;Open Sans&#39;, sans-serif" font-size="12" font-weight="400" fill="#546072">International Education</text>
+  
+  <line x1="44" y1="28" x2="310" y2="28" stroke="#ECEEF1" stroke-width="1"></line>
+</svg>

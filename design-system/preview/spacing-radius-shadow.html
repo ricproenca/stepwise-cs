@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; background: #fff; padding: 20px; }
+  .section { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #546072; margin-bottom: 10px; }
+  .row { display: flex; gap: 10px; margin-bottom: 16px; align-items: flex-end; }
+  .radius-demo { background: #8EE8D8; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #133844; width: 60px; height: 40px; }
+  .shadow-demo { width: 80px; height: 50px; background: white; border: 1px solid #ECEEF1; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #546072; border-radius: 6px; }
+  .lbl { font-size: 9px; color: #B5BDC8; text-align: center; margin-top: 5px; font-family: monospace; }
+  .col { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+  <div class="section">Border Radius</div>
+  <div class="row">
+    <div class="col"><div class="radius-demo" style="border-radius:0">0</div><div class="lbl">none</div></div>
+    <div class="col"><div class="radius-demo" style="border-radius:4px">sm</div><div class="lbl">4px</div></div>
+    <div class="col"><div class="radius-demo" style="border-radius:6px">md</div><div class="lbl">6px</div></div>
+    <div class="col"><div class="radius-demo" style="border-radius:8px">lg</div><div class="lbl">8px</div></div>
+    <div class="col"><div class="radius-demo" style="border-radius:12px">xl</div><div class="lbl">12px</div></div>
+    <div class="col"><div class="radius-demo" style="border-radius:9999px;width:70px">pill</div><div class="lbl">9999px</div></div>
+  </div>
+  <div class="section">Shadows</div>
+  <div class="row">
+    <div class="col"><div class="shadow-demo" style="box-shadow:0 1px 3px rgba(0,0,0,0.06)">sm</div><div class="lbl">--shadow-sm</div></div>
+    <div class="col"><div class="shadow-demo" style="box-shadow:0 2px 8px rgba(0,0,0,0.08)">md</div><div class="lbl">--shadow-md</div></div>
+    <div class="col"><div class="shadow-demo" style="box-shadow:0 8px 24px rgba(0,0,0,0.10)">lg</div><div class="lbl">--shadow-lg</div></div>
+    <div class="col"><div class="shadow-demo" style="box-shadow:0 16px 40px rgba(0,0,0,0.12)">xl</div><div class="lbl">--shadow-xl</div></div>
+  </div>
+</body>
+</html>

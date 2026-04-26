@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; background: #fff; padding: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-bottom: 16px; }
+  .sp { background: #133844; border-radius: 3px; }
+  .label-row { display: flex; gap: 4px; }
+  .lbl { flex: 1; font-size: 9px; color: #B5BDC8; text-align: center; font-weight: 600; }
+  .section { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #546072; margin-bottom: 8px; }
+  .tokens { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .token { display: flex; align-items: center; gap: 8px; }
+  .bar { background: #8EE8D8; border-radius: 2px; height: 16px; }
+  .tok-label { font-size: 10px; color: #232830; font-weight: 600; white-space: nowrap; }
+  .tok-val { font-size: 10px; color: #546072; font-family: monospace; }
+</style>
+</head>
+<body>
+  <div class="section">Spacing Scale</div>
+  <div class="grid">
+    <div class="sp" style="height:4px"></div>
+    <div class="sp" style="height:8px"></div>
+    <div class="sp" style="height:12px"></div>
+    <div class="sp" style="height:16px"></div>
+    <div class="sp" style="height:20px"></div>
+    <div class="sp" style="height:24px"></div>
+    <div class="sp" style="height:32px"></div>
+    <div class="sp" style="height:40px"></div>
+  </div>
+  <div class="label-row" style="margin-bottom:16px">
+    <div class="lbl">4</div><div class="lbl">8</div><div class="lbl">12</div><div class="lbl">16</div>
+    <div class="lbl">20</div><div class="lbl">24</div><div class="lbl">32</div><div class="lbl">40</div>
+  </div>
+  <div class="tokens">
+    <div class="token"><div class="bar" style="width:4px"></div><span class="tok-label">--space-1</span><span class="tok-val">4px</span></div>
+    <div class="token"><div class="bar" style="width:8px"></div><span class="tok-label">--space-2</span><span class="tok-val">8px</span></div>
+    <div class="token"><div class="bar" style="width:12px"></div><span class="tok-label">--space-3</span><span class="tok-val">12px</span></div>
+    <div class="token"><div class="bar" style="width:16px"></div><span class="tok-label">--space-4</span><span class="tok-val">16px</span></div>
+    <div class="token"><div class="bar" style="width:24px"></div><span class="tok-label">--space-6</span><span class="tok-val">24px</span></div>
+    <div class="token"><div class="bar" style="width:32px"></div><span class="tok-label">--space-8</span><span class="tok-val">32px</span></div>
+    <div class="token"><div class="bar" style="width:48px"></div><span class="tok-label">--space-12</span><span class="tok-val">48px</span></div>
+    <div class="token"><div class="bar" style="width:64px"></div><span class="tok-label">--space-16</span><span class="tok-val">64px</span></div>
+  </div>
+</body>
+</html>

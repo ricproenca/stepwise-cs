@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; background: #fff; padding: 24px; }
+  .row { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; }
+  .logo-block { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .logo-name { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B5BDC8; }
+  .logo-dark { background: #133844; padding: 14px 20px; border-radius: 6px; display: flex; align-items: center; gap: 10px; }
+  .logo-light { background: #fff; border: 1px solid #ECEEF1; padding: 14px 20px; border-radius: 6px; display: flex; align-items: center; gap: 10px; }
+  .logo-teal { background: #8EE8D8; padding: 14px 20px; border-radius: 6px; display: flex; align-items: center; gap: 10px; }
+  .wordmark-main { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.1; }
+  .wordmark-sub { font-size: 10px; font-weight: 400; line-height: 1.3; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="logo-block">
+      <div class="logo-name">On dark</div>
+      <div class="logo-dark">
+        <img src="../assets/logo-shield.svg" width="28" height="34" alt="Cambridge shield">
+        <div>
+          <div class="wordmark-main" style="color:#fff">Cambridge</div>
+          <div class="wordmark-sub" style="color:#8EE8D8">International Education</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-block">
+      <div class="logo-name">On light</div>
+      <div class="logo-light">
+        <img src="../assets/logo-shield.svg" width="28" height="34" alt="Cambridge shield">
+        <div>
+          <div class="wordmark-main" style="color:#133844">Cambridge</div>
+          <div class="wordmark-sub" style="color:#546072">International Education</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-block">
+      <div class="logo-name">On Cambridge Blue</div>
+      <div class="logo-teal">
+        <img src="../assets/logo-shield.svg" width="28" height="34" alt="Cambridge shield">
+        <div>
+          <div class="wordmark-main" style="color:#133844">Cambridge</div>
+          <div class="wordmark-sub" style="color:#133844;opacity:0.7">International Education</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:16px;font-size:10px;color:#B5BDC8;font-style:italic">Note: Shield is a simplified representative mark. Use official assets from cambridgeinternational.org for production.</div>
+</body>
+</html>

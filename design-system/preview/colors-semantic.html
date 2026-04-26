@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; background: #fff; padding: 20px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .token { border-radius: 6px; padding: 10px 12px; display: flex; align-items: center; gap: 10px; border: 1px solid #ECEEF1; }
+  .dot { width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0; }
+  .name { font-size: 11px; font-weight: 700; color: #232830; }
+  .desc { font-size: 10px; color: #546072; margin-top: 1px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="token"><div class="dot" style="background:#D1F9F1;border:1px solid #ECEEF1"></div><div><div class="name">--color-bg-tint</div><div class="desc">Section backgrounds</div></div></div>
+    <div class="token"><div class="dot" style="background:#133844"></div><div><div class="name">--color-bg-inverse</div><div class="desc">Dark sections, footer</div></div></div>
+    <div class="token"><div class="dot" style="background:#232830"></div><div><div class="name">--color-text-primary</div><div class="desc">Body text (Slate 4)</div></div></div>
+    <div class="token"><div class="dot" style="background:#546072"></div><div><div class="name">--color-text-secondary</div><div class="desc">Labels, captions</div></div></div>
+    <div class="token"><div class="dot" style="background:#133844"></div><div><div class="name">--color-cta-bg</div><div class="desc">Primary button</div></div></div>
+    <div class="token"><div class="dot" style="background:#00BDB6"></div><div><div class="name">--color-cta-secondary</div><div class="desc">Secondary button</div></div></div>
+    <div class="token"><div class="dot" style="background:#4DB78C"></div><div><div class="name">--color-success</div><div class="desc">Success states</div></div></div>
+    <div class="token"><div class="dot" style="background:#DD3025"></div><div><div class="name">--color-error</div><div class="desc">Error / alerts</div></div></div>
+  </div>
+</body>
+</html>

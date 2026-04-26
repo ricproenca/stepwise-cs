@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; background: #fff; padding: 20px 24px; }
+  .field { margin-bottom: 14px; }
+  .label { display: block; font-size: 12px; font-weight: 700; color: #232830; margin-bottom: 5px; }
+  .hint { font-size: 11px; color: #546072; margin-bottom: 5px; display: block; }
+  input, select, textarea {
+    width: 100%; padding: 9px 12px;
+    border: 1px solid #B5BDC8; border-radius: 4px;
+    font-size: 13px; font-family: 'Open Sans', sans-serif; color: #232830;
+    outline: none; transition: border-color 150ms, box-shadow 150ms;
+    background: #fff;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: #00BDB6;
+    box-shadow: 0 0 0 3px rgba(0,189,182,0.12);
+  }
+  input.error { border-color: #DD3025; }
+  input.success { border-color: #4DB78C; }
+  .error-msg { font-size: 11px; color: #DD3025; margin-top: 4px; display: block; }
+  .success-msg { font-size: 11px; color: #13553A; margin-top: 4px; display: block; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .checkbox-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #232830; }
+  input[type="checkbox"] { width: auto; accent-color: #133844; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="field">
+      <label class="label">First name</label>
+      <input type="text" placeholder="Enter first name">
+    </div>
+    <div class="field">
+      <label class="label">Surname</label>
+      <input type="text" placeholder="Enter surname">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">School / institution</label>
+    <span class="hint">Enter the registered name of your school</span>
+    <input type="text" placeholder="e.g. Cambridge International School">
+  </div>
+  <div class="field">
+    <label class="label">Country</label>
+    <select>
+      <option>Select country…</option>
+      <option>United Kingdom</option>
+      <option>Kenya</option>
+      <option>Singapore</option>
+    </select>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label class="label">Email address</label>
+      <input type="email" class="error" value="invalid-email">
+      <span class="error-msg">Please enter a valid email address.</span>
+    </div>
+    <div class="field">
+      <label class="label">Centre number</label>
+      <input type="text" class="success" value="UK293847">
+      <span class="success-msg">Centre found.</span>
+    </div>
+  </div>
+  <div class="field">
+    <label class="checkbox-row">
+      <input type="checkbox" checked> I agree to Cambridge International's terms and conditions
+    </label>
+  </div>
+</body>
+</html>

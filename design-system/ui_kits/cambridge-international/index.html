@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambridge International — UI Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body { font-family: 'Open Sans', sans-serif; background: #ECEEF1; color: #232830; }
+  #root { min-height: 100vh; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+// ── TOKENS ──────────────────────────────────────────────
+const T = {
+  blue: '#8EE8D8', lightBlue: '#D1F9F1', warmBlue: '#00BDB6', darkBlue: '#133844',
+  white: '#FFFFFF', slate1: '#ECEEF1', slate2: '#B5BDC8', slate3: '#546072', slate4: '#232830',
+  green: '#4DB78C', greenLight: '#DFF2EA', greenDark: '#13553A',
+  indigo: '#5366E0', indigoLight: '#EBEDFB', indigoDark: '#29347A',
+  cherry: '#CD3572', cherryLight: '#F2CAD8', cherryDark: '#911449',
+  crest: '#FD8153', crestLight: '#FFE2C8', crestDark: '#DD3025',
+  fontDisplay: "'Playfair Display', Georgia, serif",
+  fontBody: "'Open Sans', sans-serif",
+};
+
+// ── SHIELD SVG ────────────────────────────────────────────
+function Shield({ size = 32, light = false }) {
+  const fg = light ? T.darkBlue : T.blue;
+  const bg = light ? T.blue : T.darkBlue;
+  const s = size, h = size * 1.2;
+  return (
+    <svg width={s} height={h} viewBox="0 0 30 36" fill="none">
+      <path d="M15 1L2 6v14c0 9 5.5 13 13 15C22.5 33 28 29 28 20V6L15 1z" fill={bg}/>
+      <path d="M15 5L6 9v11c0 7 4 11 9 13 5-2 9-6 9-13V9L15 5z" fill={fg}/>
+      <path d="M15 9L8 12v8c0 5 3 8 7 10 4-2 7-5 7-10V12L15 9z" fill={bg}/>
+      <rect x="13.5" y="12" width="3" height="10" rx="0.5" fill={fg}/>
+      <rect x="9.5" y="15.5" width="11" height="3" rx="0.5" fill={fg}/>
+      <circle cx="11" cy="13.5" r="1.2" fill={fg} opacity="0.7"/>
+      <circle cx="19" cy="13.5" r="1.2" fill={fg} opacity="0.7"/>
+      <circle cx="11" cy="23" r="1.2" fill={fg} opacity="0.7"/>
+      <circle cx="19" cy="23" r="1.2" fill={fg} opacity="0.7"/>
+    </svg>
+  );
+}
+
+// ── NAVBAR ───────────────────────────────────────────────
+function NavBar({ activePage, onNav }) {
+  const links = ['Home', 'Programmes', 'Qualifications', 'Schools', 'Resources'];
+  return (
+    <nav style={{ background: T.darkBlue, padding: '0 48px', display: 'flex', alignItems: 'center', height: 64, gap: 0, position: 'sticky', top: 0, zIndex: 100 }}>
+      <button onClick={() => onNav('Home')} style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'none', border: 'none', cursor: 'pointer', marginRight: 36, padding: 0 }}>
+        <Shield size={28} />
+        <div style={{ textAlign: 'left' }}>
+          <div style={{ fontFamily: T.fontBody, fontSize: 14, fontWeight: 700, color: T.white, lineHeight: 1.1 }}>Cambridge</div>
+          <div style={{ fontFamily: T.fontBody, fontSize: 10, color: T.blue, lineHeight: 1.3 }}>International Education</div>
+        </div>
+      </button>
+      <div style={{ display: 'flex', flex: 1 }}>
+        {links.map(l => (
+          <button key={l} onClick={() => onNav(l)} style={{
+            height: 64, padding: '0 14px', background: 'none', border: 'none',
+            borderBottom: `3px solid ${activePage === l ? T.blue : 'transparent'}`,
+            fontFamily: T.fontBody, fontSize: 13, fontWeight: 600,
+            color: activePage === l ? T.white : '#D1F9F1', cursor: 'pointer', transition: 'all 150ms'
+          }}>{l}</button>
+        ))}
+      </div>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+        <input placeholder="Search…" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.25)', borderRadius: 4, padding: '6px 12px', color: T.white, fontSize: 12, fontFamily: T.fontBody, outline: 'none', width: 160 }} />
+        <button style={{ background: T.blue, color: T.darkBlue, padding: '7px 16px', borderRadius: 4, fontSize: 12, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody }}>Sign in</button>
+      </div>
+    </nav>
+  );
+}
+
+// ── FOOTER ───────────────────────────────────────────────
+function Footer() {
+  const cols = [
+    { title: 'Programmes', links: ['Cambridge Primary', 'Cambridge Lower Secondary', 'Cambridge IGCSE', 'Cambridge AS & A Level', 'Cambridge Pre-U'] },
+    { title: 'Support', links: ['Teacher resources', 'Past papers', 'Examiner reports', 'Training & PD', 'Cambridge GO'] },
+    { title: 'About', links: ['Who we are', 'Our impact', 'News & media', 'Jobs', 'Contact us'] },
+  ];
+  return (
+    <footer style={{ background: T.darkBlue, color: T.white, padding: '48px 48px 28px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', gap: 32, marginBottom: 40 }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <Shield size={24} />
+            <div>
+              <div style={{ fontSize: 15, fontWeight: 700 }}>Cambridge</div>
+              <div style={{ fontSize: 10, color: T.blue }}>International Education</div>
+            </div>
+          </div>
+          <p style={{ fontSize: 12, color: '#D1F9F1', lineHeight: 1.6, maxWidth: 240 }}>
+            The world's leading provider of international education programmes and qualifications for 3–19 year olds.
+          </p>
+        </div>
+        {cols.map(col => (
+          <div key={col.title}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: T.blue, marginBottom: 12 }}>{col.title}</div>
+            {col.links.map(l => (
+              <div key={l} style={{ fontSize: 12, color: '#D1F9F1', marginBottom: 8, cursor: 'pointer' }}>{l}</div>
+            ))}
+          </div>
+        ))}
+      </div>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ fontSize: 11, color: T.slate3 }}>© 2025 Cambridge University Press & Assessment. All rights reserved.</div>
+        <div style={{ display: 'flex', gap: 20 }}>
+          {['Privacy policy', 'Terms of use', 'Accessibility', 'Cookie settings'].map(l => (
+            <span key={l} style={{ fontSize: 11, color: T.slate3, cursor: 'pointer' }}>{l}</span>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ── HOME PAGE ────────────────────────────────────────────
+function HomePage({ onNav }) {
+  const subjects = [
+    { name: 'Biology', code: '9700', color: T.greenLight, textColor: T.greenDark, group: 'Sciences' },
+    { name: 'Chemistry', code: '9701', color: T.greenLight, textColor: T.greenDark, group: 'Sciences' },
+    { name: 'Physics', code: '9702', color: T.lightBlue, textColor: T.darkBlue, group: 'Sciences' },
+    { name: 'Mathematics', code: '9709', color: T.indigoLight, textColor: T.indigoDark, group: 'Mathematics' },
+    { name: 'English Language', code: '9093', color: T.crestLight, textColor: T.crestDark, group: 'Languages' },
+    { name: 'History', code: '9489', color: T.cherryLight, textColor: T.cherryDark, group: 'Humanities' },
+  ];
+  const stats = [
+    { num: '160+', label: 'countries' },
+    { num: '10,000+', label: 'schools' },
+    { num: '1.5M+', label: 'students' },
+    { num: '55+', label: 'AS & A Level subjects' },
+  ];
+  return (
+    <div>
+      {/* Hero */}
+      <div style={{ background: T.darkBlue, padding: '80px 48px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', right: -60, top: -60, width: 500, height: 500, borderRadius: '50%', background: T.blue, opacity: 0.06 }} />
+        <div style={{ position: 'absolute', right: 80, bottom: -80, width: 300, height: 300, borderRadius: '50%', background: T.warmBlue, opacity: 0.08 }} />
+        <div style={{ maxWidth: 700, position: 'relative' }}>
+          <div style={{ display: 'inline-block', background: T.warmBlue, color: T.white, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 12px', borderRadius: 4, marginBottom: 20 }}>Cambridge Advanced</div>
+          <h1 style={{ fontFamily: T.fontDisplay, fontSize: 52, fontWeight: 700, color: T.white, lineHeight: 1.1, marginBottom: 24, letterSpacing: '-0.02em' }}>
+            Inspiring learners<br />
+            <span style={{ color: T.blue }}>worldwide</span>
+          </h1>
+          <p style={{ fontSize: 18, color: '#D1F9F1', lineHeight: 1.6, marginBottom: 36, maxWidth: 520 }}>
+            Cambridge AS & A Level equips students with the skills and knowledge to thrive at university and beyond — recognised by leading institutions in 160+ countries.
+          </p>
+          <div style={{ display: 'flex', gap: 12 }}>
+            <button onClick={() => onNav('Qualifications')} style={{ background: T.blue, color: T.darkBlue, padding: '13px 28px', borderRadius: 4, fontSize: 15, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody }}>
+              Explore qualifications →
+            </button>
+            <button onClick={() => onNav('Schools')} style={{ background: 'transparent', color: T.white, padding: '13px 28px', borderRadius: 4, fontSize: 15, fontWeight: 700, border: `2px solid ${T.blue}`, cursor: 'pointer', fontFamily: T.fontBody }}>
+              For schools
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* Stats bar */}
+      <div style={{ background: T.blue, padding: '20px 48px', display: 'flex', gap: 0 }}>
+        {stats.map((s, i) => (
+          <div key={i} style={{ flex: 1, borderRight: i < stats.length - 1 ? `1px solid rgba(19,56,68,0.2)` : 'none', paddingRight: 24, marginRight: 24 }}>
+            <div style={{ fontFamily: T.fontDisplay, fontSize: 28, fontWeight: 700, color: T.darkBlue }}>{s.num}</div>
+            <div style={{ fontSize: 12, color: T.darkBlue, opacity: 0.7, fontWeight: 600 }}>{s.label}</div>
+          </div>
+        ))}
+      </div>
+      {/* Subjects */}
+      <div style={{ background: T.white, padding: '64px 48px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32 }}>
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: T.warmBlue, marginBottom: 8 }}>Cambridge AS & A Level</div>
+            <h2 style={{ fontFamily: T.fontDisplay, fontSize: 34, fontWeight: 700, color: T.slate4 }}>Popular subjects</h2>
+          </div>
+          <button onClick={() => onNav('Qualifications')} style={{ background: 'none', border: 'none', color: T.darkBlue, fontWeight: 700, fontSize: 14, cursor: 'pointer', fontFamily: T.fontBody }}>View all subjects →</button>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          {subjects.map(s => (
+            <div key={s.code} onClick={() => onNav('SubjectDetail', s)} style={{ background: T.white, border: `1px solid ${T.slate1}`, borderRadius: 6, overflow: 'hidden', cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', transition: 'box-shadow 200ms' }}>
+              <div style={{ background: s.color, height: 72, display: 'flex', alignItems: 'center', paddingLeft: 20 }}>
+                <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: s.textColor }}>{s.group}</span>
+              </div>
+              <div style={{ padding: '16px 20px' }}>
+                <div style={{ fontFamily: T.fontDisplay, fontSize: 18, fontWeight: 700, color: T.slate4, marginBottom: 4 }}>{s.name}</div>
+                <div style={{ fontSize: 11, color: T.slate3, marginBottom: 12 }}>Syllabus code: {s.code}</div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: T.darkBlue }}>View syllabus →</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* CTA Banner */}
+      <div style={{ background: T.lightBlue, padding: '56px 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ maxWidth: 560 }}>
+          <h2 style={{ fontFamily: T.fontDisplay, fontSize: 32, fontWeight: 700, color: T.darkBlue, marginBottom: 12 }}>Ready to offer Cambridge qualifications?</h2>
+          <p style={{ fontSize: 15, color: T.slate3, lineHeight: 1.6 }}>Join over 10,000 schools worldwide. Our team will help you through the registration process.</p>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flexShrink: 0 }}>
+          <button onClick={() => onNav('Schools')} style={{ background: T.darkBlue, color: T.white, padding: '12px 28px', borderRadius: 4, fontSize: 14, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody }}>Register as a school</button>
+          <button style={{ background: 'transparent', color: T.darkBlue, padding: '12px 28px', borderRadius: 4, fontSize: 14, fontWeight: 700, border: `2px solid ${T.darkBlue}`, cursor: 'pointer', fontFamily: T.fontBody }}>Speak to our team</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── QUALIFICATIONS PAGE ─────────────────────────────────
+function QualificationsPage({ onNav }) {
+  const [activeGroup, setActiveGroup] = React.useState('All');
+  const groups = ['All', 'Sciences', 'Mathematics', 'Languages', 'Humanities', 'Business', 'Arts'];
+  const subjects = [
+    { name: 'Biology', code: '9700', group: 'Sciences', color: T.greenLight, tc: T.greenDark },
+    { name: 'Chemistry', code: '9701', group: 'Sciences', color: T.greenLight, tc: T.greenDark },
+    { name: 'Physics', code: '9702', group: 'Sciences', color: T.lightBlue, tc: T.darkBlue },
+    { name: 'Marine Science', code: '9693', group: 'Sciences', color: T.lightBlue, tc: T.darkBlue },
+    { name: 'Mathematics', code: '9709', group: 'Mathematics', color: T.indigoLight, tc: T.indigoDark },
+    { name: 'Further Mathematics', code: '9231', group: 'Mathematics', color: T.indigoLight, tc: T.indigoDark },
+    { name: 'English Language', code: '9093', group: 'Languages', color: T.crestLight, tc: T.crestDark },
+    { name: 'English Literature', code: '9695', group: 'Languages', color: T.crestLight, tc: T.crestDark },
+    { name: 'French', code: '9716', group: 'Languages', color: T.crestLight, tc: T.crestDark },
+    { name: 'History', code: '9489', group: 'Humanities', color: T.cherryLight, tc: T.cherryDark },
+    { name: 'Geography', code: '9696', group: 'Humanities', color: T.cherryLight, tc: T.cherryDark },
+    { name: 'Economics', code: '9708', group: 'Business', color: T.slate1, tc: T.slate3 },
+    { name: 'Business', code: '9609', group: 'Business', color: T.slate1, tc: T.slate3 },
+    { name: 'Psychology', code: '9990', group: 'Humanities', color: T.cherryLight, tc: T.cherryDark },
+    { name: 'Art & Design', code: '9479', group: 'Arts', color: '#FFF0E6', tc: '#A0522D' },
+    { name: 'Music', code: '9483', group: 'Arts', color: '#FFF0E6', tc: '#A0522D' },
+  ];
+  const filtered = activeGroup === 'All' ? subjects : subjects.filter(s => s.group === activeGroup);
+  return (
+    <div style={{ background: T.slate1, minHeight: '100vh' }}>
+      {/* Page header */}
+      <div style={{ background: T.darkBlue, padding: '48px 48px 40px' }}>
+        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: T.blue, marginBottom: 10 }}>Cambridge Advanced</div>
+        <h1 style={{ fontFamily: T.fontDisplay, fontSize: 40, fontWeight: 700, color: T.white, marginBottom: 12 }}>AS & A Level subjects</h1>
+        <p style={{ fontSize: 15, color: '#D1F9F1', maxWidth: 560, lineHeight: 1.6 }}>
+          Choose from 55+ subjects. Each syllabus is developed with universities and employers to ensure relevance and rigour.
+        </p>
+      </div>
+      {/* Filter tabs */}
+      <div style={{ background: T.white, borderBottom: `2px solid ${T.slate1}`, padding: '0 48px', display: 'flex', gap: 0 }}>
+        {groups.map(g => (
+          <button key={g} onClick={() => setActiveGroup(g)} style={{
+            height: 48, padding: '0 16px', background: 'none', border: 'none',
+            borderBottom: `2px solid ${activeGroup === g ? T.warmBlue : 'transparent'}`,
+            marginBottom: -2, fontFamily: T.fontBody, fontSize: 13, fontWeight: 600,
+            color: activeGroup === g ? T.darkBlue : T.slate3, cursor: 'pointer'
+          }}>{g}</button>
+        ))}
+      </div>
+      {/* Subject grid */}
+      <div style={{ padding: '32px 48px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
+          {filtered.map(s => (
+            <div key={s.code} onClick={() => onNav('SubjectDetail', s)} style={{ background: T.white, borderRadius: 6, overflow: 'hidden', cursor: 'pointer', boxShadow: '0 1px 4px rgba(0,0,0,0.06)', border: `1px solid ${T.slate1}` }}>
+              <div style={{ background: s.color, height: 56, display: 'flex', alignItems: 'center', paddingLeft: 16 }}>
+                <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: s.tc }}>{s.group}</span>
+              </div>
+              <div style={{ padding: '14px 16px' }}>
+                <div style={{ fontFamily: T.fontDisplay, fontSize: 15, fontWeight: 700, color: T.slate4, marginBottom: 3 }}>{s.name}</div>
+                <div style={{ fontSize: 11, color: T.slate3, marginBottom: 10 }}>{s.code}</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: T.darkBlue }}>View syllabus →</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── SUBJECT DETAIL PAGE ──────────────────────────────────
+function SubjectDetailPage({ subject, onNav }) {
+  const [activeTab, setActiveTab] = React.useState('Overview');
+  const tabs = ['Overview', 'Syllabus', 'Past papers', 'Teacher resources', 'Results'];
+  const s = subject || { name: 'Biology', code: '9700', group: 'Sciences', color: T.greenLight, tc: T.greenDark };
+  return (
+    <div style={{ background: T.slate1, minHeight: '100vh' }}>
+      {/* Breadcrumb */}
+      <div style={{ background: T.white, borderBottom: `1px solid ${T.slate1}`, padding: '12px 48px', fontSize: 12, color: T.slate3 }}>
+        <span style={{ cursor: 'pointer', color: T.darkBlue }} onClick={() => onNav('Home')}>Home</span>
+        <span style={{ margin: '0 8px' }}>›</span>
+        <span style={{ cursor: 'pointer', color: T.darkBlue }} onClick={() => onNav('Qualifications')}>AS & A Level</span>
+        <span style={{ margin: '0 8px' }}>›</span>
+        <span>{s.name}</span>
+      </div>
+      {/* Hero */}
+      <div style={{ background: T.darkBlue, padding: '48px 48px 0' }}>
+        <div style={{ display: 'inline-block', background: s.color, color: s.tc, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 10px', borderRadius: 4, marginBottom: 16 }}>{s.group}</div>
+        <h1 style={{ fontFamily: T.fontDisplay, fontSize: 38, fontWeight: 700, color: T.white, marginBottom: 8 }}>Cambridge International AS & A Level<br />{s.name}</h1>
+        <div style={{ display: 'flex', gap: 16, marginBottom: 32, alignItems: 'center' }}>
+          <span style={{ fontSize: 13, color: '#D1F9F1' }}>Syllabus code: <strong style={{ color: T.white }}>{s.code}</strong></span>
+          <span style={{ background: T.warmBlue, color: T.white, fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 4 }}>Available 2025</span>
+        </div>
+        {/* Tabs */}
+        <div style={{ display: 'flex', gap: 0 }}>
+          {tabs.map(tab => (
+            <button key={tab} onClick={() => setActiveTab(tab)} style={{
+              height: 44, padding: '0 18px', background: 'none', border: 'none',
+              borderBottom: `3px solid ${activeTab === tab ? T.blue : 'transparent'}`,
+              fontFamily: T.fontBody, fontSize: 13, fontWeight: 600,
+              color: activeTab === tab ? T.white : '#D1F9F1', cursor: 'pointer'
+            }}>{tab}</button>
+          ))}
+        </div>
+      </div>
+      {/* Content */}
+      <div style={{ padding: '40px 48px', display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 28 }}>
+        <div>
+          {activeTab === 'Overview' && (
+            <div>
+              <div style={{ background: T.white, borderRadius: 6, padding: '28px 32px', marginBottom: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+                <h2 style={{ fontFamily: T.fontDisplay, fontSize: 22, fontWeight: 700, color: T.slate4, marginBottom: 14 }}>Why choose Cambridge {s.name}?</h2>
+                <p style={{ fontSize: 14, color: T.slate3, lineHeight: 1.7, marginBottom: 14 }}>
+                  This qualification develops students' knowledge and understanding of {s.name.toLowerCase()}, along with higher-order thinking skills such as analysis, synthesis and evaluation. It prepares students for further study and employment in related fields.
+                </p>
+                <p style={{ fontSize: 14, color: T.slate3, lineHeight: 1.7 }}>
+                  Students develop a deep appreciation of the subject and the skills needed to approach unseen problems, both of which are highly valued by leading universities worldwide.
+                </p>
+              </div>
+              <div style={{ background: T.white, borderRadius: 6, padding: '28px 32px', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+                <h3 style={{ fontSize: 16, fontWeight: 700, color: T.slate4, marginBottom: 16 }}>Key features</h3>
+                {['Internationally recognised by top universities', 'Available as AS Level or full A Level', 'Practical and written assessment components', 'Flexible to teach — multiple starting points', 'Supported by comprehensive teacher resources'].map(f => (
+                  <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10 }}>
+                    <div style={{ width: 18, height: 18, borderRadius: '50%', background: T.lightBlue, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
+                      <span style={{ fontSize: 10, color: T.darkBlue, fontWeight: 700 }}>✓</span>
+                    </div>
+                    <span style={{ fontSize: 13, color: T.slate4, lineHeight: 1.5 }}>{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {activeTab === 'Syllabus' && (
+            <div style={{ background: T.white, borderRadius: 6, padding: '28px 32px', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+              <h2 style={{ fontFamily: T.fontDisplay, fontSize: 22, fontWeight: 700, marginBottom: 20 }}>Syllabus documents</h2>
+              {[{ title: `Cambridge International AS & A Level ${s.name} (${s.code}) Syllabus 2025–2027`, type: 'PDF', size: '2.1 MB' }, { title: `${s.name} Specimen Papers 2025`, type: 'ZIP', size: '8.4 MB' }, { title: `${s.name} Mark Schemes 2025`, type: 'ZIP', size: '3.2 MB' }].map(doc => (
+                <div key={doc.title} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 0', borderBottom: `1px solid ${T.slate1}` }}>
+                  <div style={{ width: 36, height: 44, background: T.indigoLight, borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 9, fontWeight: 700, color: T.indigoDark, flexShrink: 0 }}>{doc.type}</div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: T.slate4, marginBottom: 3 }}>{doc.title}</div>
+                    <div style={{ fontSize: 11, color: T.slate3 }}>{doc.size}</div>
+                  </div>
+                  <button style={{ background: T.darkBlue, color: T.white, padding: '7px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody }}>Download</button>
+                </div>
+              ))}
+            </div>
+          )}
+          {(activeTab === 'Past papers' || activeTab === 'Teacher resources' || activeTab === 'Results') && (
+            <div style={{ background: T.white, borderRadius: 6, padding: '40px 32px', textAlign: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+              <div style={{ fontSize: 32, marginBottom: 12 }}>🔐</div>
+              <h3 style={{ fontFamily: T.fontDisplay, fontSize: 20, fontWeight: 700, color: T.slate4, marginBottom: 8 }}>Sign in to access {activeTab.toLowerCase()}</h3>
+              <p style={{ fontSize: 13, color: T.slate3, marginBottom: 20 }}>These resources are available to registered Cambridge International schools and teachers.</p>
+              <button style={{ background: T.darkBlue, color: T.white, padding: '10px 24px', borderRadius: 4, fontSize: 14, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody }}>Sign in to Cambridge GO</button>
+            </div>
+          )}
+        </div>
+        {/* Sidebar */}
+        <div>
+          <div style={{ background: T.lightBlue, borderRadius: 6, padding: '20px 22px', marginBottom: 16 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: T.darkBlue, marginBottom: 14 }}>Quick info</div>
+            {[['Qualification', 'AS & A Level'], ['Code', s.code], ['Group', s.group], ['Assessment', 'Written + Practical'], ['First exam', 'June 2025']].map(([k, v]) => (
+              <div key={k} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid rgba(19,56,68,0.1)` }}>
+                <span style={{ fontSize: 12, color: T.slate3 }}>{k}</span>
+                <span style={{ fontSize: 12, fontWeight: 700, color: T.darkBlue }}>{v}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: T.white, borderRadius: 6, padding: '20px 22px', marginBottom: 16, border: `1px solid ${T.slate1}` }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: T.slate4, marginBottom: 12 }}>Related subjects</div>
+            {['Further Mathematics (9231)', 'Computer Science (9618)', 'Statistics (9231)'].map(r => (
+              <div key={r} style={{ fontSize: 12, color: T.darkBlue, marginBottom: 8, cursor: 'pointer', fontWeight: 600 }}>→ {r}</div>
+            ))}
+          </div>
+          <button style={{ width: '100%', background: T.darkBlue, color: T.white, padding: '12px', borderRadius: 4, fontSize: 14, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody, marginBottom: 8 }}>
+            Download syllabus PDF
+          </button>
+          <button style={{ width: '100%', background: T.white, color: T.darkBlue, padding: '12px', borderRadius: 4, fontSize: 14, fontWeight: 700, border: `2px solid ${T.darkBlue}`, cursor: 'pointer', fontFamily: T.fontBody }}>
+            Contact our team
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── SCHOOLS PAGE ─────────────────────────────────────────
+function SchoolsPage() {
+  const steps = [
+    { num: '01', title: 'Check eligibility', desc: 'Review our registration requirements to ensure your school meets the criteria for offering Cambridge qualifications.' },
+    { num: '02', title: 'Apply online', desc: 'Complete the online application form with details about your school, including its facilities and teaching staff.' },
+    { num: '03', title: 'Assessment visit', desc: 'A Cambridge representative will visit your school to ensure it meets the required standards for delivery.' },
+    { num: '04', title: 'Start teaching', desc: "Once approved, you'll receive access to all resources, training, and support needed to deliver Cambridge qualifications." },
+  ];
+  return (
+    <div style={{ background: T.white, minHeight: '100vh' }}>
+      <div style={{ background: T.darkBlue, padding: '64px 48px' }}>
+        <h1 style={{ fontFamily: T.fontDisplay, fontSize: 44, fontWeight: 700, color: T.white, marginBottom: 16 }}>Become a Cambridge School</h1>
+        <p style={{ fontSize: 17, color: '#D1F9F1', maxWidth: 560, lineHeight: 1.6, marginBottom: 32 }}>
+          Join a global community of over 10,000 schools offering internationally recognised qualifications that unlock opportunities for every student.
+        </p>
+        <button style={{ background: T.blue, color: T.darkBlue, padding: '13px 28px', borderRadius: 4, fontSize: 15, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody }}>
+          Start your application →
+        </button>
+      </div>
+      <div style={{ padding: '64px 48px', background: T.slate1 }}>
+        <h2 style={{ fontFamily: T.fontDisplay, fontSize: 30, fontWeight: 700, color: T.slate4, marginBottom: 8, textAlign: 'center' }}>How to register</h2>
+        <p style={{ fontSize: 14, color: T.slate3, textAlign: 'center', marginBottom: 40 }}>A straightforward four-step process</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+          {steps.map(step => (
+            <div key={step.num} style={{ background: T.white, borderRadius: 6, padding: '24px 20px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+              <div style={{ fontFamily: T.fontDisplay, fontSize: 36, fontWeight: 700, color: T.blue, marginBottom: 12 }}>{step.num}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, color: T.slate4, marginBottom: 8 }}>{step.title}</div>
+              <div style={{ fontSize: 12, color: T.slate3, lineHeight: 1.6 }}>{step.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{ padding: '64px 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40 }}>
+        <div>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: T.warmBlue, marginBottom: 10 }}>Support for schools</div>
+          <h2 style={{ fontFamily: T.fontDisplay, fontSize: 28, fontWeight: 700, color: T.slate4, marginBottom: 16 }}>We're with you every step</h2>
+          {['Dedicated regional support teams', 'Comprehensive online resources on Cambridge GO', 'Professional development for teachers', 'Regular examiner feedback and reports', 'Community of practice — global school network'].map(item => (
+            <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
+              <span style={{ color: T.warmBlue, fontWeight: 700, fontSize: 16, lineHeight: 1.4 }}>✓</span>
+              <span style={{ fontSize: 14, color: T.slate3, lineHeight: 1.5 }}>{item}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ background: T.lightBlue, borderRadius: 8, padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ fontFamily: T.fontDisplay, fontSize: 28, fontWeight: 700, color: T.darkBlue, marginBottom: 8 }}>Have questions?</div>
+          <p style={{ fontSize: 14, color: T.slate3, lineHeight: 1.6, marginBottom: 24 }}>Our team is ready to answer your questions about registration, fees, and curriculum fit.</p>
+          <button style={{ background: T.darkBlue, color: T.white, padding: '12px 24px', borderRadius: 4, fontSize: 14, fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: T.fontBody, alignSelf: 'flex-start' }}>Contact us</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── RESOURCES PAGE ───────────────────────────────────────
+function ResourcesPage() {
+  const resources = [
+    { title: 'Cambridge GO', desc: 'Access all your digital teaching and learning resources in one place.', badge: 'Platform', color: T.lightBlue, tc: T.darkBlue },
+    { title: 'Past papers & mark schemes', desc: 'Download examination papers and marking schemes from previous series.', badge: 'Downloads', color: T.indigoLight, tc: T.indigoDark },
+    { title: 'Schemes of work', desc: 'Suggested lesson plans to help structure your teaching programme.', badge: 'Planning', color: T.greenLight, tc: T.greenDark },
+    { title: 'Teacher guides', desc: 'Practical guidance to support your classroom delivery of Cambridge syllabuses.', badge: 'Guides', color: T.crestLight, tc: T.crestDark },
+    { title: 'Professional development', desc: 'Face-to-face and online training for teachers at all stages of their career.', badge: 'Training', color: T.cherryLight, tc: T.cherryDark },
+    { title: 'Examiner reports', desc: 'Insights from examiners to help teachers understand what makes strong responses.', badge: 'Reports', color: T.slate1, tc: T.slate3 },
+  ];
+  return (
+    <div style={{ background: T.slate1, minHeight: '100vh' }}>
+      <div style={{ background: T.darkBlue, padding: '56px 48px' }}>
+        <h1 style={{ fontFamily: T.fontDisplay, fontSize: 40, fontWeight: 700, color: T.white, marginBottom: 12 }}>Teacher & school resources</h1>
+        <p style={{ fontSize: 15, color: '#D1F9F1', maxWidth: 500, lineHeight: 1.6 }}>Everything you need to teach and assess Cambridge qualifications with confidence.</p>
+      </div>
+      <div style={{ padding: '40px 48px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18 }}>
+        {resources.map(r => (
+          <div key={r.title} style={{ background: T.white, borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 6px rgba(0,0,0,0.06)', cursor: 'pointer' }}>
+            <div style={{ background: r.color, padding: '18px 20px' }}>
+              <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: r.tc, background: 'rgba(255,255,255,0.5)', padding: '3px 8px', borderRadius: 9999 }}>{r.badge}</span>
+            </div>
+            <div style={{ padding: '18px 20px' }}>
+              <div style={{ fontFamily: T.fontDisplay, fontSize: 17, fontWeight: 700, color: T.slate4, marginBottom: 8 }}>{r.title}</div>
+              <div style={{ fontSize: 12, color: T.slate3, lineHeight: 1.6, marginBottom: 14 }}>{r.desc}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: T.darkBlue }}>Access resource →</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── APP SHELL ─────────────────────────────────────────────
+function App() {
+  const saved = localStorage.getItem('cam_page');
+  const [page, setPage] = React.useState(saved || 'Home');
+  const [subjectData, setSubjectData] = React.useState(null);
+
+  const handleNav = (p, data) => {
+    setPage(p);
+    if (data) setSubjectData(data);
+    localStorage.setItem('cam_page', p);
+    window.scrollTo({ top: 0 });
+  };
+
+  const pageMap = {
+    Home: <HomePage onNav={handleNav} />,
+    Programmes: <QualificationsPage onNav={handleNav} />,
+    Qualifications: <QualificationsPage onNav={handleNav} />,
+    SubjectDetail: <SubjectDetailPage subject={subjectData} onNav={handleNav} />,
+    Schools: <SchoolsPage />,
+    Resources: <ResourcesPage />,
+  };
+
+  return (
+    <div>
+      <NavBar activePage={page} onNav={handleNav} />
+      {pageMap[page] || pageMap['Home']}
+      <Footer />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

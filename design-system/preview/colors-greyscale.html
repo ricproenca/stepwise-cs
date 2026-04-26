@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; background: #fff; padding: 20px; }
+  .row { display: flex; gap: 6px; margin-bottom: 8px; }
+  .swatch { flex: 1; border-radius: 5px; height: 64px; display: flex; flex-direction: column; justify-content: flex-end; padding: 6px 8px; }
+  .swatch-label { font-size: 10px; font-weight: 700; margin-bottom: 1px; }
+  .swatch-hex { font-size: 9px; opacity: 0.65; font-family: monospace; }
+  .lt { color: #232830; }
+  .dk { color: #fff; }
+  .border { border: 1px solid #ECEEF1; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="swatch lt border" style="background:#FFFFFF"><div class="swatch-label">White</div><div class="swatch-hex">#FFFFFF</div></div>
+    <div class="swatch lt" style="background:#ECEEF1"><div class="swatch-label">Slate 1</div><div class="swatch-hex">#ECEEF1</div></div>
+    <div class="swatch lt" style="background:#B5BDC8"><div class="swatch-label">Slate 2</div><div class="swatch-hex">#B5BDC8</div></div>
+    <div class="swatch dk" style="background:#546072"><div class="swatch-label">Slate 3</div><div class="swatch-hex">#546072</div></div>
+    <div class="swatch dk" style="background:#232830"><div class="swatch-label">Slate 4 ★</div><div class="swatch-hex">#232830</div></div>
+  </div>
+  <div style="font-size:10px;color:#546072;margin-top:4px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;">Slate 4 replaces black for text — maximise white space for clean, contemporary look</div>
+</body>
+</html>

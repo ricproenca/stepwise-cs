@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; background: #fff; padding: 20px 24px; }
+  .section { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #B5BDC8; margin-bottom: 10px; margin-top: 16px; }
+  .section:first-child { margin-top: 0; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700; letter-spacing: 0.02em; }
+  .badge-blue { background: #D1F9F1; color: #133844; }
+  .badge-teal { background: #00BDB6; color: #fff; }
+  .badge-green { background: #DFF2EA; color: #13553A; }
+  .badge-crest { background: #FFE2C8; color: #DD3025; }
+  .badge-cherry { background: #F2CAD8; color: #911449; }
+  .badge-indigo { background: #EBEDFB; color: #29347A; }
+  .badge-slate { background: #ECEEF1; color: #546072; }
+  .badge-dark { background: #133844; color: #D1F9F1; }
+  .tag { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; border: 1px solid; }
+  .tag-science { background: #DFF2EA; color: #13553A; border-color: #AFDFCB; }
+  .tag-arts { background: #F2CAD8; color: #911449; border-color: #E18AAC; }
+  .tag-maths { background: #EBEDFB; color: #29347A; border-color: #B0B9F1; }
+  .tag-lang { background: #FFE2C8; color: #DD3025; border-color: #FFC392; }
+</style>
+</head>
+<body>
+  <div class="section">Status Badges</div>
+  <div class="row">
+    <span class="badge badge-blue">Cambridge Advanced</span>
+    <span class="badge badge-teal">New 2025</span>
+    <span class="badge badge-green">Accepted</span>
+    <span class="badge badge-crest">Updated</span>
+    <span class="badge badge-cherry">Assessment only</span>
+    <span class="badge badge-indigo">Coursework</span>
+    <span class="badge badge-slate">Archived</span>
+    <span class="badge badge-dark">AS Level</span>
+  </div>
+
+  <div class="section">Subject Group Tags</div>
+  <div class="row">
+    <span class="tag tag-science">Sciences</span>
+    <span class="tag tag-maths">Mathematics</span>
+    <span class="tag tag-arts">Humanities & Arts</span>
+    <span class="tag tag-lang">Languages</span>
+  </div>
+
+  <div class="section">Qualification Levels</div>
+  <div class="row">
+    <span class="badge" style="background:#133844;color:#8EE8D8;border-radius:4px;">A Level</span>
+    <span class="badge" style="background:#1a4d5c;color:#D1F9F1;border-radius:4px;">AS Level</span>
+    <span class="badge" style="background:#ECEEF1;color:#546072;border-radius:4px;">IGCSE</span>
+    <span class="badge" style="background:#ECEEF1;color:#546072;border-radius:4px;">O Level</span>
+    <span class="badge" style="background:#ECEEF1;color:#546072;border-radius:4px;">Pre-U</span>
+  </div>
+</body>
+</html>
