@@ -138,10 +138,13 @@ When a concept appears in more than one topic, apply these rules:
 
 | Stage | Command | Output |
 |-------|---------|--------|
+| 0 | `/bootstrap` | design-system/style.css · components.css · design-tokens.md · svg-templates/ · frontend/assets/ |
 | 1 | `/resource-collector [topic] [slug]` | resources/scraped/{slug}/ |
 | 2 | `/content-creator [topic] [slug]` | content/{slug}/ |
 | 3 | `/frontend-builder [topic] [slug]` | frontend/topics/{slug}/ |
 | QA | `/validate-topic [slug]` | pass/fail report against completion checklist |
 | Planning | `/paper-analyser [paper] [year]` | planning/markdown/ question + answer mapping |
+
+Stage 0 (`/bootstrap`) is a one-time setup. Run it once before the first `/frontend-builder` invocation. It is safe to re-run — skips files that are already current.
 
 Every skill ends by updating its column in `queue.md` (R / C / H) to `[x]` on success or `[~]` if stopping mid-work.

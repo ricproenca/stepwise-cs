@@ -32,61 +32,16 @@ Items are removed from this file as they are applied.
 
 ---
 
-## Deferred — frontend / website (skipped on user request)
+## Applied (2026-04-26)
 
-These are still valid but will be handled when the website build resumes.
-
-### Issue 1a — Bootstrap step for design-system linkage
-The `design-system/` folder has `colors_and_type.css`, preview HTML files with inline styles, and UI kits — but the pipeline expects consolidated `design-system/style.css` + `design-system/components.css` + `design-system/design-tokens.md`, and copies in `frontend/assets/`. These are not present.
-
-**Fix (when resumed):** Add a one-time `/bootstrap` skill (new `.claude/skills/bootstrap.md`) that
-1. Symlinks or copies `colors_and_type.css` → `design-system/style.css`
-2. Extracts component classes from `design-system/preview/components-*.html` into `design-system/components.css`
-3. Generates `design-system/design-tokens.md` from the README's VISUAL FOUNDATIONS section
-4. Copies both CSS files into `frontend/assets/`
-Document it as Stage 0 in CLAUDE.md's Pipeline Commands table (the table already references it).
-
-### Issue 5a — frontend-builder YAML frontmatter (CRITICAL for Stage 3)
-`.claude/skills/frontend-builder.md` has no frontmatter — it cannot be invoked as `/frontend-builder`.
-
-**Fix:** Add complete YAML matching resource-collector and content-creator:
-```yaml
----
-name: frontend-builder
-description: Builds HTML pages from generated content. Runs at Stage 3. Invoke with: /frontend-builder [topic-name] [slug]
-when_to_use: ...
-argument-hint: "[topic-name] [slug]"
-arguments: [topic_name, slug]
-disable-model-invocation: true
-allowed-tools: [Read, Write, Edit, Bash]
----
-```
-
-### Issue 5b — No prereq check
-Doesn't verify `design-system/*.css` exist, doesn't check which content files are present, doesn't show what's already in `frontend/topics/$slug/`.
-
-**Fix:** Add a `!` shell block at the top:
-```
-ls content/$slug/
-ls design-system/
-ls frontend/topics/$slug/ 2>/dev/null || echo "(no pages built yet)"
-```
-
-### Issue 5c — Placeholders use `{topic-slug}` instead of `$slug`
-All path references need `$slug` / `$topic_name` for argument substitution to work.
-
-### Issue 5d — No SVG templates
-The skill says "emit SVG for each diagram type" but gives no template code — Claude will improvise.
-
-**Fix:** Add `design-system/svg-templates/` with one reference SVG per diagram type (flowchart, comparison-table, binary-diagram, network-diagram, memory-map, timeline, tree-diagram). Skill reads the template and adapts it to the diagram spec.
-
-### Issue 5e — `frontend/index.html` update has no duplicate protection
-Running frontend-builder twice on the same topic will add two topic cards.
-
-**Fix:** Before inserting a card, the skill checks for an existing `<article>` with `data-slug="$slug"` and replaces it.
-
-### Issue 5f — No queue.md update (H column)
-Mirror the Step 9 pattern already added to content-creator.
+**Frontend / website**
+- 1a — `/bootstrap` skill created at `.claude/skills/bootstrap.md`; `design-system/style.css`, `components.css`, `design-tokens.md`, and `svg-templates/` all created; `frontend/assets/` populated. Stage 0 row added to CLAUDE.md Pipeline Commands table.
+- 5a — `frontend-builder.md` already had YAML frontmatter (resolved before this audit was actioned).
+- 5b — Preflight check expanded: verifies `design-system/style.css`, `components.css`, and `design-tokens.md` before proceeding.
+- 5c — All `{topic-slug}` and `{topic-name}` placeholders replaced with `$slug` / `$topic_name`.
+- 5d — SVG template instructions added to Diagram Rendering section; `network-diagram` always emits `diagram-placeholder`.
+- 5e — Duplicate protection added to `frontend/index.html` update step (`data-slug="$slug"` check).
+- 5f — queue.md H column update step added to `frontend-builder.md`.
 
 ---
 

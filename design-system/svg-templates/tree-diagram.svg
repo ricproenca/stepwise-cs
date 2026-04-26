@@ -1,0 +1,56 @@
+<svg viewBox="0 0 480 240" role="img" xmlns="http://www.w3.org/2000/svg"
+     style="font-family:'Open Sans',sans-serif; width:100%; max-width:600px;">
+  <title>Tree diagram template</title>
+  <desc>Hierarchical tree with a root node, two level-1 children, and four level-2 grandchildren. Adapt labels at each level to the specific hierarchy.</desc>
+
+  <!-- ROOT NODE (level 0) — centred at x=240, y=32 -->
+  <rect x="160" y="16" width="160" height="40" rx="4"
+        fill="#133844" stroke="#133844" stroke-width="2"/>
+  <text x="240" y="41" text-anchor="middle" font-size="13"
+        fill="#D1F9F1" font-weight="700">Root node</text>
+
+  <!-- Connecting lines: root → children -->
+  <line x1="240" y1="56" x2="120" y2="104" stroke="#133844" stroke-width="2"/>
+  <line x1="240" y1="56" x2="360" y2="104" stroke="#133844" stroke-width="2"/>
+
+  <!-- LEVEL 1 LEFT — centred at x=120, y=120 -->
+  <rect x="40"  y="104" width="160" height="36" rx="4"
+        fill="#D1F9F1" stroke="#133844" stroke-width="2"/>
+  <text x="120" y="127" text-anchor="middle" font-size="12"
+        fill="#133844" font-weight="600">Child A</text>
+
+  <!-- LEVEL 1 RIGHT — centred at x=360, y=120 -->
+  <rect x="280" y="104" width="160" height="36" rx="4"
+        fill="#D1F9F1" stroke="#133844" stroke-width="2"/>
+  <text x="360" y="127" text-anchor="middle" font-size="12"
+        fill="#133844" font-weight="600">Child B</text>
+
+  <!-- Connecting lines: left child → grandchildren -->
+  <line x1="120" y1="140" x2="60"  y2="184" stroke="#133844" stroke-width="1.5"/>
+  <line x1="120" y1="140" x2="180" y2="184" stroke="#133844" stroke-width="1.5"/>
+
+  <!-- Connecting lines: right child → grandchildren -->
+  <line x1="360" y1="140" x2="300" y2="184" stroke="#133844" stroke-width="1.5"/>
+  <line x1="360" y1="140" x2="420" y2="184" stroke="#133844" stroke-width="1.5"/>
+
+  <!-- LEVEL 2 — four leaf nodes -->
+  <rect x="20"  y="184" width="80" height="34" rx="4"
+        fill="#ECEEF1" stroke="#B5BDC8" stroke-width="1.5"/>
+  <text x="60"  y="206" text-anchor="middle" font-size="11"
+        fill="#546072" font-weight="600">Leaf A1</text>
+
+  <rect x="140" y="184" width="80" height="34" rx="4"
+        fill="#ECEEF1" stroke="#B5BDC8" stroke-width="1.5"/>
+  <text x="180" y="206" text-anchor="middle" font-size="11"
+        fill="#546072" font-weight="600">Leaf A2</text>
+
+  <rect x="260" y="184" width="80" height="34" rx="4"
+        fill="#ECEEF1" stroke="#B5BDC8" stroke-width="1.5"/>
+  <text x="300" y="206" text-anchor="middle" font-size="11"
+        fill="#546072" font-weight="600">Leaf B1</text>
+
+  <rect x="380" y="184" width="80" height="34" rx="4"
+        fill="#ECEEF1" stroke="#B5BDC8" stroke-width="1.5"/>
+  <text x="420" y="206" text-anchor="middle" font-size="11"
+        fill="#546072" font-weight="600">Leaf B2</text>
+</svg>
