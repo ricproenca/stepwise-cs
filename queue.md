@@ -15,7 +15,7 @@ If a topic is marked `[~]`, check which files already exist in the folder and ge
 #### 1.1 — Data Representation (`data-representation`) · Paper 1
 | R | C | H |
 |---|---|---|
-| [ ] | [ ] | [ ] |
+| [x] | [x] | [ ] |
 
 Resources: textbook Ch.1, `resources/pdfs/past-papers/` (search: binary, hexadecimal, two's complement, ASCII)
 

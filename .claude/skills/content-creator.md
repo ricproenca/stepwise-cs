@@ -129,6 +129,9 @@ Write to `content/$slug/notes.md`.
 - No prohibited terms (see CLAUDE.md: "basically", "in simple terms", "fast/better" without qualification, "etc.", motivational filler).
 - Every technical term defined on first use.
 - At least one worked example per calculation-based objective.
+- Each H2 section must open with 1–3 sentences of factual context: what the concept covers, why it is examined, and any real-world anchor that grounds the material. No motivational filler.
+- Add a one-sentence concept-bridge before each H3 subsection that builds directly on the preceding one, showing how the ideas connect.
+- End each H2 section with a `> **Key Takeaway:**` blockquote containing 2–4 exam-critical bullets that summarise the section. Use mark-scheme language where available.
 
 ### Diagram specs (minimum 3 per topic)
 Embed as HTML comments in the relevant section:
