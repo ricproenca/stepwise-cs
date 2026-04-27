@@ -1,4 +1,5 @@
 import { Open_Sans, Playfair_Display } from 'next/font/google';
+import BackToTop from '../components/BackToTop';
 import './globals.css';
 
 const openSans = Open_Sans({
@@ -23,7 +24,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        {children}
+        <BackToTop />
+      </body>
     </html>
   );
 }
