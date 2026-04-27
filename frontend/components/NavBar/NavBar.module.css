@@ -1,0 +1,60 @@
+.nav {
+  background: var(--color-cambridge-dark-blue);
+  padding: 0 var(--space-8);
+  display: flex;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-right: var(--space-10);
+  text-decoration: none;
+}
+
+.logoMain {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.logoSub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--color-cambridge-blue);
+  line-height: 1.2;
+}
+
+.links { display: flex; flex: 1; }
+
+.link {
+  padding: 0 var(--space-4);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-cambridge-light-blue);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-white);
+  border-bottom-color: var(--color-cambridge-blue);
+}
+
+@media (max-width: 640px) {
+  .links { display: none; }
+}

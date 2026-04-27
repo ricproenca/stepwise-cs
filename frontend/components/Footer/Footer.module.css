@@ -1,0 +1,32 @@
+.footer {
+  background: var(--color-cambridge-dark-blue);
+  padding: var(--space-8) var(--container-pad);
+  margin-top: var(--space-16);
+}
+
+.inner {
+  max-width: var(--max-width-xl);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.credit {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-cambridge-light-blue);
+}
+
+.disclaimer {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-slate-3);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+}
