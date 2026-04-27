@@ -24,7 +24,7 @@ export default function FilterTabs({ sections }) {
       </div>
       {visible.map(section => (
         <section key={section.level} className={styles.section} aria-labelledby={`heading-${section.level.replace(' ', '-')}`}>
-          <h3 id={`heading-${section.level.replace(' ', '-')}`} className={styles.sectionHeading}>{section.level}</h3>
+          {visible.length > 1 && <h3 id={`heading-${section.level.replace(' ', '-')}`} className={styles.sectionHeading}>{section.level}</h3>}
           <div className={styles.grid}>
             {section.topics.map(topic => (
               <TopicCardSlot key={topic.ref} topic={topic} />

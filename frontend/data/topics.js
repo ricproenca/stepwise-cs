@@ -9,6 +9,7 @@ export const topicSections = [
         paper: 'AS · Paper 1',
         status: 'available',
         stats: '16 glossary terms · 12 questions',
+        meta: 'Chapter 1 — Information Representation · 5 sections · 16 glossary terms · 12 questions',
       },
       { ref: '1.2', slug: null, title: 'Multimedia', paper: 'AS · Paper 1', status: 'pending' },
       { ref: '1.3', slug: null, title: 'Compression', paper: 'AS · Paper 1', status: 'pending' },

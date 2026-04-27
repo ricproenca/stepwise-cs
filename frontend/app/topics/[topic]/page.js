@@ -11,25 +11,12 @@ const SECTIONS = [
   { id: 'syllabus-coverage', label: 'Syllabus Coverage' },
 ];
 
-export default function NotesPage({ params }) {
-  const { topic } = params;
+export default async function NotesPage({ params }) {
+  const { topic } = await params;
   const g = `/topics/${topic}/glossary`;
 
   return (
-    <>
-      <header className={styles.topicHeader}>
-        <div className={styles.topicHeaderInner}>
-          <div className={styles.badgeRow}>
-            <span className={styles.badge}>1.1</span>
-            <span className={styles.badgeLight}>AS Level</span>
-            <span className={styles.badgeLight}>Paper 1</span>
-          </div>
-          <h1 className={styles.topicTitle}>Data Representation</h1>
-          <p className={styles.topicMeta}>Chapter 1 — Information Representation &nbsp;&middot;&nbsp; 5 sections &nbsp;&middot;&nbsp; 16 glossary terms &nbsp;&middot;&nbsp; 12 questions</p>
-        </div>
-      </header>
-
-      <div className={styles.pageLayout}>
+    <div className={styles.pageLayout}>
         <aside className={styles.leftSidebar} aria-label="Section navigation">
           <SidebarNav sections={SECTIONS} />
         </aside>
@@ -593,6 +580,5 @@ export default function NotesPage({ params }) {
           <GlossarySidebar topic={topic} />
         </aside>
       </div>
-    </>
   );
 }
