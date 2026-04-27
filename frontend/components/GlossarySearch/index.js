@@ -4,7 +4,7 @@ import { useState } from 'react';
 import GlossaryTerm from '../GlossaryTerm';
 import styles from './GlossarySearch.module.css';
 
-export default function GlossarySearch({ terms, letters }) {
+export default function GlossarySearch({ terms, letters, notesBase }) {
   const [query, setQuery] = useState('');
   const q = query.toLowerCase().trim();
 
@@ -23,7 +23,7 @@ export default function GlossarySearch({ terms, letters }) {
         <div>
           <label htmlFor="gloss-search" className="visually-hidden">Search glossary terms</label>
           <input
-            type="search"
+            type="text"
             id="gloss-search"
             className={styles.searchInput}
             placeholder="Search terms…"
@@ -49,7 +49,7 @@ export default function GlossarySearch({ terms, letters }) {
         <section key={letter} id={`letter-${letter.toLowerCase()}`} aria-labelledby={`heading-${letter}`}>
           <h2 id={`heading-${letter}`} className={styles.letterHeading}>{letter}</h2>
           {filtered.filter(t => t.letter === letter).map(term => (
-            <GlossaryTerm key={term.id} term={term} />
+            <GlossaryTerm key={term.id} term={term} notesBase={notesBase} />
           ))}
         </section>
       ))}

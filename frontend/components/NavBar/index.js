@@ -17,9 +17,6 @@ export default function NavBar() {
           <span className={styles.logoSub}>Cambridge AS &amp; A Level</span>
         </div>
       </Link>
-      <div className={styles.links} role="list">
-        <Link href="/" className={styles.link} role="listitem">Topics</Link>
-      </div>
     </nav>
   );
 }

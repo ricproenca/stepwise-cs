@@ -76,4 +76,11 @@
   color: var(--color-text-secondary);
   background: var(--color-bg-subtle);
   margin-right: var(--space-1);
+  text-decoration: none;
+}
+
+a.tag:hover {
+  background: var(--color-cambridge-dark-blue);
+  border-color: var(--color-cambridge-dark-blue);
+  color: var(--color-white);
 }

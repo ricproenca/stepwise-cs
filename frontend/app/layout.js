@@ -22,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable}`}>
+    <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

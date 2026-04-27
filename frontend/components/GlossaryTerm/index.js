@@ -1,6 +1,6 @@
 import styles from './GlossaryTerm.module.css';
 
-export default function GlossaryTerm({ term }) {
+export default function GlossaryTerm({ term, notesBase }) {
   return (
     <div className={styles.term} id={term.id}>
       <h3 className={styles.name}>
@@ -16,7 +16,12 @@ export default function GlossaryTerm({ term }) {
         <div className={styles.differentiator}>{term.differentiator}</div>
       )}
       <p className={styles.refs}>
-        {term.refs.map(r => <span key={r} className={styles.tag}>{r}</span>)}
+        {term.refs.map(r => {
+          const anchor = `s${r.replace(/\./g, '-')}`;
+          return notesBase
+            ? <a key={r} href={`${notesBase}#${anchor}`} className={styles.tag}>{r}</a>
+            : <span key={r} className={styles.tag}>{r}</span>;
+        })}
       </p>
     </div>
   );
