@@ -34,8 +34,9 @@ Log ALL gaps here immediately when found. Do not wait until a topic is finished.
 - **Status:** Open
 - **Topic:** data-representation
 - **Type:** Visual Placeholder
-- **Description:** Textbook illustrates two storage methods for BCD (Method 1: four single bytes; Method 2: two bytes) using a layout diagram for the denary number 3165. The markdown source describes this in prose only; no table or diagram is present.
-- **Action:** Content creator must reproduce the packed/unpacked storage layout as a markdown table or ASCII-art diagram in notes.md.
+- **Description:** Textbook illustrates two storage methods for BCD using a layout diagram for the denary number 3165. The markdown source contains a `[VISUAL NEEDED]` stub; no renderable SVG exists.
+- **Action:** Produce a binary-diagram SVG showing packed BCD (0101 0010, one byte) vs unpacked BCD (0000 0101 / 0000 0010, two bytes) for denary 52. Replace the `diagram-placeholder` block in `frontend/topics/data-representation/index.html` once the SVG is ready.
+- **HTML Placeholder:** `[VISUAL NEEDED: binary-diagram — packed BCD vs unpacked BCD — page: topics/data-representation/index.html]`
 - **Logged:** 2026-04-26
 
 ### data-representation — ASCII code table

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.1 Data Representation — Glossary — Cambridge 9618 CS</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/components.css">
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <nav class="nav-primary" role="navigation" aria-label="Site navigation">
+    <a href="/index.html" class="nav-logo" aria-label="Cambridge 9618 home">
+      <svg width="32" height="38" viewBox="0 0 30 36" fill="none" aria-hidden="true" focusable="false">
+        <path d="M15 1L2 6v14c0 9 5.5 13 13 15C22.5 33 28 29 28 20V6L15 1z" fill="#133844" stroke="#8EE8D8" stroke-width="0.5"/>
+        <path d="M15 5L6 9v11c0 7 4 11 9 13 5-2 9-6 9-13V9L15 5z" fill="#8EE8D8"/>
+        <path d="M15 9L8 12v8c0 5 3 8 7 10 4-2 7-5 7-10V12L15 9z" fill="#133844"/>
+        <rect x="13.5" y="12" width="3" height="10" rx="0.5" fill="#8EE8D8"/>
+        <rect x="9.5" y="15.5" width="11" height="3" rx="0.5" fill="#8EE8D8"/>
+      </svg>
+      <div>
+        <span class="nav-logo__main">9618 CS</span>
+        <span class="nav-logo__sub">Cambridge AS &amp; A Level</span>
+      </div>
+    </a>
+    <div class="nav-links" role="list">
+      <a href="/index.html" class="nav-link" role="listitem">Topics</a>
+    </div>
+  </nav>
+
+  <!-- ── SUBNAV ────────────────────────────────────────────── -->
+  <nav class="subnav" aria-label="Topic pages">
+    <a href="index.html" class="subnav-link">Notes</a>
+    <a href="questions.html" class="subnav-link">Questions</a>
+    <a href="glossary.html" class="subnav-link active" aria-current="page">Glossary</a>
+  </nav>
+
+  <!-- ── TOPIC HEADER ──────────────────────────────────────── -->
+  <header style="background:var(--color-bg-inverse);padding:var(--space-10) var(--container-pad);">
+    <div style="max-width:var(--max-width-xl);margin:0 auto;">
+      <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-4);">
+        <span class="badge">1.1</span>
+        <span class="badge badge--outline" style="border-color:rgba(255,255,255,0.3);color:var(--color-cambridge-light-blue);">AS Level</span>
+        <span class="badge badge--outline" style="border-color:rgba(255,255,255,0.3);color:var(--color-cambridge-light-blue);">Paper 1</span>
+      </div>
+      <h1 style="font-family:var(--font-display);font-size:var(--text-4xl);color:var(--color-white);line-height:var(--lh-tight);margin:0 0 var(--space-3);">Glossary</h1>
+      <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-cambridge-blue);margin:0;">Data Representation (1.1) &nbsp;·&nbsp; 16 terms &nbsp;·&nbsp; Definitions are Cambridge mark-scheme compliant</p>
+    </div>
+  </header>
+
+  <!-- ── MAIN ──────────────────────────────────────────────── -->
+  <div class="page-layout--wide">
+
+    <!-- Search + letter nav -->
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:flex-start;margin-bottom:var(--space-8);">
+      <div>
+        <label for="gloss-search" class="visually-hidden">Search glossary terms</label>
+        <input type="search" id="gloss-search" class="glossary-search"
+               placeholder="Search terms…"
+               oninput="filterGlossary(this.value)"
+               aria-label="Search glossary terms">
+      </div>
+      <nav class="letter-nav" aria-label="Jump to letter">
+        <a href="#letter-a" aria-label="Terms starting with A">A</a>
+        <a href="#letter-b" aria-label="Terms starting with B">B</a>
+        <a href="#letter-c" aria-label="Terms starting with C">C</a>
+        <a href="#letter-e" aria-label="Terms starting with E">E</a>
+        <a href="#letter-g" aria-label="Terms starting with G">G</a>
+        <a href="#letter-h" aria-label="Terms starting with H">H</a>
+        <a href="#letter-k" aria-label="Terms starting with K">K</a>
+        <a href="#letter-m" aria-label="Terms starting with M">M</a>
+        <a href="#letter-n" aria-label="Terms starting with N">N</a>
+        <a href="#letter-o" aria-label="Terms starting with O">O</a>
+        <a href="#letter-t" aria-label="Terms starting with T">T</a>
+        <a href="#letter-u" aria-label="Terms starting with U">U</a>
+      </nav>
+    </div>
+
+    <!-- No results -->
+    <p id="no-gloss-results" class="hidden" style="font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text-secondary);text-align:center;padding:var(--space-10);">No terms match your search.</p>
+
+    <!-- ── LETTER A ───────────────────────────────────────── -->
+    <section id="letter-a" aria-labelledby="heading-a">
+      <h2 id="heading-a" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">A</h2>
+
+      <div class="glossary-term" id="ascii">
+        <h3 class="glossary-term__name">ASCII <span style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-regular);color:var(--color-text-secondary);">(American Standard Code for Information Interchange)</span></h3>
+        <p class="glossary-term__definition">A 7-bit character encoding standard that assigns a unique binary code to 128 characters, including English letters, digits, punctuation, and 32 control codes.</p>
+        <p class="glossary-term__plain">A table that maps every keyboard character to a 7-digit binary number.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The character 'A' is assigned the code 65 in denary (<code>0100 0001</code> in binary).</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> ASCII uses 7 bits (128 characters); extended ASCII uses 8 bits (256 characters); Unicode uses a minimum of 16 bits and covers all world languages. ASCII is not a standardised subset of extended ASCII — the extra 128 codes vary by implementation.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.5</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER B ───────────────────────────────────────── -->
+    <section id="letter-b" aria-labelledby="heading-b">
+      <h2 id="heading-b" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">B</h2>
+
+      <div class="glossary-term" id="binary">
+        <h3 class="glossary-term__name">Binary <span style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-regular);color:var(--color-text-secondary);">(number system)</span></h3>
+        <p class="glossary-term__definition">A base-2 number system that uses only the digits 0 and 1; each digit position represents an increasing power of 2 moving from right to left.</p>
+        <p class="glossary-term__plain">The number language computers use, where every value is built from 0s and 1s.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The denary value 13 is represented as <code>1101</code> in binary (8 + 4 + 0 + 1).</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.2</span></p>
+      </div>
+
+      <div class="glossary-term" id="bcd">
+        <h3 class="glossary-term__name">Binary-Coded Decimal <span style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-regular);color:var(--color-text-secondary);">(BCD)</span></h3>
+        <p class="glossary-term__definition">A number system that represents each individual denary digit as a separate 4-bit binary code; only the codes 0000 to 1001 (representing digits 0–9) are valid.</p>
+        <p class="glossary-term__plain">Each decimal digit gets its own 4-bit binary code, rather than converting the whole number to binary at once.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The denary number 964 in BCD is <code>1001 0110 0100</code> (9 → 1001, 6 → 0110, 4 → 0100).</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> BCD and pure binary produce different bit patterns for the same denary value. BCD of 27 is <code>0010 0111</code> (two separate 4-bit groups); pure binary of 27 is <code>00011011</code> (a single 8-bit value). The same 8-bit pattern <code>00100111</code> is 27 in BCD but 39 in unsigned binary.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.2</span> <span class="tag">1.1.4</span></p>
+      </div>
+
+      <div class="glossary-term" id="bit">
+        <h3 class="glossary-term__name">Bit</h3>
+        <p class="glossary-term__definition">A single binary digit; the smallest unit of data in a computer, holding the value 0 or 1.</p>
+        <p class="glossary-term__plain">The most basic unit of computer information — one switch that is either off (0) or on (1).</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The binary number <code>1011</code> contains four bits.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.2</span></p>
+      </div>
+
+      <div class="glossary-term" id="byte">
+        <h3 class="glossary-term__name">Byte</h3>
+        <p class="glossary-term__definition">A group of 8 bits, treated as the fundamental unit of computer memory addressing.</p>
+        <p class="glossary-term__plain">A group of eight binary digits; large enough to store a single ASCII character.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The ASCII code for 'Z' (90 in denary) is stored as one byte: <code>01011010</code>.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.1</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER C ───────────────────────────────────────── -->
+    <section id="letter-c" aria-labelledby="heading-c">
+      <h2 id="heading-c" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">C</h2>
+
+      <div class="glossary-term" id="character-set">
+        <h3 class="glossary-term__name">Character Set</h3>
+        <p class="glossary-term__definition">A standardised mapping that assigns a unique binary code to every character, symbol, or control sequence recognised by a computer system.</p>
+        <p class="glossary-term__plain">An agreed list that tells every computer how to translate between characters and the binary numbers stored in memory.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> In the ASCII character set, the letter 'a' maps to binary code <code>1100001</code> (97 in denary).</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.5</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER E ───────────────────────────────────────── -->
+    <section id="letter-e" aria-labelledby="heading-e">
+      <h2 id="heading-e" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">E</h2>
+
+      <div class="glossary-term" id="extended-ascii">
+        <h3 class="glossary-term__name">Extended ASCII</h3>
+        <p class="glossary-term__definition">An 8-bit extension of the ASCII standard that uses an additional bit to provide 256 unique character codes, adding accented letters, currency symbols, and drawing characters beyond the original 128.</p>
+        <p class="glossary-term__plain">A wider version of ASCII that adds 128 extra characters for non-English Western European letters and symbols.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The pound sign (£) is code 156 in one common extended ASCII implementation.</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> Extended ASCII adds 128 codes beyond standard ASCII but lacks standardisation across implementations; Unicode provides a single universal standard covering all languages.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.5</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER G ───────────────────────────────────────── -->
+    <section id="letter-g" aria-labelledby="heading-g">
+      <h2 id="heading-g" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">G</h2>
+
+      <div class="glossary-term" id="gibibyte">
+        <h3 class="glossary-term__name">Gibibyte <span style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-regular);color:var(--color-text-secondary);">(GiB)</span></h3>
+        <p class="glossary-term__definition">A binary unit of data storage equal to 2³⁰ bytes (1,073,741,824 bytes), defined by the IEC binary prefix system.</p>
+        <p class="glossary-term__plain">Approximately one billion bytes, measured using powers of 2 rather than powers of 10.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> A computer with 8 GiB of RAM contains 8 × 2³⁰ = 8,589,934,592 bytes of memory.</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> 1 GiB = 2³⁰ bytes (≈1.07 × 10⁹); 1 GB = 10⁹ bytes. A hard drive advertised as "1 TB" contains fewer bytes than "1 TiB" of RAM.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.1</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER H ───────────────────────────────────────── -->
+    <section id="letter-h" aria-labelledby="heading-h">
+      <h2 id="heading-h" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">H</h2>
+
+      <div class="glossary-term" id="hexadecimal">
+        <h3 class="glossary-term__name">Hexadecimal</h3>
+        <p class="glossary-term__definition">A base-16 number system that uses the digits 0–9 and the letters A–F to represent values 0–15, where each single hexadecimal digit corresponds to exactly four binary bits.</p>
+        <p class="glossary-term__plain">A shorthand for binary that groups four bits into one digit, making long binary values easier for humans to read and write without error.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The 8-bit binary value <code>1011 0101</code> is written as <code>B5</code> in hexadecimal (1011 = B = 11; 0101 = 5).</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.2</span> <span class="tag">1.1.4</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER K ───────────────────────────────────────── -->
+    <section id="letter-k" aria-labelledby="heading-k">
+      <h2 id="heading-k" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">K</h2>
+
+      <div class="glossary-term" id="kibibyte">
+        <h3 class="glossary-term__name">Kibibyte <span style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-regular);color:var(--color-text-secondary);">(KiB)</span></h3>
+        <p class="glossary-term__definition">A binary unit of data storage equal to 2¹⁰ bytes (1,024 bytes), defined by the IEC as the binary equivalent of the decimal kilobyte.</p>
+        <p class="glossary-term__plain">1,024 bytes — the correct binary-based unit for describing computer memory sizes.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> A text file containing 1,024 characters encoded in ASCII occupies exactly 1 KiB.</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> 1 KiB = 1,024 bytes (binary prefix); 1 KB = 1,000 bytes (decimal prefix). The distinction matters when calculating RAM or cache sizes precisely.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.1</span></p>
+      </div>
+
+      <div class="glossary-term" id="kilobyte">
+        <h3 class="glossary-term__name">Kilobyte <span style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-regular);color:var(--color-text-secondary);">(KB)</span></h3>
+        <p class="glossary-term__definition">A decimal unit of data equal to 10³ bytes (1,000 bytes), based on the SI prefix system where kilo = 1,000.</p>
+        <p class="glossary-term__plain">One thousand bytes, used in storage device specifications and data transfer rates.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> A 500 KB image file contains 500,000 bytes of data.</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> Kilobyte (KB) = 1,000 bytes (decimal); kibibyte (KiB) = 1,024 bytes (binary). Operating systems often report file sizes in KiB but display "KB" — a common source of confusion.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.1</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER M ───────────────────────────────────────── -->
+    <section id="letter-m" aria-labelledby="heading-m">
+      <h2 id="heading-m" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">M</h2>
+
+      <div class="glossary-term" id="memory-dump">
+        <h3 class="glossary-term__name">Memory Dump</h3>
+        <p class="glossary-term__definition">The output of the contents of a section of computer memory to a screen or printer, typically displayed in hexadecimal to make the binary data readable.</p>
+        <p class="glossary-term__plain">A snapshot of raw memory contents printed out so a developer can inspect what is stored and find errors.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> A memory dump might display address <code>00A4</code> containing <code>B5</code>, representing the binary value <code>10110101</code>.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.4</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER N ───────────────────────────────────────── -->
+    <section id="letter-n" aria-labelledby="heading-n">
+      <h2 id="heading-n" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">N</h2>
+
+      <div class="glossary-term" id="nibble">
+        <h3 class="glossary-term__name">Nibble</h3>
+        <p class="glossary-term__definition">A group of 4 bits, representing exactly one hexadecimal digit and one BCD digit.</p>
+        <p class="glossary-term__plain">Half a byte — four binary digits grouped together.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The high nibble of <code>1011 0101</code> is <code>1011</code> (= B in hex); the low nibble is <code>0101</code> (= 5 in hex).</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.2</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER O ───────────────────────────────────────── -->
+    <section id="letter-o" aria-labelledby="heading-o">
+      <h2 id="heading-o" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">O</h2>
+
+      <div class="glossary-term" id="ones-complement">
+        <h3 class="glossary-term__name">One's Complement</h3>
+        <p class="glossary-term__definition">A method of representing negative integers in binary by inverting all bits of the positive equivalent; produces two representations of zero and does not support standard binary addition directly.</p>
+        <p class="glossary-term__plain">Flip every bit to get the negative version of a number — but the result has a flaw: there are two ways to write zero.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> +72 = <code>0100 1000</code>; one's complement of −72 = <code>1011 0111</code>.</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> One's complement inverts all bits only; two's complement inverts all bits and adds 1. Two's complement is preferred in hardware because it has a single zero and supports addition without correction.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.2</span></p>
+      </div>
+
+      <div class="glossary-term" id="overflow">
+        <h3 class="glossary-term__name">Overflow</h3>
+        <p class="glossary-term__definition">An error that occurs when the result of a binary arithmetic operation exceeds the range of values representable in the number of bits allocated, causing the stored result to be incorrect.</p>
+        <p class="glossary-term__plain">The answer is too large (or too small) to fit in the available bits, so the wrong value is stored.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> Adding 82 (<code>01010010</code>) and 69 (<code>01000101</code>) in 8-bit two's complement gives <code>1001 0111</code>, which is interpreted as −105 — incorrect because 151 exceeds the maximum of +127.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.3</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER T ───────────────────────────────────────── -->
+    <section id="letter-t" aria-labelledby="heading-t">
+      <h2 id="heading-t" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">T</h2>
+
+      <div class="glossary-term" id="twos-complement">
+        <h3 class="glossary-term__name">Two's Complement</h3>
+        <p class="glossary-term__definition">A method of representing both positive and negative integers in binary, where the most significant bit carries a negative weight (−2ⁿ⁻¹) and a negative number is obtained by inverting all bits and adding 1.</p>
+        <p class="glossary-term__plain">The standard way computers store negative numbers — flip all the bits and add one.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The 8-bit two's complement of −45: +45 = <code>0010 1101</code> → invert → <code>1101 0010</code> → add 1 → <code>1101 0011</code>.</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> Two's complement has only one representation of zero (unlike one's complement or sign-magnitude), and subtraction is performed using the same addition circuit, requiring no special hardware.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.2</span> <span class="tag">1.1.3</span></p>
+      </div>
+    </section>
+
+    <!-- ── LETTER U ───────────────────────────────────────── -->
+    <section id="letter-u" aria-labelledby="heading-u">
+      <h2 id="heading-u" style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:var(--fw-bold);color:var(--color-cambridge-dark-blue);border-bottom:2px solid var(--color-cambridge-blue);padding-bottom:var(--space-2);margin-bottom:var(--space-8);">U</h2>
+
+      <div class="glossary-term" id="unicode">
+        <h3 class="glossary-term__name">Unicode</h3>
+        <p class="glossary-term__definition">A universal character encoding standard that assigns a unique code point to every character in all major world languages, using a minimum of 16 bits per character and supporting over 143,000 characters.</p>
+        <p class="glossary-term__plain">A worldwide standard that gives a unique number to every letter, symbol, and emoji in every human language.</p>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3);"><strong>Example:</strong> The Greek letter Ω (omega) has Unicode code point U+03A9, stored as <code>0000 0011 1010 1001</code> in binary.</p>
+        <div class="glossary-term__differentiator">
+          <strong>Don't confuse:</strong> ASCII uses 7 bits and covers 128 English characters; Unicode uses a minimum of 16 bits and covers all world scripts. The first 128 Unicode code points are identical to ASCII.
+        </div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-secondary);margin-top:var(--space-3);"><span class="tag">1.1.5</span></p>
+      </div>
+    </section>
+
+  </div><!-- /page-layout--wide -->
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer style="background:var(--color-cambridge-dark-blue);padding:var(--space-8) var(--container-pad);margin-top:var(--space-16);">
+    <div style="max-width:var(--max-width-xl);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);">
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-cambridge-light-blue);">Cambridge AS &amp; A Level Computer Science (9618) · Section 1.1 Data Representation</p>
+      <div style="display:flex;gap:var(--space-4);">
+        <a href="index.html" class="btn btn--outline btn--sm" style="color:var(--color-cambridge-light-blue);border-color:var(--color-cambridge-light-blue);">Notes</a>
+        <a href="questions.html" class="btn btn--outline btn--sm" style="color:var(--color-cambridge-light-blue);border-color:var(--color-cambridge-light-blue);">Questions</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SEARCH SCRIPT ─────────────────────────────────────── -->
+  <script>
+    function filterGlossary(query) {
+      const q = query.toLowerCase().trim();
+      const terms = document.querySelectorAll('.glossary-term');
+      const sections = document.querySelectorAll('section[id^="letter-"]');
+      let totalVisible = 0;
+
+      sections.forEach(section => {
+        let sectionVisible = 0;
+        section.querySelectorAll('.glossary-term').forEach(term => {
+          const text = term.textContent.toLowerCase();
+          const show = !q || text.includes(q);
+          term.classList.toggle('hidden', !show);
+          if (show) sectionVisible++;
+        });
+        section.classList.toggle('hidden', sectionVisible === 0);
+        totalVisible += sectionVisible;
+      });
+
+      document.getElementById('no-gloss-results').classList.toggle('hidden', totalVisible > 0);
+    }
+  </script>
+
+</body>
+</html>

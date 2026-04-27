@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.1 Data Representation — Questions — Cambridge 9618 CS</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/components.css">
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <nav class="nav-primary" role="navigation" aria-label="Site navigation">
+    <a href="/index.html" class="nav-logo" aria-label="Cambridge 9618 home">
+      <svg width="32" height="38" viewBox="0 0 30 36" fill="none" aria-hidden="true" focusable="false">
+        <path d="M15 1L2 6v14c0 9 5.5 13 13 15C22.5 33 28 29 28 20V6L15 1z" fill="#133844" stroke="#8EE8D8" stroke-width="0.5"/>
+        <path d="M15 5L6 9v11c0 7 4 11 9 13 5-2 9-6 9-13V9L15 5z" fill="#8EE8D8"/>
+        <path d="M15 9L8 12v8c0 5 3 8 7 10 4-2 7-5 7-10V12L15 9z" fill="#133844"/>
+        <rect x="13.5" y="12" width="3" height="10" rx="0.5" fill="#8EE8D8"/>
+        <rect x="9.5" y="15.5" width="11" height="3" rx="0.5" fill="#8EE8D8"/>
+      </svg>
+      <div>
+        <span class="nav-logo__main">9618 CS</span>
+        <span class="nav-logo__sub">Cambridge AS &amp; A Level</span>
+      </div>
+    </a>
+    <div class="nav-links" role="list">
+      <a href="/index.html" class="nav-link" role="listitem">Topics</a>
+    </div>
+  </nav>
+
+  <!-- ── SUBNAV ────────────────────────────────────────────── -->
+  <nav class="subnav" aria-label="Topic pages">
+    <a href="index.html" class="subnav-link">Notes</a>
+    <a href="questions.html" class="subnav-link active" aria-current="page">Questions</a>
+    <a href="glossary.html" class="subnav-link">Glossary</a>
+  </nav>
+
+  <!-- ── TOPIC HEADER ──────────────────────────────────────── -->
+  <header style="background:var(--color-bg-inverse);padding:var(--space-10) var(--container-pad);">
+    <div style="max-width:var(--max-width-xl);margin:0 auto;">
+      <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-4);">
+        <span class="badge">1.1</span>
+        <span class="badge badge--outline" style="border-color:rgba(255,255,255,0.3);color:var(--color-cambridge-light-blue);">AS Level</span>
+        <span class="badge badge--outline" style="border-color:rgba(255,255,255,0.3);color:var(--color-cambridge-light-blue);">Paper 1</span>
+      </div>
+      <h1 style="font-family:var(--font-display);font-size:var(--text-4xl);color:var(--color-white);line-height:var(--lh-tight);margin:0 0 var(--space-3);">Practice Questions</h1>
+      <p style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-cambridge-blue);margin:0;">Data Representation (1.1) &nbsp;·&nbsp; 12 questions &nbsp;·&nbsp; Ordered by marks</p>
+    </div>
+  </header>
+
+  <!-- ── MAIN ──────────────────────────────────────────────── -->
+  <div class="page-layout--wide">
+
+    <!-- Progress bar -->
+    <div id="progress-bar" style="background:var(--color-bg-subtle);border-radius:var(--radius-md);padding:var(--space-4) var(--space-6);margin-bottom:var(--space-8);display:flex;align-items:center;gap:var(--space-6);flex-wrap:wrap;">
+      <div>
+        <span style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:var(--fw-bold);color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em;">Progress</span>
+        <div style="display:flex;gap:var(--space-4);margin-top:var(--space-2);">
+          <span id="prog-attempted" style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-primary);"><strong>0</strong> attempted</span>
+          <span id="prog-correct" style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-green);"><strong>0</strong> correct</span>
+          <span id="prog-total" style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-secondary);">of 12</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:120px;">
+        <div style="height:8px;background:var(--color-border);border-radius:var(--radius-pill);overflow:hidden;">
+          <div id="prog-fill" style="height:100%;width:0%;background:var(--color-green);border-radius:var(--radius-pill);transition:width 0.3s ease;"></div>
+        </div>
+      </div>
+      <button onclick="resetProgress()" class="btn btn--outline btn--sm" aria-label="Reset all progress">Reset</button>
+    </div>
+
+    <!-- Filters -->
+    <div style="margin-bottom:var(--space-8);display:flex;gap:var(--space-8);flex-wrap:wrap;align-items:flex-start;">
+      <div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:var(--fw-bold);color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:var(--space-3);">Difficulty</p>
+        <div class="filter-tabs" role="group" aria-label="Filter by difficulty">
+          <button class="filter-tab active" data-filter-diff="all" onclick="applyFilters()" aria-pressed="true">All</button>
+          <button class="filter-tab" data-filter-diff="Easy" onclick="applyFilters()" aria-pressed="false">Easy</button>
+          <button class="filter-tab" data-filter-diff="Medium" onclick="applyFilters()" aria-pressed="false">Medium</button>
+          <button class="filter-tab" data-filter-diff="Hard" onclick="applyFilters()" aria-pressed="false">Hard</button>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:var(--fw-bold);color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:var(--space-3);">Command Word</p>
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <select id="cmd-filter" onchange="applyFilters()" aria-label="Filter by command word"
+            style="padding:var(--space-2) var(--space-4);border:2px solid var(--color-cambridge-dark-blue);border-radius:var(--radius-pill);font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-semibold);color:var(--color-cambridge-dark-blue);background:transparent;cursor:pointer;outline:none;">
+            <option value="all">All</option>
+            <option value="State">State</option>
+            <option value="Describe">Describe</option>
+            <option value="Identify">Identify</option>
+            <option value="Give">Give</option>
+            <option value="Perform">Perform</option>
+            <option value="Convert">Convert</option>
+            <option value="Show">Show</option>
+            <option value="Explain">Explain</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- No results message -->
+    <p id="no-results" class="hidden" style="font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text-secondary);text-align:center;padding:var(--space-10);">No questions match the selected filters.</p>
+
+    <!-- Questions (ordered by marks: 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6) -->
+
+    <!-- Q1 — 1 mark, Easy, State, 1.1.1 -->
+    <article class="question-card" data-marks="1" data-command="State" data-difficulty="Easy" id="q1">
+      <header class="question-header">
+        <span class="badge">1 mark</span>
+        <span class="badge badge--outline">State</span>
+        <span class="badge badge--outline">Easy</span>
+        <span class="tag">1.1.1</span>
+      </header>
+      <p class="question-text">State the difference between a kibibyte and a kilobyte.</p>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q1')" id="q1-attempted" aria-label="Mark question 1 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q1')" id="q1-correct" aria-label="Mark question 1 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li>A kibibyte is 1,024 bytes (2¹⁰ bytes) and uses a binary prefix; a kilobyte is 1,000 bytes (10³ bytes) and uses a decimal prefix. [1]</li>
+          </ul>
+          <p class="examiner-tip">One mark for identifying either the numerical difference (1,024 vs 1,000) or the system difference (binary prefix vs decimal prefix) — both in the same sentence earns the mark.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q2 — 1 mark, Easy, State, 1.1.3 -->
+    <article class="question-card" data-marks="1" data-command="State" data-difficulty="Easy" id="q2">
+      <header class="question-header">
+        <span class="badge">1 mark</span>
+        <span class="badge badge--outline">State</span>
+        <span class="badge badge--outline">Easy</span>
+        <span class="tag">1.1.3</span>
+      </header>
+      <p class="question-text">State what is meant by an overflow in binary addition.</p>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q2')" id="q2-attempted" aria-label="Mark question 2 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q2')" id="q2-correct" aria-label="Mark question 2 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li>The result cannot be represented in the number of bits available. [1]</li>
+          </ul>
+          <p class="examiner-tip">Answers that say "the number is too big" without qualifying "too big for the available bits" are unlikely to earn the mark. The key phrase is that the result exceeds the representable range for the given bit width.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q3 — 2 marks, Easy, Describe, 1.1.2 -->
+    <article class="question-card" data-marks="2" data-command="Describe" data-difficulty="Easy" id="q3">
+      <header class="question-header">
+        <span class="badge">2 marks</span>
+        <span class="badge badge--outline">Describe</span>
+        <span class="badge badge--outline">Easy</span>
+        <span class="tag">1.1.2</span>
+      </header>
+      <p class="question-text">Describe what is meant by Binary Coded Decimal (BCD) and give one example of a denary number converted to BCD.</p>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q3')" id="q3-attempted" aria-label="Mark question 3 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q3')" id="q3-correct" aria-label="Mark question 3 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li>BCD represents each individual denary digit as a separate 4-bit binary code. [1]</li>
+            <li>Example: denary 27 in BCD is <code>0010 0111</code> (2 → 0010; 7 → 0111). [1]</li>
+          </ul>
+          <p class="examiner-tip">The mark for the description requires the phrase "each denary digit" — saying "represents numbers in binary" does not distinguish BCD from pure binary and will not earn the mark.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q4 — 2 marks, Easy, Identify, 1.1.4 -->
+    <article class="question-card" data-marks="2" data-command="Identify" data-difficulty="Easy" id="q4">
+      <header class="question-header">
+        <span class="badge">2 marks</span>
+        <span class="badge badge--outline">Identify</span>
+        <span class="badge badge--outline">Easy</span>
+        <span class="tag">1.1.4</span>
+      </header>
+      <p class="question-text">Identify two practical applications of the hexadecimal number system.</p>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q4')" id="q4-attempted" aria-label="Mark question 4 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q4')" id="q4-correct" aria-label="Mark question 4 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li>Memory dumps — displaying raw memory contents during software debugging (hexadecimal is shorter and less error-prone than binary). [1]</li>
+            <li>HTML/CSS colour codes — colours are specified as six-digit hex values, where each pair represents a red, green, or blue channel intensity. [1]</li>
+          </ul>
+          <p class="examiner-tip">Also accepted: MAC addresses; URL encoding; assembly language opcodes and addresses. Each application requires enough detail to distinguish it from a generic use — "computers use hex" will not earn the mark.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q5 — 2 marks, Medium, Perform, 1.1.3 [Past Paper S23/11] -->
+    <article class="question-card" data-marks="2" data-command="Perform" data-difficulty="Medium" id="q5">
+      <header class="question-header">
+        <span class="badge">2 marks</span>
+        <span class="badge badge--outline">Perform</span>
+        <span class="badge badge--outline">Medium</span>
+        <span class="tag">1.1.3</span>
+        <span class="badge badge--dark">Past Paper</span>
+      </header>
+      <p class="question-text">Add the following two binary integers using binary addition. Show your working.</p>
+      <pre style="font-family:var(--font-mono);font-size:var(--text-sm);background:var(--color-bg-subtle);padding:var(--space-4);border-radius:var(--radius-md);margin:0 0 var(--space-4);"><code>  10110000
++ 00011011</code></pre>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q5')" id="q5-attempted" aria-label="Mark question 5 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q5')" id="q5-correct" aria-label="Mark question 5 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li>Working shown (carries propagated correctly): [1]<pre style="font-family:var(--font-mono);font-size:var(--text-sm);background:var(--color-bg-subtle);padding:var(--space-3);border-radius:var(--radius-sm);margin-top:var(--space-2);"><code>  carry: 1 1 1 1
+         1 0 1 1 0 0 0 0
+       + 0 0 0 1 1 0 1 1</code></pre></li>
+            <li>Answer: <code>11001011</code> [1]</li>
+          </ul>
+          <p class="examiner-tip">S23/11 Q3(d)(v) — Working must be visible to earn the first mark; an answer alone with no working scores 0 for the working mark even if correct.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q11 — 2 marks, Medium, Perform, 1.1.3 [Past Paper W24/11] -->
+    <article class="question-card" data-marks="2" data-command="Perform" data-difficulty="Medium" id="q11">
+      <header class="question-header">
+        <span class="badge">2 marks</span>
+        <span class="badge badge--outline">Perform</span>
+        <span class="badge badge--outline">Medium</span>
+        <span class="tag">1.1.3</span>
+        <span class="badge badge--dark">Past Paper</span>
+      </header>
+      <p class="question-text">Subtract the denary number 23 from the two's complement binary number <code>01001010</code>. Show your working.</p>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q11')" id="q11-attempted" aria-label="Mark question 11 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q11')" id="q11-correct" aria-label="Mark question 11 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li>Working: convert 23 to binary = <code>00010111</code>; find two's complement of 23: invert → <code>11101000</code> → add 1 → <code>11101001</code> [1]<pre style="font-family:var(--font-mono);font-size:var(--text-sm);background:var(--color-bg-subtle);padding:var(--space-3);border-radius:var(--radius-sm);margin-top:var(--space-2);"><code>  0100 1010
++ 1110 1001
+= (1) 0011 0011  ← discard carry</code></pre></li>
+            <li>Answer: <code>00110011</code> (= 51, which equals 74 − 23 ✓) [1]</li>
+          </ul>
+          <p class="examiner-tip">W24/11 Q1(c) — Both methods are accepted: two's complement addition or direct subtraction. The carry beyond 8 bits is discarded — it does not cause overflow because the result (51) is within the representable range.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q6 — 3 marks, Medium, Give, 1.1.5 [Past Paper W22/11] -->
+    <article class="question-card" data-marks="3" data-command="Give" data-difficulty="Medium" id="q6">
+      <header class="question-header">
+        <span class="badge">3 marks</span>
+        <span class="badge badge--outline">Give</span>
+        <span class="badge badge--outline">Medium</span>
+        <span class="tag">1.1.5</span>
+        <span class="badge badge--dark">Past Paper</span>
+      </header>
+      <p class="question-text">Give one similarity and two differences between the ASCII and Unicode character sets.</p>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q6')" id="q6-attempted" aria-label="Mark question 6 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q6')" id="q6-correct" aria-label="Mark question 6 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <p style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-bold);margin-bottom:var(--space-2);">Similarity (one of):</p>
+          <ul class="mark-scheme">
+            <li>Both represent each character using a unique binary code. [1]</li>
+            <li><em>Alternative:</em> Unicode contains all the characters that ASCII contains; ASCII is a subset of Unicode. [1]</li>
+          </ul>
+          <p style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-bold);margin:var(--space-3) 0 var(--space-2);">Differences (two of):</p>
+          <ul class="mark-scheme">
+            <li>Unicode allocates up to 32 bits per character, whereas ASCII uses 7 bits; Unicode can therefore represent a greater number of characters than ASCII. [1]</li>
+            <li>Unicode supports characters from all world languages; ASCII supports only English characters. [1]</li>
+          </ul>
+          <p class="examiner-tip">W22/11 Q1(c) — The similarity mark is most reliably earned by noting that both assign unique binary codes. For differences, mark-scheme wording focuses on bit width and language coverage — both are required for the full 2 difference marks.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q8 — 3 marks, Medium, Identify, 1.1.4 -->
+    <article class="question-card" data-marks="3" data-command="Identify" data-difficulty="Medium" id="q8">
+      <header class="question-header">
+        <span class="badge">3 marks</span>
+        <span class="badge badge--outline">Identify</span>
+        <span class="badge badge--outline">Medium</span>
+        <span class="tag">1.1.4</span>
+      </header>
+      <p class="question-text">Identify one practical application of Binary Coded Decimal (BCD) and justify why BCD is used in that application rather than standard binary. Your justification must include two distinct reasons.</p>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q8')" id="q8-attempted" aria-label="Mark question 8 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q8')" id="q8-correct" aria-label="Mark question 8 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li>Application: banking or financial calculation systems. [1]</li>
+            <li>Binary floating-point arithmetic cannot represent all decimal fractions exactly, causing rounding errors that accumulate over repeated calculations. [1]</li>
+            <li>Financial transactions use fixed decimal places (e.g. two decimal places for monetary values), and BCD preserves this precision without approximation. [1]</li>
+          </ul>
+          <p class="examiner-tip">Alternative application: digital clock or calculator display. Justification: decimal digits map directly to display segments; conversion requires no arithmetic calculation. One mark for the application; two further marks require two distinct technical reasons — restating the same point scores only 1 of the 2 justification marks.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q7 — 4 marks, Medium, Convert, 1.1.2 -->
+    <article class="question-card" data-marks="4" data-command="Convert" data-difficulty="Medium" id="q7">
+      <header class="question-header">
+        <span class="badge">4 marks</span>
+        <span class="badge badge--outline">Convert</span>
+        <span class="badge badge--outline">Medium</span>
+        <span class="tag">1.1.2</span>
+      </header>
+      <div class="question-text">
+        <p><strong>(a)</strong> Convert the denary number 964 into Binary Coded Decimal (BCD). [1]</p>
+        <p><strong>(b)</strong> Convert the 8-bit two's complement binary integer <code>11100111</code> into denary. [1]</p>
+        <p><strong>(c)</strong> Convert the positive binary integer <code>11110010</code> into hexadecimal. [1]</p>
+        <p><strong>(d)</strong> State the smallest and largest values that can be represented using 8-bit two's complement. Give your answers in denary. [2]</p>
+      </div>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q7')" id="q7-attempted" aria-label="Mark question 7 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q7')" id="q7-correct" aria-label="Mark question 7 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li><strong>(a)</strong> <code>1001 0110 0100</code> [1] &nbsp;&nbsp; <em>(9 → 1001; 6 → 0110; 4 → 0100)</em></li>
+            <li><strong>(b)</strong> −25 [1] &nbsp;&nbsp; <em>(−128 + 64 + 32 + 4 + 2 + 1 = −25)</em></li>
+            <li><strong>(c)</strong> F2 [1] &nbsp;&nbsp; <em>(1111 = F; 0010 = 2)</em></li>
+            <li><strong>(d)</strong> Smallest: <strong>−128</strong> [1] &nbsp; Largest: <strong>+127</strong> [1]</li>
+          </ul>
+          <p class="examiner-tip">Part (a): convert each digit independently — do not convert 964 as a whole number to binary first. Part (b): the MSB contributes −128 in two's complement, not +128. Part (d): both values are required for both marks; only one value earns 1 mark.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q12 — 4 marks, Hard, Explain, 1.1.2 -->
+    <article class="question-card" data-marks="4" data-command="Explain" data-difficulty="Hard" id="q12">
+      <header class="question-header">
+        <span class="badge">4 marks</span>
+        <span class="badge badge--outline">Explain</span>
+        <span class="badge badge--outline">Hard</span>
+        <span class="tag">1.1.2</span>
+      </header>
+      <div class="question-text">
+        <p>A student claims: <em>"BCD wastes memory because it uses more bits than binary to represent the same number."</em></p>
+        <p><strong>(a)</strong> Calculate the number of bits required to store the denary value 95 in BCD. [1]</p>
+        <p><strong>(b)</strong> Calculate the minimum number of bits required to store the denary value 95 in standard unsigned binary. [1]</p>
+        <p><strong>(c)</strong> Explain whether the student's claim is correct, and state one application where using BCD is preferable despite the storage overhead. [2]</p>
+      </div>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q12')" id="q12-attempted" aria-label="Mark question 12 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q12')" id="q12-correct" aria-label="Mark question 12 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li><strong>(a)</strong> 95 in BCD: 9 → 1001; 5 → 0101 → two 4-bit groups = <strong>8 bits</strong> [1]</li>
+            <li><strong>(b)</strong> 95 in binary = 01011111 → 7 significant bits; minimum <strong>7 bits</strong> (or 8 bits if stored as a byte — accept either with justification). [1]</li>
+            <li><strong>(c)</strong> The student's claim is correct in general: a three-digit number such as 964 requires 12 bits in BCD but only 10 bits in binary, so BCD uses more storage for the same numeric value. [1]</li>
+            <li>BCD is preferred in electronic display systems (digital clocks or calculators) because each digit maps directly to a display segment without binary-to-decimal conversion, reducing circuit complexity. [1]</li>
+          </ul>
+          <p class="examiner-tip">Part (b): 7 bits is technically correct for minimum storage of 95, but byte-aligned storage (8 bits) is also accepted with justification. Part (c): the application must explain why BCD properties are advantageous — "BCD is used in clocks" without a reason scores 0.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q9 — 5 marks, Hard, Show, 1.1.3 -->
+    <article class="question-card" data-marks="5" data-command="Show" data-difficulty="Hard" id="q9">
+      <header class="question-header">
+        <span class="badge">5 marks</span>
+        <span class="badge badge--outline">Show</span>
+        <span class="badge badge--outline">Hard</span>
+        <span class="tag">1.1.3</span>
+      </header>
+      <div class="question-text">
+        <p>A student performs the following 8-bit two's complement binary addition:</p>
+        <pre style="font-family:var(--font-mono);font-size:var(--text-sm);background:var(--color-bg-subtle);padding:var(--space-4);border-radius:var(--radius-md);margin:0 0 var(--space-3);"><code>  01100100   (100 in denary)
++ 01001001   (73 in denary)</code></pre>
+        <p><strong>(a)</strong> Show the binary result of the addition. [1]</p>
+        <p><strong>(b)</strong> Convert the binary result to denary using two's complement column weightings. [1]</p>
+        <p><strong>(c)</strong> Explain why the result does not equal the expected denary value of 173. [2]</p>
+        <p><strong>(d)</strong> State the correct denary result of 100 + 73. [1]</p>
+      </div>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q9')" id="q9-attempted" aria-label="Mark question 9 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q9')" id="q9-correct" aria-label="Mark question 9 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <ul class="mark-scheme">
+            <li><strong>(a)</strong><pre style="font-family:var(--font-mono);font-size:var(--text-sm);background:var(--color-bg-subtle);padding:var(--space-3);border-radius:var(--radius-sm);margin-top:var(--space-2);"><code>  carry:  1
+          0 1 1 0 0 1 0 0
+        + 0 1 0 0 1 0 0 1
+        = 1 0 1 0 1 1 0 1</code></pre>Result: <code>10101101</code> [1]</li>
+            <li><strong>(b)</strong> −128 + 32 + 8 + 4 + 1 = <strong>−83</strong> [1]</li>
+            <li><strong>(c)</strong> The addition of two positive numbers has produced a result with MSB = 1, which is interpreted as a negative value in two's complement. [1]</li>
+            <li>This occurs because 173 exceeds the maximum positive value representable in 8-bit two's complement (+127), so the result overflowed into the sign bit. [1]</li>
+            <li><strong>(d)</strong> <strong>173</strong> [1]</li>
+          </ul>
+          <p class="examiner-tip">Part (c) requires two distinct points: first, that the result has an incorrect sign (positive + positive = negative), and second, that 173 &gt; 127 and exceeds the representable range. A single-point answer such as "overflow occurred" earns only 1 mark out of 2.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q10 — 6 marks, Hard, State/Explain, 1.1.2 -->
+    <article class="question-card" data-marks="6" data-command="State" data-difficulty="Hard" id="q10">
+      <header class="question-header">
+        <span class="badge">6 marks</span>
+        <span class="badge badge--outline">State</span>
+        <span class="badge badge--outline">Hard</span>
+        <span class="tag">1.1.2</span>
+      </header>
+      <div class="question-text">
+        <p>The 8-bit binary pattern <code>00100111</code> is stored in three separate memory locations. In each location it is interpreted using a different system:</p>
+        <ul>
+          <li><strong>Location A:</strong> unsigned binary integer</li>
+          <li><strong>Location B:</strong> Binary Coded Decimal (BCD)</li>
+          <li><strong>Location C:</strong> 8-bit two's complement integer</li>
+        </ul>
+        <p>For each location, state the denary value and explain why the same bit pattern produces a different result.</p>
+      </div>
+      <div class="reveal">
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn--outline reveal__trigger" onclick="toggleReveal(this)" aria-expanded="false">Show Answer</button>
+          <button class="btn btn--outline btn--sm" onclick="markAttempted('q10')" id="q10-attempted" aria-label="Mark question 10 as attempted">Mark attempted</button>
+          <button class="btn btn--sm" style="background:var(--color-green);" onclick="markCorrect('q10')" id="q10-correct" aria-label="Mark question 10 as correct">Mark correct</button>
+        </div>
+        <div class="reveal__content">
+          <p style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-bold);margin-bottom:var(--space-2);">Location A — Unsigned binary:</p>
+          <ul class="mark-scheme">
+            <li>Denary value: 32 + 4 + 2 + 1 = <strong>39</strong> [1]</li>
+            <li>The bit pattern is treated as a standard weighted binary number where all column values are positive, so each 1 bit is summed as a positive power of 2. [1]</li>
+          </ul>
+          <p style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-bold);margin:var(--space-3) 0 var(--space-2);">Location B — BCD:</p>
+          <ul class="mark-scheme">
+            <li>Denary value: <strong>27</strong> [1]</li>
+            <li>The 8 bits are split into two 4-bit groups: 0010 = 2 and 0111 = 7. Each group independently encodes one decimal digit; the values represent 2 and 7, not the positional binary sum 39. [1]</li>
+          </ul>
+          <p style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-bold);margin:var(--space-3) 0 var(--space-2);">Location C — 8-bit two's complement:</p>
+          <ul class="mark-scheme">
+            <li>Denary value: <strong>39</strong> [1]</li>
+            <li>The MSB is 0, indicating a positive number; the remaining bits are interpreted as standard positive binary, giving the same result as unsigned binary (39). Locations A and C coincide here because the MSB is 0 — they differ only when the MSB is 1. [1]</li>
+          </ul>
+          <p class="examiner-tip">The common mistake is assuming BCD and binary must give different results. Students must show the working for each system independently. Locations A and C give the same value here because MSB = 0 — explain why they coincide rather than just stating the value twice.</p>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /page-layout--wide -->
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer style="background:var(--color-cambridge-dark-blue);padding:var(--space-8) var(--container-pad);margin-top:var(--space-16);">
+    <div style="max-width:var(--max-width-xl);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);">
+      <p style="font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-cambridge-light-blue);">Cambridge AS &amp; A Level Computer Science (9618) · Section 1.1 Data Representation</p>
+      <div style="display:flex;gap:var(--space-4);">
+        <a href="index.html" class="btn btn--outline btn--sm" style="color:var(--color-cambridge-light-blue);border-color:var(--color-cambridge-light-blue);">Notes</a>
+        <a href="glossary.html" class="btn btn--outline btn--sm" style="color:var(--color-cambridge-light-blue);border-color:var(--color-cambridge-light-blue);">Glossary</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ────────────────────────────────────────────── -->
+  <script>
+    const STORAGE_KEY = '9618-data-representation-progress';
+
+    function loadProgress() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+      catch { return {}; }
+    }
+
+    function saveProgress(data) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    function updateProgressBar() {
+      const data = loadProgress();
+      const cards = document.querySelectorAll('.question-card');
+      const total = cards.length;
+      let attempted = 0, correct = 0;
+      cards.forEach(c => {
+        const id = c.id;
+        if (data[id]?.attempted) attempted++;
+        if (data[id]?.correct) correct++;
+      });
+      document.getElementById('prog-attempted').innerHTML = '<strong>' + attempted + '</strong> attempted';
+      document.getElementById('prog-correct').innerHTML = '<strong>' + correct + '</strong> correct';
+      document.getElementById('prog-fill').style.width = (Math.round(correct / total * 100)) + '%';
+    }
+
+    function markAttempted(id) {
+      const data = loadProgress();
+      if (!data[id]) data[id] = {};
+      data[id].attempted = true;
+      saveProgress(data);
+      const btn = document.getElementById(id + '-attempted');
+      if (btn) { btn.textContent = '✓ Attempted'; btn.classList.add('btn--teal'); }
+      updateProgressBar();
+    }
+
+    function markCorrect(id) {
+      const data = loadProgress();
+      if (!data[id]) data[id] = {};
+      data[id].attempted = true;
+      data[id].correct = true;
+      saveProgress(data);
+      const btn = document.getElementById(id + '-correct');
+      if (btn) { btn.textContent = '✓ Correct'; }
+      const abtn = document.getElementById(id + '-attempted');
+      if (abtn) { abtn.textContent = '✓ Attempted'; abtn.classList.add('btn--teal'); }
+      updateProgressBar();
+    }
+
+    function resetProgress() {
+      localStorage.removeItem(STORAGE_KEY);
+      document.querySelectorAll('[id$="-attempted"]').forEach(b => { b.textContent = 'Mark attempted'; b.classList.remove('btn--teal'); });
+      document.querySelectorAll('[id$="-correct"]').forEach(b => { b.textContent = 'Mark correct'; });
+      updateProgressBar();
+    }
+
+    function toggleReveal(btn) {
+      const content = btn.closest('.reveal').querySelector('.reveal__content');
+      const isOpen = content.classList.contains('is-open');
+      content.classList.toggle('is-open');
+      btn.textContent = isOpen ? 'Show Answer' : 'Hide Answer';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    }
+
+    // Filter logic
+    function applyFilters() {
+      const diffBtns = document.querySelectorAll('[data-filter-diff]');
+      let activeDiff = 'all';
+      diffBtns.forEach(b => {
+        if (b.classList.contains('active')) activeDiff = b.dataset.filterDiff;
+      });
+      const activeCmd = document.getElementById('cmd-filter').value;
+
+      let visibleCount = 0;
+      document.querySelectorAll('.question-card').forEach(card => {
+        const diff = card.dataset.difficulty;
+        const cmd = card.dataset.command;
+        const show = (activeDiff === 'all' || diff === activeDiff) &&
+                     (activeCmd === 'all' || cmd === activeCmd);
+        card.classList.toggle('hidden', !show);
+        if (show) visibleCount++;
+      });
+      document.getElementById('no-results').classList.toggle('hidden', visibleCount > 0);
+    }
+
+    // Difficulty tab click handler
+    document.querySelectorAll('[data-filter-diff]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-filter-diff]').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-pressed', 'true');
+        applyFilters();
+      });
+    });
+
+    // Restore progress on load
+    (function() {
+      const data = loadProgress();
+      Object.entries(data).forEach(([id, state]) => {
+        if (state.attempted) {
+          const btn = document.getElementById(id + '-attempted');
+          if (btn) { btn.textContent = '✓ Attempted'; btn.classList.add('btn--teal'); }
+        }
+        if (state.correct) {
+          const btn = document.getElementById(id + '-correct');
+          if (btn) btn.textContent = '✓ Correct';
+        }
+      });
+      updateProgressBar();
+    })();
+  </script>
+
+</body>
+</html>
