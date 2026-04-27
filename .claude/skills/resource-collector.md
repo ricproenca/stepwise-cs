@@ -36,16 +36,7 @@ Every run must write the following files. A missing file means the skill has not
 
 ## Source Priority Order
 
-1. **Hodder textbook** in `resources/md/textbook/` — Cambridge-endorsed, most authoritative.
-2. **Hodder textbook Answers** in `resources/md/textbook/` — official worked solutions, mark-scheme language.
-3. **moshikur** in `resources/md/moshikur/` — clean markdown organized by syllabus sub-point.
-4. **savemyexams** in `resources/md/savemyexams/` — exam-focused definitions and key points.
-5. **pseudocode_pro Presentation** in `resources/md/pseudocode_pro/` — slide-format key concepts (AS Level Units 1–6 only).
-6. **pseudocode_pro Answers** in `resources/md/pseudocode_pro/` — worked solutions (AS Level Units 1–6 only).
-7. **pseudocode_pro Homework** in `resources/md/pseudocode_pro/` — practice problems (AS Level Units 1–6 only).
-8. **thinka** in `resources/md/thinka/` — additional coverage; verbose, use last.
-9. **moshikur_pseudocode** in `resources/md/moshikur_pseudocode/` — pseudocode examples (where listed).
-10. **General knowledge** — last resort only. Log every such use in `index.md` under "Gaps".
+→ Full ranked list with rules: `.claude/skills/references/source-priority.md` — "Stage 1"
 
 ---
 
@@ -63,7 +54,7 @@ awk -v s="## $slug" 'BEGIN{p=0} $0==s{p=1; print; next} /^## [a-z]/ && p{exit} p
 
 Copy the syllabus block verbatim into `resources/scraped/$slug/syllabus-scope.md`. Every objective becomes one row in the `index.md` coverage report.
 
-Record the `paper:` number from md-index.md — it is needed in Step 2 for past-paper lookup.
+Record the `paper:` number from md-index.md — needed in Step 2 for past-paper lookup.
 
 If no md-index entry is found, log the slug as missing in `index.md` and proceed using general knowledge only.
 
@@ -76,7 +67,7 @@ Read every file listed under `## $slug` in `resources/md/md-index.md`.
 When extracting:
 - Tag each chunk with `[Source: <relative-path>]` so origin is traceable.
 - Preserve tables, lists, worked examples, and diagram descriptions verbatim.
-- When a source file covers multiple slugs in the same chapter (e.g. Chapter 01 covers data-representation, multimedia, and compression), read the full file but extract only sections whose headings or content match `$slug`'s syllabus objectives from `syllabus-scope.md`. Do not discard borderline content — include it and note the objective it supports.
+- When a source file covers multiple slugs, extract only sections matching `$slug`'s objectives from `syllabus-scope.md`. Include borderline content and note the objective it supports.
 
 Write the combined extracts, grouped by source, to `resources/scraped/$slug/extracts.md`.
 
@@ -84,7 +75,7 @@ Write the combined extracts, grouped by source, to `resources/scraped/$slug/extr
 
 ## Step 2 — Past papers and mark schemes
 
-Use the `paper:` number recorded in Step 0. Scan all years under `resources/md/past-papers/paper $paper/`.
+Use the `paper:` number from Step 0. Scan all years under `resources/md/past-papers/paper $paper/`.
 
 ```!
 echo "=== Past paper files for paper $paper ==="
@@ -92,9 +83,9 @@ find "resources/md/past-papers/paper $paper" -name "*qp*.md" | sort
 ```
 
 For each question paper file found:
-- Identify questions whose wording matches the objectives in `syllabus-scope.md` by keyword (use the queue.md "Resources" search terms as a starting list).
-- Find the corresponding mark scheme file (same series/year/variant code, `ms` instead of `qp`).
-- Record: paper number, series+year (e.g. S24), variant, question number, mark allocation, exact question wording, and mark-scheme points verbatim.
+- Identify questions matching the objectives in `syllabus-scope.md`.
+- Find the corresponding mark scheme file (same series/year/variant, `ms` instead of `qp`).
+- Record: paper number, series+year, variant, question number, mark allocation, exact wording, and mark-scheme points verbatim.
 
 Write all matches to `resources/scraped/$slug/past-papers.md`. If no questions match, write a single-line note.
 
@@ -102,33 +93,9 @@ Write all matches to `resources/scraped/$slug/past-papers.md`. If no questions m
 
 ## Step 3 — Write index.md
 
-Write `resources/scraped/$slug/index.md`:
+→ Template: `.claude/skills/references/output-templates.md` — "index.md"
 
-```markdown
-# Resource Summary — $topic_name
-
-**Slug:** $slug
-**Syllabus ref:** (from syllabus-scope.md)
-**Date collected:** YYYY-MM-DD
-
-## Sources Used
-- Markdown sources: [list files read, or "none found in md-index.md"]
-- Past papers available: [list paper/series/year, or "none found"]
-
-## Coverage by Syllabus Objective
-
-- [objective verbatim] — Covered / Partially covered / Missing — [source(s)]
-
-## Past Papers Found
-| Paper | Series/Year | Variant | Question | Marks | Objective matched |
-|-------|-------------|---------|----------|-------|-------------------|
-
-## Gaps
-For each Missing or Partial objective: state whether general knowledge can fill it or a source is needed.
-
-## Recommended Next Step
-Note anything the content creator must be aware of: missing visuals, complex derivations, overlapping topics from CLAUDE.md's Cross-Topic Overlap Reference.
-```
+Write to `resources/scraped/$slug/index.md`.
 
 ---
 
@@ -160,8 +127,7 @@ Before stopping, confirm:
 
 ## Pacing Rule
 
-After writing all files and updating queue.md, STOP.
-Report to the user:
+After writing all files and updating queue.md, STOP. Report to the user:
 1. Sources found: markdown file count, past paper count
 2. Syllabus coverage: X/Y objectives Covered, Z Partial, W Missing
 3. Any gaps to be aware of

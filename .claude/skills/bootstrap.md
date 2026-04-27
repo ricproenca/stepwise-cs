@@ -42,9 +42,7 @@ For each file marked MISSING, run the corresponding step below. Skip steps for f
 
 ## Step 1 — style.css
 
-Copy `design-system/colors_and_type.css` to `design-system/style.css`.
-
-The file content is identical — `style.css` is the canonical name used by all HTML pages. Do not modify the content.
+Copy `design-system/colors_and_type.css` to `design-system/style.css`. The file content is identical — `style.css` is the canonical name used by all HTML pages. Do not modify the content.
 
 ---
 
@@ -54,29 +52,7 @@ Write `design-system/components.css` with the full set of component classes.
 
 Reference: `design-system/README.md` for brand values. All classes must use CSS custom properties from `style.css` — no hardcoded colour hex values.
 
-Required classes:
-`.card` `.card__header` `.card__title` `.card__body` `.card__footer`
-`.stat-card` `.stat-card__number` `.stat-card__label`
-`.badge` `.badge--outline` `.badge--dark` `.badge--green` `.badge--crest`
-`.tag`
-`.btn` `.btn--outline` `.btn--teal` `.btn--sm` `.btn--lg`
-`.callout`
-`.key-takeaway`
-`.cross-topic-note`
-`.reveal` `.reveal__content` `.reveal__content.is-open`
-`.mark-scheme`
-`.question-card` `.question-header` `.question-text`
-`.examiner-tip`
-`.diagram-placeholder`
-`.table`
-`.nav-primary` `.nav-logo` `.nav-logo__main` `.nav-logo__sub` `.nav-links` `.nav-link`
-`.subnav` `.subnav-link`
-`.sidebar-nav` `.sidebar-nav__title`
-`.filter-tabs` `.filter-tab`
-`.glossary-search` `.letter-nav` `.glossary-term` `.glossary-term__name` `.glossary-term__definition` `.glossary-term__plain` `.glossary-term__differentiator`
-`.page-layout` `.page-layout--wide` `.topic-grid`
-`.notes-content`
-`.hidden` `.visually-hidden`
+→ Complete required class list: `.claude/skills/references/css-classes.md`
 
 ---
 
@@ -90,18 +66,11 @@ This file is read by `frontend-builder` before generating HTML to ensure correct
 
 ## Step 4 — SVG templates
 
-Create `design-system/svg-templates/` and write the following 6 template files. Each must include `viewBox`, `role="img"`, `<title>`, and `<desc>`. Use hex colour literals matching the design tokens (CSS variables don't resolve in standalone SVG files).
+Create `design-system/svg-templates/` and write 6 template files. Each must include `viewBox`, `role="img"`, `<title>`, and `<desc>`. Use hex colour literals matching the design tokens (CSS variables don't resolve in standalone SVG files).
 
-| File | Description |
-|------|-------------|
-| `flowchart.svg` | 2 process boxes + 1 decision diamond + Yes/No arrows |
-| `comparison-table.svg` | 3-column × 3-row grid; header row dark blue |
-| `binary-diagram.svg` | 8 bit-cells with column weight labels (2⁷–2⁰) |
-| `memory-map.svg` | 4 vertical segments with address annotations |
-| `timeline.svg` | Horizontal axis with 4 numbered nodes + labels |
-| `tree-diagram.svg` | Root node → 2 children → 4 leaf nodes |
+→ File list and descriptions: `.claude/skills/references/diagram-specs.md` — "frontend-builder — diagram rendering table"
 
-Note: `network-diagram` is intentionally excluded. `frontend-builder` always emits `<figure class="diagram-placeholder">` for `<!-- DIAGRAM: network-diagram -->` specs.
+Note: `network-diagram` is intentionally excluded — `frontend-builder` always emits `<figure class="diagram-placeholder">` for those specs.
 
 ---
 
@@ -118,14 +87,12 @@ ls frontend/assets/
 
 ## Step 6 — Report
 
-Print a summary of every file written or skipped. Example output:
+Print a summary of every file written or skipped:
 
 ```
 Bootstrap complete:
   WRITTEN: design-system/style.css
   WRITTEN: design-system/components.css
-  WRITTEN: design-system/design-tokens.md
-  WRITTEN: design-system/svg-templates/flowchart.svg
   ...
   COPIED:  frontend/assets/style.css
   COPIED:  frontend/assets/components.css
