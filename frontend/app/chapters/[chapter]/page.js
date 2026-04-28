@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import TopicCard from '../../../components/TopicCard';
+import Footer from '../../../components/Footer';
 import { chapters } from '../../../data/chapters';
 import styles from './page.module.css';
 
@@ -13,24 +14,31 @@ export default async function ChapterPage({ params }) {
 
   if (!chapter) notFound();
 
+  const available = chapter.topics.filter(t => t.status === 'available').length;
+
   return (
-    <main className={styles.main}>
-      <div className={styles.inner}>
-        <a href="/" className={styles.backLink}>← All Chapters</a>
-        <header className={styles.header}>
-          <div className={styles.badges}>
-            <span className={styles.chapterBadge}>Chapter {chapter.number}</span>
-            <span className={styles.levelBadge}>{chapter.level} · {chapter.paper}</span>
-          </div>
+    <>
+      <header className={styles.hero}>
+        <div className={styles.heroInner}>
+          <p className={styles.eyebrow}>Chapter {chapter.number} &nbsp;·&nbsp; {chapter.level} &nbsp;·&nbsp; {chapter.paper}</p>
           <h1 className={styles.title}>{chapter.title}</h1>
-          <p className={styles.meta}>{chapter.topics.length} topic{chapter.topics.length !== 1 ? 's' : ''}</p>
-        </header>
+          <p className={styles.subtitle}>
+            {available === 0
+              ? `${chapter.topics.length} topic${chapter.topics.length !== 1 ? 's' : ''} — coming soon`
+              : `${available} of ${chapter.topics.length} topic${chapter.topics.length !== 1 ? 's' : ''} available`}
+          </p>
+        </div>
+      </header>
+
+      <main className={styles.main}>
         <div className={styles.grid}>
           {chapter.topics.map(topic => (
             <TopicCard key={topic.ref} topic={topic} />
           ))}
         </div>
-      </div>
-    </main>
+      </main>
+
+      <Footer topicLabel={`Chapter ${chapter.number} — ${chapter.title}`} />
+    </>
   );
 }

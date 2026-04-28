@@ -1,77 +1,42 @@
-.main {
+.hero {
+  background: var(--color-cambridge-dark-blue);
+  padding: var(--space-16) var(--container-pad);
+}
+
+.heroInner {
   max-width: var(--max-width-xl);
   margin: 0 auto;
-  padding: var(--space-12) var(--container-pad);
 }
 
-.inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-}
-
-.backLink {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  color: var(--color-cambridge-dark-blue);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-}
-
-.backLink:hover { text-decoration: underline; }
-
-.header { display: flex; flex-direction: column; gap: var(--space-3); }
-
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.chapterBadge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
+.eyebrow {
   font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wide);
-  background: var(--color-cambridge-light-blue);
-  color: var(--color-cambridge-dark-blue);
-}
-
-.levelBadge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wide);
-  background: transparent;
-  border: 1px solid var(--color-border-medium);
-  color: var(--color-text-secondary);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-cambridge-blue);
+  margin-bottom: var(--space-2);
 }
 
 .title {
   font-family: var(--font-display);
   font-size: var(--text-4xl);
   font-weight: var(--fw-bold);
-  color: var(--color-cambridge-dark-blue);
+  color: var(--color-white);
   line-height: var(--lh-tight);
-  margin: 0;
+  margin-bottom: var(--space-3);
 }
 
-.meta {
+.subtitle {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-cambridge-light-blue);
+}
+
+.main {
+  max-width: var(--max-width-xl);
+  margin: 0 auto;
+  padding: var(--space-12) var(--container-pad);
 }
 
 .grid {

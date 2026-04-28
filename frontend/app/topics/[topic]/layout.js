@@ -2,7 +2,7 @@ export function generateStaticParams() {
   return [{ topic: 'data-representation' }];
 }
 
-import NavBar from '../../../components/NavBar';
+import TopicHeader from '../../../components/TopicHeader';
 import TopicNav from '../../../components/TopicNav';
 import Footer from '../../../components/Footer';
 import Link from 'next/link';
@@ -28,19 +28,8 @@ export default async function TopicLayout({ children, params }) {
 
   return (
     <>
-      <NavBar />
+      <TopicHeader topicData={topicData} levelLabel={levelLabel} paperLabel={paperLabel} />
       <TopicNav topic={topic} />
-      <header className={styles.topicHeader}>
-        <div className={styles.topicHeaderInner}>
-          <div className={styles.badgeRow}>
-            {topicData.ref && <span className={styles.badge}>{topicData.ref}</span>}
-            {levelLabel && <span className={styles.badgeLight}>{levelLabel}</span>}
-            {paperLabel && <span className={styles.badgeLight}>{paperLabel}</span>}
-          </div>
-          <h1 className={styles.topicTitle}>{topicData.title}</h1>
-          {topicData.meta && <p className={styles.topicMeta}>{topicData.meta}</p>}
-        </div>
-      </header>
       {children}
       <Footer topicLabel={`Section ${topicData.ref} ${topicData.title}`} links={footerLinks} />
     </>
