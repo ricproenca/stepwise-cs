@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './ChapterCard.module.css';
 
 export default function ChapterCard({ chapter }) {
@@ -20,7 +21,7 @@ export default function ChapterCard({ chapter }) {
       </p>
       <div className={styles.cardFooter}>
         {available > 0 ? (
-          <a href={`/chapters/${chapter.slug}`} className={styles.btn}>View Chapter</a>
+          <Link href={`/chapters/${chapter.slug}`} className={styles.btn}>View Chapter</Link>
         ) : (
           <span className={styles.tag}>Coming soon</span>
         )}

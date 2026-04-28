@@ -59,7 +59,7 @@ export default function QuestionCard({ question, onAttempted, onCorrect, attempt
         {isOpen && (
           <div className={styles.answerContent}>
             <ul className={styles.markScheme}>
-              {question.answer.map((point, i) => <li key={i}>{point}</li>)}
+              {question.answer.map((point, i) => <li key={`${question.id}-${i}`}>{point}</li>)}
             </ul>
             {question.tip && <p className={styles.tip}>{question.tip}</p>}
           </div>

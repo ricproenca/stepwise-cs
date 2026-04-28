@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './TopicCard.module.css';
 
 export default function TopicCard({ topic }) {
@@ -14,9 +15,9 @@ export default function TopicCard({ topic }) {
           <span className={styles.tag}>Coming soon</span>
         ) : (
           <>
-            <a href={`/topics/${topic.slug}`} className={styles.btn}>Notes</a>
-            <a href={`/topics/${topic.slug}/questions`} className={`${styles.btn} ${styles.btnOutline}`}>Questions</a>
-            <a href={`/topics/${topic.slug}/glossary`} className={`${styles.btn} ${styles.btnOutline}`}>Glossary</a>
+            <Link href={`/topics/${topic.slug}`} className={styles.btn}>Notes</Link>
+            <Link href={`/topics/${topic.slug}/questions`} className={`${styles.btn} ${styles.btnOutline}`}>Questions</Link>
+            <Link href={`/topics/${topic.slug}/glossary`} className={`${styles.btn} ${styles.btnOutline}`}>Glossary</Link>
           </>
         )}
       </div>

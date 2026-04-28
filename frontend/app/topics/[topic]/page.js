@@ -118,7 +118,7 @@ export default async function NotesPage({ params }) {
           <h3>Binary (Base 2)</h3>
           <p>Uses only digits 0 and 1. Each position is a power of 2.</p>
 
-          <figure style={{ margin: 'var(--space-6) 0' }}>
+          <figure className={styles.svgFigure}>
             <svg viewBox="0 0 480 120" role="img" xmlns="http://www.w3.org/2000/svg"
               style={{ fontFamily: "'Courier New',monospace", width: '100%', maxWidth: '600px', display: 'block' }}>
               <title>8-bit unsigned binary column weighting: 01101001 = 105</title>

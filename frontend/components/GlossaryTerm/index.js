@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './GlossaryTerm.module.css';
 
 export default function GlossaryTerm({ term, notesBase }) {
@@ -19,7 +20,7 @@ export default function GlossaryTerm({ term, notesBase }) {
         {term.refs.map(r => {
           const anchor = `s${r.replace(/\./g, '-')}`;
           return notesBase
-            ? <a key={r} href={`${notesBase}#${anchor}`} className={styles.tag}>{r}</a>
+            ? <Link key={r} href={`${notesBase}#${anchor}`} className={styles.tag}>{r}</Link>
             : <span key={r} className={styles.tag}>{r}</span>;
         })}
       </p>
