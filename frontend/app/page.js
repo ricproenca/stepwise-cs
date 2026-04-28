@@ -1,6 +1,6 @@
 import FilterTabs from '../components/FilterTabs';
 import Footer from '../components/Footer';
-import { topicSections } from '../data/topics';
+import { chapters } from '../data/chapters';
 import styles from './page.module.css';
 
 export default function HomePage() {
@@ -18,9 +18,9 @@ export default function HomePage() {
 
       <main className={styles.main}>
         <div className={styles.topicsHeader}>
-          <h2 className={styles.topicsTitle}>Topics</h2>
+          <h2 className={styles.topicsTitle}>Chapters</h2>
         </div>
-        <FilterTabs sections={topicSections} />
+        <FilterTabs chapters={chapters} />
       </main>
 
       <Footer />

@@ -9,7 +9,7 @@
 **Plain English:** A table that maps every keyboard character to a 7-digit binary number.
 **Example:** The character 'A' is assigned the code 65 in denary (0100 0001 in binary).
 **Differentiator:** ASCII uses 7 bits (128 characters); extended ASCII uses 8 bits (256 characters); Unicode uses a minimum of 16 bits and covers all world languages. ASCII is not a subset of extended ASCII in any standardised form — extended ASCII varies by implementation.
-**Syllabus Ref:** 1.1.5
+**Syllabus Ref:** 1.1.6
 
 ---
 
@@ -28,7 +28,7 @@
 **Plain English:** Each decimal digit gets its own 4-bit binary code, rather than converting the whole number to binary at once.
 **Example:** The denary number 964 in BCD is 1001 0110 0100 (9 → 1001, 6 → 0110, 4 → 0100).
 **Differentiator:** BCD and pure binary produce different bit patterns for the same denary value. BCD of 27 is 0010 0111 (two separate 4-bit groups); pure binary of 27 is 00011011 (a single 8-bit value). The same 8-bit pattern 00100111 is 27 in BCD but 39 in unsigned binary.
-**Syllabus Ref:** 1.1.2, 1.1.4
+**Syllabus Ref:** 1.1.2, 1.1.5
 
 ---
 
@@ -54,7 +54,7 @@
 **Definition:** A standardised mapping that assigns a unique binary code to every character, symbol, or control sequence recognised by a computer system.
 **Plain English:** An agreed list that tells every computer how to translate between characters and the binary numbers stored in memory.
 **Example:** In the ASCII character set, the letter 'a' maps to binary code 1100001 (97 in denary).
-**Syllabus Ref:** 1.1.5
+**Syllabus Ref:** 1.1.6
 
 ---
 
@@ -65,7 +65,7 @@
 **Plain English:** A wider version of ASCII that adds 128 extra characters for non-English Western European letters and symbols.
 **Example:** The pound sign (£) is code 156 in one common extended ASCII implementation.
 **Differentiator:** Extended ASCII adds 128 codes beyond standard ASCII but lacks standardisation across implementations; Unicode provides a single universal standard covering all languages.
-**Syllabus Ref:** 1.1.5
+**Syllabus Ref:** 1.1.6
 
 ---
 
@@ -86,7 +86,7 @@
 **Definition:** A base-16 number system that uses the digits 0–9 and the letters A–F to represent values 0–15, where each single hexadecimal digit corresponds to exactly four binary bits.
 **Plain English:** A shorthand for binary that groups four bits into one digit, making long binary values easier for humans to read and write without error.
 **Example:** The 8-bit binary value 1011 0101 is written as B5 in hexadecimal (1011 = B = 11; 0101 = 5).
-**Syllabus Ref:** 1.1.2, 1.1.4
+**Syllabus Ref:** 1.1.2, 1.1.5
 
 ---
 
@@ -116,7 +116,7 @@
 **Definition:** The output of the contents of a section of computer memory to a screen or printer, typically displayed in hexadecimal to make the binary data readable.
 **Plain English:** A snapshot of raw memory contents printed out so a developer can inspect what is stored and find errors.
 **Example:** A memory dump might display address 00A4 containing B5, representing the binary value 10110101.
-**Syllabus Ref:** 1.1.4
+**Syllabus Ref:** 1.1.5
 
 ---
 
@@ -147,7 +147,7 @@
 **Definition:** An error that occurs when the result of a binary arithmetic operation exceeds the range of values representable in the number of bits allocated, causing the stored result to be incorrect.
 **Plain English:** The answer is too large (or too small) to fit in the available bits, so the wrong value is stored.
 **Example:** Adding 82 (01010010) and 69 (01000101) in 8-bit two's complement gives 1001 0111, which is interpreted as −105 — incorrect because 151 exceeds the maximum of +127.
-**Syllabus Ref:** 1.1.3
+**Syllabus Ref:** 1.1.4
 
 ---
 
@@ -169,4 +169,4 @@
 **Plain English:** A worldwide standard that gives a unique number to every letter, symbol, and emoji in every human language.
 **Example:** The Greek letter Ω (omega) has Unicode code point U+03A9, stored as 0000 0011 1010 1001 in binary.
 **Differentiator:** ASCII uses 7 bits and covers 128 English characters; Unicode uses a minimum of 16 bits and covers all world scripts. The first 128 Unicode code points are identical to ASCII.
-**Syllabus Ref:** 1.1.5
+**Syllabus Ref:** 1.1.6

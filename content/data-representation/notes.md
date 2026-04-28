@@ -61,7 +61,7 @@ Used for internal memory (RAM, cache). Based on powers of 2. The suffix **-bi** 
 
 ---
 
-## 1.1.2 Number Systems and Conversions
+## 1.1.2 Number Systems
 
 All integer data stored by a computer is encoded in binary. Exam questions for this section require confident conversion between binary, denary, hexadecimal, and BCD — and a precise understanding of how the same bit pattern produces a different denary value depending on the encoding system applied.
 
@@ -246,7 +246,28 @@ One's complement represents a negative number by inverting all bits of its posit
 
 ---
 
-## 1.1.3 Binary Addition and Subtraction
+## 1.1.3 Number Base Conversion
+
+Converting integer values between binary, denary, hexadecimal, and BCD is a core Paper 1 skill. Each conversion method is presented within the relevant number system in §1.1.2; this section provides a consolidated reference.
+
+| From | To | Method |
+|---|---|---|
+| Binary → Denary | Sum column weights where bit = 1 | 01101001 = 64 + 32 + 8 + 1 = 105 |
+| Denary → Binary | Repeated subtraction from highest power, or repeated division by 2 | 107 → 01101011 |
+| Binary → Hex | Group into nibbles from the right; convert each 4-bit group to one hex digit | 1011 1110 → BE |
+| Hex → Binary | Expand each hex digit to 4 bits | 45A → 0100 0101 1010 |
+| Hex → Denary | Multiply each digit by 16 to its positional power, sum | A3 = 160 + 3 = 163 |
+| Denary → Hex | Repeated division by 16; remainders right-to-left | 241 → F1 |
+| Denary → BCD | Convert each decimal digit independently to 4-bit code | 964 → 1001 0110 0100 |
+| BCD → Denary | Read each 4-bit group as a separate decimal digit | 0010 0111 → 27 |
+| Denary → Two's complement | Write positive in binary; if negative: invert all bits, add 1 | −45 → 1101 0011 |
+| Two's complement → Denary | MSB contributes −2ⁿ⁻¹; sum remaining column weights | 1110 0111 → −25 |
+
+**Important:** The same 8-bit pattern produces different denary values depending on the encoding applied. For example, 00100111 is 39 in unsigned binary, 27 in BCD, and +39 in two's complement (positive because MSB = 0).
+
+---
+
+## 1.1.4 Binary Addition and Subtraction
 
 Binary arithmetic is tested in Paper 1 through worked addition and subtraction examples where marks are awarded for showing carries. Overflow — the error produced when a result exceeds the representable range — is a separate examinable concept and must be explained in terms of the bit width, not described only as "the number is too large."
 
@@ -350,7 +371,7 @@ Discard carry → **0001 1011** = 16 + 8 + 2 + 1 = 27 ✓
 
 ---
 
-## 1.1.4 Practical Applications of BCD and Hexadecimal
+## 1.1.5 Practical Applications of BCD and Hexadecimal
 
 Binary is the native encoding for all processor arithmetic, but two situations call for a different representation: displaying or storing individual decimal digits without conversion errors (BCD), and presenting binary data to humans in a shorter, readable form (hexadecimal). Paper 1 questions ask for specific applications with justifications — generic answers do not earn marks.
 
@@ -405,7 +426,7 @@ The hexadecimal representation is substantially shorter and less prone to transc
 
 ---
 
-## 1.1.5 Character Sets
+## 1.1.6 Character Sets and Encoding
 
 Every character stored by a computer is represented as a binary number. A character set is the agreed mapping between characters and their binary codes — without a shared standard, the same binary pattern would be interpreted as a different character on different systems. Paper 1 regularly tests the differences between ASCII, extended ASCII, and Unicode in terms of bit width, capacity, and language coverage.
 
@@ -492,9 +513,9 @@ Unicode was created to provide a universal character encoding standard covering 
 
 ## Syllabus Coverage
 
-- **Show understanding of binary magnitudes and the difference between binary prefixes and decimal prefixes (kibi/kilo, mebi/mega, gibi/giga, tebi/tera)** — Covered
-- **Show understanding of different number systems (binary, denary, hexadecimal, BCD, one's and two's complement); convert an integer value from one base/representation to another** — Covered
-- **Perform binary addition and subtraction (positive and negative binary integers); show understanding of how overflow can occur** — Covered
-- **Describe practical applications where BCD is used** — Covered
-- **Describe practical applications where hexadecimal is used** — Covered (incorporated within §1.1.4)
-- **Show understanding of and represent character data in its internal binary form, depending on the character set used (ASCII, extended ASCII, Unicode)** — Covered
+- **1.1.1 Binary magnitudes and prefixes (kibi/kilo, mebi/mega, gibi/giga, tebi/tera)** — Covered
+- **1.1.2 Number systems (binary, denary, hexadecimal, BCD, one's complement, two's complement)** — Covered
+- **1.1.3 Number base conversion (integer values between bases/representations)** — Covered
+- **1.1.4 Binary addition and subtraction (positive and negative integers, overflow)** — Covered
+- **1.1.5 Practical applications of BCD and hexadecimal** — Covered
+- **1.1.6 Character sets and encoding (ASCII, extended ASCII, Unicode)** — Covered

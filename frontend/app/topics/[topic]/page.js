@@ -5,9 +5,10 @@ import styles from './page.module.css';
 const SECTIONS = [
   { id: 's1-1-1', label: '1.1.1 Binary Magnitudes' },
   { id: 's1-1-2', label: '1.1.2 Number Systems' },
-  { id: 's1-1-3', label: '1.1.3 Binary Arithmetic' },
-  { id: 's1-1-4', label: '1.1.4 Applications' },
-  { id: 's1-1-5', label: '1.1.5 Character Sets' },
+  { id: 's1-1-3', label: '1.1.3 Base Conversion' },
+  { id: 's1-1-4', label: '1.1.4 Binary Arithmetic' },
+  { id: 's1-1-5', label: '1.1.5 Applications' },
+  { id: 's1-1-6', label: '1.1.6 Character Sets' },
   { id: 'syllabus-coverage', label: 'Syllabus Coverage' },
 ];
 
@@ -108,7 +109,7 @@ export default async function NotesPage({ params }) {
           </div>
 
           {/* ── 1.1.2 ─────────────────────────────────────── */}
-          <h2 id="s1-1-2">1.1.2 Number Systems and Conversions</h2>
+          <h2 id="s1-1-2">1.1.2 Number Systems</h2>
 
           <p>All integer data stored by a computer is encoded in binary. Exam questions for this section require confident conversion between binary, denary, hexadecimal, and BCD — and a precise understanding of how the same bit pattern produces a different denary value depending on the encoding system applied.</p>
 
@@ -313,7 +314,38 @@ export default async function NotesPage({ params }) {
           </div>
 
           {/* ── 1.1.3 ─────────────────────────────────────── */}
-          <h2 id="s1-1-3">1.1.3 Binary Addition and Subtraction</h2>
+          <h2 id="s1-1-3">1.1.3 Number Base Conversion</h2>
+
+          <p>Converting integer values between binary, denary, hexadecimal, and BCD is a core Paper 1 skill. The conversion methods are demonstrated within §1.1.2; this section provides a consolidated quick-reference.</p>
+
+          <table className={styles.table} aria-label="Number base conversion methods summary">
+            <thead><tr><th>From</th><th>To</th><th>Method</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td>Binary</td><td>Denary</td><td>Sum column weights where bit = 1</td><td><code>01101001</code> = 64+32+8+1 = <strong>105</strong></td></tr>
+              <tr><td>Denary</td><td>Binary</td><td>Repeated subtraction from highest power, or repeated division by 2</td><td>107 → <code>01101011</code></td></tr>
+              <tr><td>Binary</td><td>Hex</td><td>Group into nibbles from the right; convert each 4-bit group to one hex digit</td><td><code>1011 1110</code> → <strong>BE</strong></td></tr>
+              <tr><td>Hex</td><td>Binary</td><td>Expand each hex digit to 4 bits</td><td><code>45A</code> → <code>0100 0101 1010</code></td></tr>
+              <tr><td>Hex</td><td>Denary</td><td>Multiply each digit by 16 to its positional power, sum</td><td>A3 = 160+3 = <strong>163</strong></td></tr>
+              <tr><td>Denary</td><td>Hex</td><td>Repeated division by 16; remainders right-to-left</td><td>241 → <strong>F1</strong></td></tr>
+              <tr><td>Denary</td><td>BCD</td><td>Convert each decimal digit independently to 4-bit code</td><td>964 → <code>1001 0110 0100</code></td></tr>
+              <tr><td>BCD</td><td>Denary</td><td>Read each 4-bit group as a separate decimal digit</td><td><code>0010 0111</code> → <strong>27</strong></td></tr>
+              <tr><td>Denary (negative)</td><td>Two&apos;s complement</td><td>Write positive in binary; invert all bits; add 1</td><td>−45 → <code>1101 0011</code></td></tr>
+              <tr><td>Two&apos;s complement</td><td>Denary</td><td>MSB contributes −2ⁿ⁻¹; sum remaining column weights</td><td><code>1110 0111</code> → <strong>−25</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div className={styles.keyTakeaway} role="note">
+            <strong>Key Takeaway — 1.1.3</strong>
+            <ul>
+              <li>The same 8-bit pattern produces different denary values depending on the encoding: <code>00100111</code> is 39 in unsigned binary, 27 in BCD, and +39 in two&apos;s complement (positive because MSB = 0).</li>
+              <li>Binary ↔ hex conversion is always a nibble-by-nibble transcription — no arithmetic required.</li>
+              <li>BCD ↔ denary conversion treats each decimal digit independently — the whole number is never converted as a single binary value.</li>
+              <li>Two&apos;s complement negation: invert all bits, add 1. Reversal: apply −2ⁿ⁻¹ weight to MSB and sum the rest.</li>
+            </ul>
+          </div>
+
+          {/* ── 1.1.4 ─────────────────────────────────────── */}
+          <h2 id="s1-1-4">1.1.4 Binary Addition and Subtraction</h2>
 
           <p>Binary arithmetic is tested in Paper 1 through worked addition and subtraction examples where marks are awarded for showing carries. Overflow — the error produced when a result exceeds the representable range — is a separate examinable concept and must be explained in terms of the bit width, not described only as &ldquo;the number is too large.&rdquo;</p>
 
@@ -381,7 +413,7 @@ export default async function NotesPage({ params }) {
           <p><code>1110 0001</code> = −128 + 64 + 32 + 1 = <strong>−31</strong> ✓</p>
 
           <div className={styles.keyTakeaway} role="note">
-            <strong>Key Takeaway — 1.1.3</strong>
+            <strong>Key Takeaway — 1.1.4</strong>
             <ul>
               <li>Binary addition: carry is propagated left; 1 + 1 = 10 in binary (sum 0, carry 1); 1 + 1 + carry 1 = 11 (sum 1, carry 1).</li>
               <li>Overflow in 8-bit two&apos;s complement: positive + positive → negative result, or negative + negative → positive result — both indicate a result outside −128 to +127.</li>
@@ -390,8 +422,8 @@ export default async function NotesPage({ params }) {
             </ul>
           </div>
 
-          {/* ── 1.1.4 ─────────────────────────────────────── */}
-          <h2 id="s1-1-4">1.1.4 Practical Applications of BCD and Hexadecimal</h2>
+          {/* ── 1.1.5 ─────────────────────────────────────── */}
+          <h2 id="s1-1-5">1.1.5 Practical Applications of BCD and Hexadecimal</h2>
 
           <p>Binary is the native encoding for all processor arithmetic, but two situations call for a different representation: displaying or storing individual decimal digits without conversion errors (BCD), and presenting binary data to humans in a shorter, readable form (hexadecimal). Paper 1 questions ask for specific applications with justifications — generic answers do not earn marks.</p>
 
@@ -455,7 +487,7 @@ export default async function NotesPage({ params }) {
           </table>
 
           <div className={styles.keyTakeaway} role="note">
-            <strong>Key Takeaway — 1.1.4</strong>
+            <strong>Key Takeaway — 1.1.5</strong>
             <ul>
               <li>BCD is preferred where decimal precision is required: financial systems, digital displays, and real-time clocks — accepted exam answers require a specific application, not a generic claim of accuracy.</li>
               <li>Hexadecimal is preferred where humans must read, write, or verify binary data: memory dumps, HTML/CSS colour codes, MAC addresses, and URL encoding.</li>
@@ -464,8 +496,8 @@ export default async function NotesPage({ params }) {
             </ul>
           </div>
 
-          {/* ── 1.1.5 ─────────────────────────────────────── */}
-          <h2 id="s1-1-5">1.1.5 Character Sets</h2>
+          {/* ── 1.1.6 ─────────────────────────────────────── */}
+          <h2 id="s1-1-6">1.1.6 Character Sets and Encoding</h2>
 
           <p>Every character stored by a computer is represented as a binary number. A character set is the agreed mapping between characters and their binary codes — without a shared standard, the same binary pattern would be interpreted as a different character on different systems. Paper 1 regularly tests the differences between ASCII, extended ASCII, and Unicode in terms of bit width, capacity, and language coverage.</p>
 
@@ -552,7 +584,7 @@ export default async function NotesPage({ params }) {
           </ul>
 
           <div className={styles.keyTakeaway} role="note">
-            <strong>Key Takeaway — 1.1.5</strong>
+            <strong>Key Takeaway — 1.1.6</strong>
             <ul>
               <li>ASCII: 7 bits, 128 characters, English only. Extended ASCII: 8 bits, 256 characters, adds Western European characters, but no universal standard for the extra 128 codes.</li>
               <li>Unicode: minimum 16 bits, 143,000+ characters, covers all world writing systems; the first 128 Unicode code points are identical to ASCII.</li>
@@ -565,12 +597,12 @@ export default async function NotesPage({ params }) {
           <section id="syllabus-coverage" aria-labelledby="syllabus-heading" className={styles.syllabusSection}>
             <h2 id="syllabus-heading">Syllabus Coverage</h2>
             <ul>
-              <li>✅ Show understanding of binary magnitudes and the difference between binary prefixes and decimal prefixes (kibi/kilo, mebi/mega, gibi/giga, tebi/tera) — <strong>Covered</strong></li>
-              <li>✅ Show understanding of different number systems (binary, denary, hexadecimal, BCD, one&apos;s and two&apos;s complement); convert an integer value from one base/representation to another — <strong>Covered</strong></li>
-              <li>✅ Perform binary addition and subtraction (positive and negative binary integers); show understanding of how overflow can occur — <strong>Covered</strong></li>
-              <li>✅ Describe practical applications where BCD is used — <strong>Covered</strong></li>
-              <li>✅ Describe practical applications where hexadecimal is used — <strong>Covered</strong></li>
-              <li>✅ Show understanding of and represent character data in its internal binary form, depending on the character set used (ASCII, extended ASCII, Unicode) — <strong>Covered</strong></li>
+              <li>✅ 1.1.1 Binary magnitudes and prefixes (kibi/kilo, mebi/mega, gibi/giga, tebi/tera) — <strong>Covered</strong></li>
+              <li>✅ 1.1.2 Number systems (binary, denary, hexadecimal, BCD, one&apos;s complement, two&apos;s complement) — <strong>Covered</strong></li>
+              <li>✅ 1.1.3 Number base conversion (integer values between bases/representations) — <strong>Covered</strong></li>
+              <li>✅ 1.1.4 Binary addition and subtraction (positive and negative integers, overflow) — <strong>Covered</strong></li>
+              <li>✅ 1.1.5 Practical applications of BCD and hexadecimal — <strong>Covered</strong></li>
+              <li>✅ 1.1.6 Character sets and encoding (ASCII, extended ASCII, Unicode) — <strong>Covered</strong></li>
             </ul>
           </section>
 

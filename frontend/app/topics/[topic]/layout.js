@@ -6,18 +6,17 @@ import NavBar from '../../../components/NavBar';
 import TopicNav from '../../../components/TopicNav';
 import Footer from '../../../components/Footer';
 import Link from 'next/link';
-import { topicSections } from '../../../data/topics';
+import { chapters } from '../../../data/chapters';
 import styles from './layout.module.css';
 
 export default async function TopicLayout({ children, params }) {
   const { topic } = await params;
   const base = `/topics/${topic}`;
 
-  const allTopics = topicSections.flatMap(s => s.topics);
-  const topicData = allTopics.find(t => t.slug === topic) ?? {};
-  const sectionData = topicSections.find(s => s.topics.some(t => t.slug === topic));
-  const levelLabel = sectionData?.level === 'AS' ? 'AS Level' : (sectionData?.level ?? '');
-  const paperLabel = topicData.paper?.split('·').pop().trim() ?? '';
+  const chapter = chapters.find(c => c.topics.some(t => t.slug === topic));
+  const topicData = chapter?.topics.find(t => t.slug === topic) ?? {};
+  const levelLabel = chapter?.level === 'AS' ? 'AS Level' : (chapter?.level ?? '');
+  const paperLabel = chapter?.paper ?? '';
 
   const footerLinks = (
     <>

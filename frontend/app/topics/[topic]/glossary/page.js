@@ -1,12 +1,9 @@
-'use client';
-
-import { useParams } from 'next/navigation';
 import GlossarySearch from '../../../../components/GlossarySearch';
 import { glossaryTerms, glossaryLetters } from '../../../../data/glossary-data-representation';
 import styles from './glossary.module.css';
 
-export default function GlossaryPage() {
-  const { topic } = useParams();
+export default async function GlossaryPage({ params }) {
+  const { topic } = await params;
   return (
     <main className={styles.main}>
       <div className={styles.inner}>
