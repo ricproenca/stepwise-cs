@@ -64,6 +64,14 @@ Every topic has a level (AS or A Level) and paper (1–4) recorded in queue.md. 
 - Never use inline styles
 - Reference design-tokens.md before generating any HTML
 
+## Project Context
+
+- Framework: Next.js 14+ App Router
+- Frontend only — no backend, no API routes
+- Styling: CSS Modules only
+- Language: TypeScript
+- Review standards: see /planning/CODE_REVIEW.md
+
 ## Content Standards
 - All definitions must be Cambridge-compliant and usable as exam answers
 - Questions must follow the command word framework:

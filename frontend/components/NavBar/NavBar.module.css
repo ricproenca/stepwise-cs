@@ -7,14 +7,15 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  gap: var(--space-6);
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  margin-right: var(--space-10);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logoMain {
@@ -34,27 +35,53 @@
   line-height: 1.2;
 }
 
-.links { display: flex; flex: 1; }
+/* ── BREADCRUMB ───────────────────────────────────────────── */
 
-.link {
-  padding: 0 var(--space-4);
-  height: 60px;
+.breadcrumb {
   display: flex;
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.separator {
+  color: var(--color-cambridge-blue);
+  font-size: var(--text-xs);
+  flex-shrink: 0;
+}
+
+.crumbLink {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--fw-semibold);
   color: var(--color-cambridge-light-blue);
   text-decoration: none;
-  border-bottom: 3px solid transparent;
-  transition: all var(--transition-fast);
+  white-space: nowrap;
+  transition: color var(--transition-fast);
 }
 
-.link:hover {
+.crumbLink:hover { color: var(--color-white); }
+
+.crumbCurrent {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
   color: var(--color-white);
-  border-bottom-color: var(--color-cambridge-blue);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 640px) {
-  .links { display: none; }
+  .breadcrumb { display: none; }
 }
