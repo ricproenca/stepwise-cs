@@ -1,0 +1,1 @@
+Read the skill at .claude/skills/resource-collector.md and execute it against the current project.

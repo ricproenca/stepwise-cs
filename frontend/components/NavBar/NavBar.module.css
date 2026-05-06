@@ -1,0 +1,85 @@
+.nav {
+  background: var(--color-cambridge-dark-blue);
+  padding: 0 var(--space-8);
+  display: flex;
+  align-items: center;
+  height: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: var(--space-6);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 30px;
+  width: 42px;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.logoText {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+/* ── BREADCRUMB ───────────────────────────────────────────── */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.separator {
+  color: var(--color-cambridge-blue);
+  font-size: var(--text-xs);
+  flex-shrink: 0;
+}
+
+.crumbLink {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-cambridge-light-blue);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.crumbLink:hover { color: var(--color-white); }
+
+.crumbCurrent {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .breadcrumb { display: none; }
+}

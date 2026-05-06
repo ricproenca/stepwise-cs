@@ -11,583 +11,421 @@ Each topic block starts with `## <slug>`. The resource-collector filters this fi
 
 ---
 
-## data-representation
-**Syllabus ref:** 1.1 — Data Representation · AS · Paper 1
+## Full 9618 Syllabus — Chapters, Topics, and Subtopics
 
-- Show understanding of binary magnitudes and the difference between binary prefixes and decimal prefixes.
-  *Notes:* kibi/kilo, mebi/mega, gibi/giga, tebi/tera.
-- Show understanding of different number systems.
-  *Notes:* binary, denary, hexadecimal, Binary Coded Decimal (BCD), one's and two's complement. Convert an integer value from one base/representation to another.
-- Perform binary addition and subtraction.
-  *Notes:* positive and negative binary integers; show understanding of how overflow can occur.
-- Describe practical applications where BCD and hexadecimal are used.
-- Show understanding of and represent character data in its internal binary form, depending on the character set used.
-  *Notes:* ASCII, extended ASCII, Unicode. Candidates are not expected to memorise particular character codes.
+### AS Level Content (Paper 1: sections 1–8 | Paper 2: sections 9–12)
 
 ---
 
-## multimedia
-**Syllabus ref:** 1.2 — Multimedia (Graphics, Sound) · AS · Paper 1
+#### Chapter 1 — Information Representation
 
-**Graphics**
-- Show understanding of how data for a bitmapped image are encoded.
-  *Notes:* pixel, file header, image resolution, screen resolution, colour depth/bit depth.
-- Perform calculations to estimate the file size for a bitmap image.
-- Show understanding of the effects of changing elements of a bitmap image on image quality and file size.
-  *Notes:* image resolution, colour depth/bit depth.
-- Show understanding of how data for a vector graphic are encoded.
-  *Notes:* drawing object, property, drawing list.
-- Justify the use of a bitmap image or a vector graphic for a given task.
+**1.1 Data Representation**
+- 1.1.1 Binary magnitudes and prefixes (kibi/kilo, mebi/mega, gibi/giga, tebi/tera)
+- 1.1.2 Number systems (binary, denary, hexadecimal, BCD, one's complement, two's complement)
+- 1.1.3 Number base conversion (integer values between bases/representations)
+- 1.1.4 Binary addition and subtraction (positive and negative integers, overflow)
+- 1.1.5 Practical applications of BCD and hexadecimal
+- 1.1.6 Character sets and encoding (ASCII, extended ASCII, Unicode)
 
-**Sound**
-- Show understanding of how sound is represented and encoded.
-  *Notes:* sampling, sampling rate, sampling resolution, analogue and digital data.
-- Show understanding of the impact of changing sampling rate and resolution.
-  *Notes:* impact on file size and accuracy.
+**1.2 Multimedia**
+- 1.2.1 Bitmap graphics (pixel, file header, image resolution, screen resolution, colour depth/bit depth)
+- 1.2.2 Bitmap file size calculations
+- 1.2.3 Effects of changing image resolution and colour depth on quality and file size
+- 1.2.4 Vector graphics (drawing object, property, drawing list)
+- 1.2.5 Bitmap vs vector — justifying choice for a given task
+- 1.2.6 Sound representation and encoding (sampling, sampling rate, sampling resolution, analogue and digital)
+- 1.2.7 Impact of changing sampling rate and resolution on file size and accuracy
 
----
-
-## compression
-**Syllabus ref:** 1.3 — Compression · AS · Paper 1
-
-- Show understanding of the need for, and examples of the use of, compression.
-- Show understanding of lossy and lossless compression and justify the use of a method in a given situation.
-- Show understanding of how a text file, bitmap image, vector graphic and sound file can be compressed.
-  *Notes:* including the use of run-length encoding (RLE).
+**1.3 Compression**
+- 1.3.1 Need for compression and examples of use
+- 1.3.2 Lossy vs lossless compression — justifying method for a given situation
+- 1.3.3 Compression of text files, bitmap images, vector graphics, and sound files
+- 1.3.4 Run-length encoding (RLE)
 
 ---
 
-## networks-internet
-**Syllabus ref:** 2.1 — Networks including the internet · AS · Paper 1
+#### Chapter 2 — Communication
 
-- Show understanding of the purpose and benefits of networking devices.
-- Show understanding of the characteristics of a LAN (local area network) and a WAN (wide area network).
-- Explain the client-server and peer-to-peer models of networked computers.
-  *Notes:* roles of different computers within the network and subnetwork models; benefits and drawbacks of each model; justify the use of a model for a given situation.
-- Show understanding of thin-client and thick-client and the differences between them.
-- Show understanding of the bus, star, mesh and hybrid topologies.
-  *Notes:* how packets are transmitted between two hosts for a given topology; justify the use of a topology for a given situation.
-- Show understanding of cloud computing.
-  *Notes:* public and private clouds; benefits and drawbacks of cloud computing.
-- Show understanding of the differences between and implications of the use of wireless and wired networks.
-  *Notes:* copper cable, fibre-optic cable, radio waves (including WiFi), microwaves, satellites.
-- Describe the hardware that is used to support a LAN.
-  *Notes:* switch, server, NIC, WNIC, Wireless Access Points (WAP), cables, bridge, repeater.
-- Describe the role and function of a router in a network.
-- Show understanding of Ethernet and how collisions are detected and avoided.
-  *Notes:* Carrier Sense Multiple Access / Collision Detection (CSMA/CD).
-- Show understanding of bit streaming.
-  *Notes:* real-time and on-demand; importance of bit rates and broadband speed on bit streaming.
-- Show understanding of the differences between the World Wide Web (WWW) and the internet.
-- Describe the hardware that is used to support the internet.
-  *Notes:* modems, PSTN (Public Switched Telephone Network), dedicated lines, cell phone network.
-- Explain the use of IP addresses in the transmission of data over the internet.
-  *Notes:* format of an IP address including IPv4 and IPv6; use of subnetting; how an IP address is associated with a device on a network; public vs private IP address and security implications; static vs dynamic IP address.
-- Explain how a Uniform Resource Locator (URL) is used to locate a resource on the World Wide Web (WWW) and the role of the Domain Name Service (DNS).
+**2.1 Networks Including the Internet**
+- 2.1.1 Purpose and benefits of networking devices
+- 2.1.2 LAN and WAN characteristics
+- 2.1.3 Client-server and peer-to-peer models (roles, benefits, drawbacks, justification)
+- 2.1.4 Thin-client and thick-client (differences and implications)
+- 2.1.5 Network topologies — bus, star, mesh, hybrid (packet transmission, justification)
+- 2.1.6 Cloud computing (public and private clouds, benefits and drawbacks)
+- 2.1.7 Wireless vs wired networks (copper cable, fibre-optic, radio/WiFi, microwaves, satellites)
+- 2.1.8 LAN hardware (switch, server, NIC, WNIC, WAP, cables, bridge, repeater)
+- 2.1.9 Role and function of a router
+- 2.1.10 Ethernet and collision detection/avoidance (CSMA/CD)
+- 2.1.11 Bit streaming (real-time and on-demand, bit rates and broadband speed)
+- 2.1.12 WWW vs the internet
+- 2.1.13 Internet hardware (modems, PSTN, dedicated lines, cell phone network)
+- 2.1.14 IP addresses (IPv4, IPv6, subnetting, public vs private, static vs dynamic)
+- 2.1.15 URLs and Domain Name Service (DNS)
 
 ---
 
-## computers-components
-**Syllabus ref:** 3.1 — Computers and their components · AS · Paper 1
+#### Chapter 3 — Hardware
 
-- Show understanding of the need for input, output, primary memory and secondary (including removable) storage.
-- Show understanding of embedded systems.
-  *Notes:* benefits and drawbacks of embedded systems.
-- Describe the principal operations of hardware devices.
-  *Notes:* laser printer, 3D printer, microphone, speakers, magnetic hard disk, solid state (flash) memory, optical disc reader/writer, touchscreen, virtual reality headset.
-- Show understanding of the use of buffers.
-- Explain the differences between Random Access Memory (RAM) and Read Only Memory (ROM).
-  *Notes:* including their use in a range of devices and systems.
-- Explain the differences between Static RAM (SRAM) and Dynamic RAM (DRAM).
-  *Notes:* use of SRAM and DRAM in a range of devices/systems and reasons for using one instead of the other.
-- Explain the difference between Programmable ROM (PROM), Erasable Programmable ROM (EPROM) and Electrically Erasable Programmable ROM (EEPROM).
-- Show an understanding of monitoring and control systems.
-  *Notes:* difference between monitoring and control; use of sensors (temperature, pressure, infra-red, sound) and actuators; importance of feedback.
+**3.1 Computers and Their Components**
+- 3.1.1 Input, output, primary memory, and secondary storage — need and purpose
+- 3.1.2 Embedded systems (benefits and drawbacks)
+- 3.1.3 Hardware devices (laser printer, 3D printer, microphone, speakers, hard disk, SSD/flash, optical, touchscreen, VR headset)
+- 3.1.4 Buffers — purpose and use
+- 3.1.5 RAM vs ROM (differences and use in devices)
+- 3.1.6 SRAM vs DRAM (differences and appropriate use cases)
+- 3.1.7 PROM, EPROM, EEPROM (differences)
+- 3.1.8 Monitoring and control systems (monitoring vs control, sensors, actuators, feedback)
 
----
-
-## logic-gates-circuits
-**Syllabus ref:** 3.2 — Logic Gates and Logic Circuits · AS · Paper 1
-
-- Use the following logic gate symbols: NOT, AND, OR, NAND, NOR, XOR.
-- Understand and define the functions of NOT, AND, OR, NAND, NOR and XOR (EOR) gates.
-  *Notes:* all gates except NOT will have two inputs only.
-- Construct the truth table for each of the logic gates above.
-- Construct a logic circuit from: a problem statement, a logic expression, a truth table.
-- Construct a truth table from: a problem statement, a logic circuit, a logic expression.
-- Construct a logic expression from: a problem statement, a logic circuit, a truth table.
+**3.2 Logic Gates and Logic Circuits**
+- 3.2.1 Logic gate symbols — NOT, AND, OR, NAND, NOR, XOR
+- 3.2.2 Functions of NOT, AND, OR, NAND, NOR, XOR (EOR) gates
+- 3.2.3 Truth tables for each logic gate
+- 3.2.4 Constructing logic circuits (from problem statement, logic expression, truth table)
+- 3.2.5 Constructing truth tables (from problem statement, logic circuit, logic expression)
+- 3.2.6 Constructing logic expressions (from problem statement, logic circuit, truth table)
 
 ---
 
-## cpu-architecture
-**Syllabus ref:** 4.1 — Central Processing Unit (CPU) Architecture · AS · Paper 1
+#### Chapter 4 — Processor Fundamentals
 
-- Show understanding of the basic Von Neumann model for a computer system and the stored program concept.
-- Show understanding of the purpose and role of registers, including the difference between general purpose and special purpose registers.
-  *Notes:* special purpose registers including Program Counter (PC), Memory Data Register (MDR), Memory Address Register (MAR), Accumulator (ACC), Index Register (IX), Current Instruction Register (CIR), Status Register.
-- Show understanding of the purpose and roles of the Arithmetic and Logic Unit (ALU), Control Unit (CU), system clock, Immediate Access Store (IAS).
-- Show understanding of how data are transferred between various components of the computer system using the address bus, data bus and control bus.
-- Show understanding of how factors contribute to the performance of the computer system.
-  *Notes:* processor type and number of cores, bus width, clock speed, cache memory.
-- Understand how different ports provide connection to peripheral devices.
-  *Notes:* USB, HDMI, VGA.
-- Describe the stages of the Fetch-Execute (F-E) cycle.
-  *Notes:* describe and use 'register transfer' notation to describe the F-E cycle.
-- Show understanding of the purpose of interrupts.
-  *Notes:* possible causes; applications; use of an Interrupt Service Routine (ISR); when interrupts are detected during the F-E cycle; how interrupts are handled.
+**4.1 Central Processing Unit (CPU) Architecture**
+- 4.1.1 Von Neumann model and stored program concept
+- 4.1.2 Registers — general purpose vs special purpose (PC, MDR, MAR, ACC, IX, CIR, Status Register)
+- 4.1.3 ALU, Control Unit, system clock, Immediate Access Store (IAS)
+- 4.1.4 Address bus, data bus, control bus — data transfer between components
+- 4.1.5 Factors affecting CPU performance (processor type, number of cores, bus width, clock speed, cache memory)
+- 4.1.6 Ports and peripheral connections (USB, HDMI, VGA)
+- 4.1.7 Fetch-Execute cycle stages (register transfer notation)
+- 4.1.8 Interrupts (causes, applications, ISR, detection during F-E cycle, handling)
 
----
+**4.2 Assembly Language**
+- 4.2.1 Relationship between assembly language and machine code
+- 4.2.2 Two-pass assembler (stages, applied to a program)
+- 4.2.3 Tracing assembly language programs
+- 4.2.4 Instruction groups (data movement, I/O, arithmetic, unconditional/conditional, compare)
+- 4.2.5 Addressing modes (immediate, direct, indirect, indexed, relative)
+- 4.2.6 Instruction set reference (LDM, LDD, LDI, LDX, LDR, MOV, STO, ADD, SUB, INC, DEC, JMP, CMP, CMI, JPE, JPN, IN, OUT, END)
 
-## assembly-language
-**Syllabus ref:** 4.2 — Assembly Language · AS · Paper 1
-
-- Show understanding of the relationship between assembly language and machine code.
-- Describe the different stages of the assembly process for a two-pass assembler.
-  *Notes:* apply the two-pass assembler process to a given simple assembly language program.
-- Trace a given simple assembly language program.
-- Show understanding that a set of instructions are grouped.
-  *Notes:* data movement; input/output of data; arithmetic operations; unconditional and conditional instructions; compare instructions.
-- Show understanding of and be able to use different modes of addressing.
-  *Notes:* immediate, direct, indirect, indexed, relative.
-
-*Reference instruction set (used in exams):* `LDM #n`, `LDD <address>`, `LDI <address>`, `LDX <address>`, `LDR #n`, `MOV <register>`, `STO <address>`, `ADD <address>|#n`, `SUB <address>|#n`, `INC <register>`, `DEC <register>`, `JMP <address>`, `CMP <address>|#n`, `CMI <address>`, `JPE <address>`, `JPN <address>`, `IN`, `OUT`, `END`. One general-purpose register (ACC). `#` = denary, `B` = binary, `&` = hexadecimal.
+**4.3 Bit Manipulation**
+- 4.3.1 Binary shifts (logical, arithmetic, cyclic — left and right)
+- 4.3.2 Bit manipulation to monitor/control a device
+- 4.3.3 Bit masking — testing and setting a bit (AND, XOR, OR, LSL, LSR instructions)
 
 ---
 
-## bit-manipulation
-**Syllabus ref:** 4.3 — Bit manipulation · AS · Paper 1
+#### Chapter 5 — System Software
 
-- Show understanding of and perform binary shifts.
-  *Notes:* logical, arithmetic and cyclic shifts; left and right.
-- Show understanding of how bit manipulation can be used to monitor/control a device.
-  *Notes:* carry out bit manipulation operations; test and set a bit (using bit masking).
+**5.1 Operating Systems**
+- 5.1.1 Purpose and need for an Operating System
+- 5.1.2 Key OS management tasks (memory, file, security, hardware I/O, process management)
+- 5.1.3 Utility software (disk formatter, virus checker, defragmentation, disk repair, file compression, backup)
+- 5.1.4 Program libraries (purpose, benefits, DLL files)
 
-*Extended instructions:* `AND`, `XOR`, `OR` (both `#n/Bn/&n` and `<address>` forms), `LSL #n`, `LSR #n`, plus label syntax.
-
----
-
-## operating-systems
-**Syllabus ref:** 5.1 — Operating Systems · AS · Paper 1
-
-- Explain why a computer system requires an Operating System (OS).
-- Explain the key management tasks carried out by the OS.
-  *Notes:* memory management, file management, security management, hardware management (input/output/peripherals), process management.
-- Show understanding of the need for typical utility software provided with an OS.
-  *Notes:* disk formatter, virus checker, defragmentation software, disk contents analysis/disk repair software, file compression, back-up software.
-- Show understanding of program libraries.
-  *Notes:* software is often constructed using existing code from program libraries; benefits to the developer, including Dynamic Link Library (DLL) files.
+**5.2 Language Translators**
+- 5.2.1 Assembler, compiler, interpreter — need for each
+- 5.2.2 Compiler vs interpreter — benefits, drawbacks, justification
+- 5.2.3 Partially compiled and partially interpreted languages (e.g. Java)
+- 5.2.4 Integrated Development Environment (IDE) features (coding prompts, syntax checking, prettyprint, debugging tools: single stepping, breakpoints, report window)
 
 ---
 
-## language-translators
-**Syllabus ref:** 5.2 — Language Translators · AS · Paper 1
+#### Chapter 6 — Security, Privacy and Data Integrity
 
-- Show understanding of the need for: assembler software (for assembly language), a compiler (for high-level language), an interpreter (for translation and execution of a high-level language program).
-- Explain the benefits and drawbacks of using either a compiler or interpreter and justify the use of each.
-- Show awareness that high-level language programs may be partially compiled and partially interpreted (e.g. Java console mode).
-- Describe features found in a typical Integrated Development Environment (IDE).
-  *Notes:* coding (context-sensitive prompts); initial error detection (dynamic syntax checks); presentation (prettyprint, expand/collapse code blocks); debugging (single stepping, breakpoints — variables, expressions, report window).
+**6.1 Data Security**
+- 6.1.1 Security, privacy, and integrity — definitions and differences
+- 6.1.2 Need for data security and system security
+- 6.1.3 Security measures (user accounts, passwords, digital signatures, biometrics, firewall, anti-virus, anti-spyware, encryption)
+- 6.1.4 Threats (malware: virus/spyware, hackers, phishing, pharming)
+- 6.1.5 Methods to restrict threats
+- 6.1.6 Data security methods (encryption, access rights)
 
----
-
-## data-security
-**Syllabus ref:** 6.1 — Data Security · AS · Paper 1
-
-- Explain the difference between the terms security, privacy and integrity of data.
-- Show appreciation of the need for both the security of data and the security of the computer system.
-- Describe security measures designed to protect computer systems, ranging from the stand-alone PC to a network of computers.
-  *Notes:* user accounts, passwords, authentication techniques such as digital signatures and biometrics, firewall, anti-virus software, anti-spyware, encryption.
-- Show understanding of the threats to computer and data security posed by networks and the internet.
-  *Notes:* malware (virus, spyware), hackers, phishing, pharming.
-- Describe methods that can be used to restrict the risks posed by threats.
-- Describe security methods designed to protect the security of data.
-  *Notes:* encryption, access rights.
+**6.2 Data Integrity**
+- 6.2.1 Data validation and verification — role in protecting integrity
+- 6.2.2 Validation methods (range check, format check, length check, presence check, existence check, limit check, check digit)
+- 6.2.3 Verification during data entry (visual check, double entry)
+- 6.2.4 Verification during data transfer (parity check — byte and block, checksum)
 
 ---
 
-## data-integrity
-**Syllabus ref:** 6.2 — Data Integrity · AS · Paper 1
+#### Chapter 7 — Ethics and Ownership
 
-- Describe how data validation and data verification help protect the integrity of data.
-- Describe and use methods of data validation.
-  *Notes:* range check, format check, length check, presence check, existence check, limit check, check digit.
-- Describe and use methods of data verification during data entry and data transfer.
-  *Notes:* during data entry — visual check, double entry. During data transfer — parity check (byte and block), checksum.
-
----
-
-## ethics-ownership
-**Syllabus ref:** 7.1 — Ethics and Ownership · AS · Paper 1
-
-- Show understanding of the need for and purpose of ethics as a computing professional.
-  *Notes:* importance of joining a professional ethical body including BCS (British Computer Society), IEEE.
-- Show understanding of the need to act ethically and the impact of acting ethically or unethically for a given situation.
-- Show understanding of the need for copyright legislation.
-- Show understanding of the different types of software licensing and justify the use of a licence for a given situation.
-  *Notes:* Free Software Foundation, Open Source Initiative, shareware and commercial software.
-- Show understanding of Artificial Intelligence (AI).
-  *Notes:* impact of AI including social, economic and environmental issues; applications of AI.
+**7.1 Ethics and Ownership**
+- 7.1.1 Ethics in computing — need and purpose
+- 7.1.2 Professional ethical bodies (BCS, IEEE)
+- 7.1.3 Acting ethically vs unethically — impact for a given situation
+- 7.1.4 Copyright legislation — need and purpose
+- 7.1.5 Software licensing types (Free Software Foundation, Open Source Initiative, shareware, commercial)
+- 7.1.6 Artificial Intelligence — social, economic and environmental impact and applications
 
 ---
 
-## database-concepts
-**Syllabus ref:** 8.1 — Database Concepts · AS · Paper 1
+#### Chapter 8 — Databases
 
-- Show understanding of the limitations of using a file-based approach for the storage and retrieval of data.
-- Describe the features of a relational database that address the limitations of a file-based approach.
-- Show understanding of and use the terminology associated with a relational database model.
-  *Notes:* entity, table, record, field, tuple, attribute, primary key, candidate key, secondary key, foreign key, relationship (one-to-many, one-to-one, many-to-many), referential integrity, indexing.
-- Use an entity-relationship (E-R) diagram to document a database design.
-- Show understanding of the normalisation process.
-  *Notes:* First Normal Form (1NF), Second Normal Form (2NF), Third Normal Form (3NF).
-- Explain why a given set of database tables are, or are not, in 3NF.
-- Produce a normalised database design for a description of a database, a given set of data, or a given set of tables.
+**8.1 Database Concepts**
+- 8.1.1 Limitations of file-based storage and retrieval
+- 8.1.2 Features of relational databases addressing file-based limitations
+- 8.1.3 Relational database terminology (entity, table, record, field, tuple, attribute, primary key, candidate key, secondary key, foreign key, relationships, referential integrity, indexing)
+- 8.1.4 Entity-relationship (E-R) diagrams
+- 8.1.5 Normalisation process — 1NF, 2NF, 3NF
+- 8.1.6 Determining whether tables are in 3NF
+- 8.1.7 Producing a normalised database design
 
----
+**8.2 Database Management Systems (DBMS)**
+- 8.2.1 DBMS features (data management, data dictionary, data modelling, logical schema, data integrity, data security, backup, access rights)
+- 8.2.2 DBMS software tools (developer interface, query processor)
 
-## dbms
-**Syllabus ref:** 8.2 — Database Management Systems (DBMS) · AS · Paper 1
-
-- Show understanding of the features provided by a DBMS that address the issues of a file-based approach.
-  *Notes:* data management (maintaining a data dictionary); data modelling; logical schema; data integrity; data security (backup procedures, access rights to individuals/groups of users).
-- Show understanding of how software tools found within a DBMS are used in practice.
-  *Notes:* use and purpose of developer interface and query processor.
-
----
-
-## ddl-dml
-**Syllabus ref:** 8.3 — Data Definition Language (DDL) and Data Manipulation Language (DML) · AS · Paper 1
-
-- Show understanding that the DBMS carries out all creation/modification of the database structure using its DDL.
-- Show understanding that the DBMS carries out all queries and maintenance of data using its DML.
-- Show understanding that the industry standard for both DDL and DML is Structured Query Language (SQL).
-  *Notes:* understand a given SQL statement.
-- Understand given SQL (DDL) statements and be able to write simple SQL (DDL) statements using a sub-set of statements.
-  *Notes:* `CREATE DATABASE`; `CREATE TABLE` (with attributes using CHARACTER, VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE, TIME); `ALTER TABLE`; `PRIMARY KEY (field)`; `FOREIGN KEY (field) REFERENCES Table (Field)`.
-- Write an SQL script to query or modify data (DML) stored in at most two database tables.
-  *Notes:* queries — `SELECT ... FROM`, `WHERE`, `ORDER BY`, `GROUP BY`, `INNER JOIN`, `SUM`, `COUNT`, `AVG`. Maintenance — `INSERT INTO`, `DELETE FROM`, `UPDATE`.
+**8.3 Data Definition Language (DDL) and Data Manipulation Language (DML)**
+- 8.3.1 DDL — role in database structure creation/modification
+- 8.3.2 DML — role in queries and data maintenance
+- 8.3.3 SQL as the industry standard for DDL and DML
+- 8.3.4 SQL DDL statements (CREATE DATABASE, CREATE TABLE with data types: CHARACTER, VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE, TIME; ALTER TABLE, PRIMARY KEY, FOREIGN KEY...REFERENCES)
+- 8.3.5 SQL DML queries (SELECT...FROM, WHERE, ORDER BY, GROUP BY, INNER JOIN, SUM, COUNT, AVG)
+- 8.3.6 SQL DML data maintenance (INSERT INTO, DELETE FROM, UPDATE)
 
 ---
 
-## computational-thinking
-**Syllabus ref:** 9.1 — Computational Thinking Skills · AS · Paper 2
+#### Chapter 9 — Algorithm Design and Problem-Solving
 
-- Show an understanding of abstraction.
-  *Notes:* need for and benefits of using abstraction; describe the purpose of abstraction; produce an abstract model of a system by only including essential details.
-- Describe and use decomposition.
-  *Notes:* break down problems into sub-problems leading to the concept of a program module (procedure/function).
+**9.1 Computational Thinking Skills**
+- 9.1.1 Abstraction — need, benefits, purpose
+- 9.1.2 Producing an abstract model (essential details only)
+- 9.1.3 Decomposition — breaking problems into sub-problems, concept of program modules
 
----
-
-## algorithms-as
-**Syllabus ref:** 9.2 — Algorithms (AS) · AS · Paper 2
-
-- Show understanding that an algorithm is a solution to a problem expressed as a sequence of defined steps.
-- Use suitable identifier names for the representation of data used by a problem and represent these using an identifier table.
-- Write pseudocode that contains input, process and output.
-- Write pseudocode using the three basic constructs of sequence, selection and iteration (repetition).
-- Document a simple algorithm using a structured English description, a flowchart or pseudocode.
-- Write pseudocode from: a structured English description, a flowchart.
-- Draw a flowchart from: a structured English description, pseudocode.
-- Describe and use the process of stepwise refinement to express an algorithm to a level of detail from which the task may be programmed.
-- Use logic statements to define parts of an algorithm solution.
+**9.2 Algorithms**
+- 9.2.1 Algorithm definition (sequence of defined steps)
+- 9.2.2 Identifier tables for data representation
+- 9.2.3 Pseudocode — input, process, output
+- 9.2.4 Pseudocode — sequence, selection, iteration
+- 9.2.5 Documenting algorithms (structured English, flowchart, pseudocode)
+- 9.2.6 Writing pseudocode from structured English or flowchart
+- 9.2.7 Drawing flowcharts from structured English or pseudocode
+- 9.2.8 Stepwise refinement
+- 9.2.9 Logic statements in algorithm design
 
 ---
 
-## data-types-records
-**Syllabus ref:** 10.1 — Data Types and Records · AS · Paper 2
+#### Chapter 10 — Data Types and Structures
 
-- Select and use appropriate data types for a problem solution.
-  *Notes:* integer, real, char, string, Boolean, date. Pseudocode uses: INTEGER, REAL, CHAR, STRING, BOOLEAN, DATE, ARRAY, FILE.
-- Show understanding of the purpose of a record structure to hold a set of data of different data types under one identifier.
-  *Notes:* write pseudocode to define a record structure; read data from a record structure and save data to a record structure.
+**10.1 Data Types and Records**
+- 10.1.1 Appropriate data types (INTEGER, REAL, CHAR, STRING, BOOLEAN, DATE, ARRAY, FILE)
+- 10.1.2 Record structures — purpose and pseudocode definition
+- 10.1.3 Reading from and saving data to record structures in pseudocode
 
----
+**10.2 Arrays**
+- 10.2.1 Array terminology (index, upper bound, lower bound)
+- 10.2.2 Choosing 1D or 2D array for a given task
+- 10.2.3 Pseudocode for 1D and 2D arrays
+- 10.2.4 Bubble sort in pseudocode
+- 10.2.5 Linear search in pseudocode
 
-## arrays
-**Syllabus ref:** 10.2 — Arrays · AS · Paper 2
+**10.3 Files**
+- 10.3.1 Why files are needed
+- 10.3.2 Pseudocode for reading and writing text files (one or more lines)
 
-- Use the technical terms associated with arrays.
-  *Notes:* index, upper and lower bound.
-- Select a suitable data structure (1D or 2D array) to use for a given task.
-- Write pseudocode for 1D and 2D arrays.
-- Write pseudocode to process array data.
-  *Notes:* sort using a bubble sort; search using a linear search.
-
----
-
-## files-as
-**Syllabus ref:** 10.3 — Files · AS · Paper 2
-
-- Show understanding of why files are needed.
-- Write pseudocode to handle text files that consist of one or more lines.
+**10.4 Introduction to Abstract Data Types (ADT)**
+- 10.4.1 ADT definition (collection of data and operations)
+- 10.4.2 Stack, queue, linked list as ADT examples
+- 10.4.3 Key features of stack, queue, linked list — justifying use
+- 10.4.4 Using stack, queue, linked list to store data (add, edit, delete)
+- 10.4.5 Implementing stack, queue, linked list using arrays
 
 ---
 
-## adt-intro
-**Syllabus ref:** 10.4 — Introduction to Abstract Data Types (ADT) · AS · Paper 2
+#### Chapter 11 — Programming
 
-- Show understanding that an ADT is a collection of data and a set of operations on those data.
-- Show understanding that a stack, queue and linked list are examples of ADTs.
-  *Notes:* describe the key features of a stack, queue and linked list and justify their use for a given situation.
-- Use a stack, queue and linked list to store data.
-  *Notes:* candidates will not be required to write pseudocode for these structures, but should be able to add, edit and delete data from them.
-- Describe how a queue, stack and linked list can be implemented using arrays.
+**11.1 Programming Basics**
+- 11.1.1 Implementing pseudocode from flowchart or structured English
+- 11.1.2 Pseudocode statements (constants, variables, assignment, arithmetic/logical operators, input/output)
+- 11.1.3 Built-in functions and library routines
+- 11.1.4 String manipulation functions
 
----
+**11.2 Constructs**
+- 11.2.1 IF statement (with ELSE, nested IF)
+- 11.2.2 CASE structure
+- 11.2.3 Count-controlled loop (FOR)
+- 11.2.4 Post-condition loop (REPEAT...UNTIL)
+- 11.2.5 Pre-condition loop (WHILE...ENDWHILE)
+- 11.2.6 Choosing the appropriate loop structure for a problem
 
-## programming-basics
-**Syllabus ref:** 11.1 — Programming Basics · AS · Paper 2
-
-- Implement and write pseudocode from a given design presented as either a program flowchart or structured English.
-- Write pseudocode statements for: declaration and initialisation of constants; declaration of variables; assignment of values to variables; expressions involving arithmetic or logical operators (input from keyboard, output to console).
-- Use built-in functions and library routines.
-  *Notes:* any functions not given in the pseudocode guide will be provided; string manipulation functions will always be given.
-
----
-
-## constructs
-**Syllabus ref:** 11.2 — Constructs · AS · Paper 2
-
-- Use pseudocode to write: an IF statement including the ELSE clause and nested IF; a CASE structure; a count-controlled loop; a post-condition loop; a pre-condition loop.
-- Justify why one loop structure may be better suited to solve a problem than the others.
+**11.3 Structured Programming**
+- 11.3.1 Defining and using procedures (none, one or more parameters; pass by reference vs by value)
+- 11.3.2 When to use a procedure in an algorithm
+- 11.3.3 Defining and using functions (return value, used in expressions)
+- 11.3.4 When to use a function in an algorithm
+- 11.3.5 Terminology (procedure/function header, interface, parameter, argument, return value)
+- 11.3.6 Writing efficient pseudocode
 
 ---
 
-## structured-programming
-**Syllabus ref:** 11.3 — Structured Programming · AS · Paper 2
+#### Chapter 12 — Software Development
 
-- Define and use a procedure.
-- Explain where in the construction of an algorithm it would be appropriate to use a procedure.
-- Use parameters.
-  *Notes:* a procedure may have none, one or more parameters; a parameter can be passed by reference or by value.
-- Define and use a function.
-- Explain where in the construction of an algorithm it is appropriate to use a function.
-  *Notes:* a function is used in an expression, e.g. the return value replaces the call.
-- Use the terminology associated with procedures and functions.
-  *Notes:* procedure/function header, procedure/function interface, parameter, argument, return value.
-- Write efficient pseudocode.
+**12.1 Program Development Life Cycle**
+- 12.1.1 Purpose of a development life cycle
+- 12.1.2 Development life cycle types (waterfall, iterative, rapid application development / RAD)
+- 12.1.3 Principles, benefits, and drawbacks of each life cycle type
+- 12.1.4 Stages of the life cycle (analysis, design, coding, testing, maintenance)
 
----
+**12.2 Program Design**
+- 12.2.1 Structure charts — purpose and construction
+- 12.2.2 Deriving pseudocode from a structure chart
+- 12.2.3 State-transition diagrams
 
-## development-lifecycle
-**Syllabus ref:** 12.1 — Program Development Life cycle · AS · Paper 2
-
-- Show understanding of the purpose of a development life cycle.
-- Show understanding of the need for different development life cycles depending on the program being developed.
-  *Notes:* waterfall, iterative, rapid application development (RAD).
-- Describe the principles, benefits and drawbacks of each type of life cycle.
-- Show understanding of the analysis, design, coding, testing and maintenance stages in the program development life cycle.
+**12.3 Program Testing and Maintenance**
+- 12.3.1 Exposing and avoiding faults in programs
+- 12.3.2 Error types (syntax, logic, run-time) and correction
+- 12.3.3 Testing methods (dry run, walkthrough, white-box, black-box, integration, alpha, beta, acceptance, stub)
+- 12.3.4 Test strategy and test plan — need and contents
+- 12.3.5 Test data types (normal, abnormal, extreme/boundary)
+- 12.3.6 System maintenance types (perfective, adaptive, corrective)
+- 12.3.7 Analysing and amending programs to enhance functionality
 
 ---
 
-## program-design
-**Syllabus ref:** 12.2 — Program Design · AS · Paper 2
-
-- Use a structure chart to decompose a problem into sub-tasks and express the parameters passed between the various modules/procedures/functions which are part of the algorithm design.
-  *Notes:* describe the purpose of a structure chart; construct a structure chart for a given problem; derive equivalent pseudocode from a structure chart.
-- Show understanding of the purpose of state-transition diagrams to document an algorithm.
+### A Level Content (Paper 3: sections 13–20 | Paper 4: sections 19–20)
 
 ---
 
-## testing-maintenance
-**Syllabus ref:** 12.3 — Program Testing and Maintenance · AS · Paper 2
+#### Chapter 13 — Data Representation
 
-- Show understanding of ways of exposing and avoiding faults in programs.
-- Locate and identify the different types of errors: syntax errors, logic errors, run-time errors.
-- Correct identified errors.
-- Show understanding of the methods of testing available and select appropriate data for a given method.
-  *Notes:* dry run, walkthrough, white-box, black-box, integration, alpha, beta, acceptance, stub.
-- Show understanding of the need for a test strategy and test plan and their likely contents.
-- Choose appropriate test data for a test plan.
-  *Notes:* normal, abnormal and extreme/boundary.
-- Show understanding of the need for continuing maintenance of a system and the differences between each type of maintenance.
-  *Notes:* perfective, adaptive, corrective.
-- Analyse an existing program and make amendments to enhance functionality.
+**13.1 User-Defined Data Types**
+- 13.1.1 Why user-defined types are necessary
+- 13.1.2 Non-composite types (enumerated, pointer)
+- 13.1.3 Composite data types (set, record, class/object)
+- 13.1.4 Designing appropriate user-defined data types for a given problem
 
----
+**13.2 File Organisation and Access**
+- 13.2.1 File organisation methods (serial, sequential with key field, random with record key)
+- 13.2.2 File access methods (sequential access, direct access)
+- 13.2.3 Hashing algorithms (reading and writing to random/sequential files)
 
-## user-defined-types
-**Syllabus ref:** 13.1 — User-defined data types · A Level · Paper 3
-
-- Show understanding of why user-defined types are necessary.
-- Define and use non-composite types.
-  *Notes:* including enumerated, pointer.
-- Define and use composite data types.
-  *Notes:* including set, record and class/object.
-- Choose and design an appropriate user-defined data type for a given problem.
+**13.3 Floating-Point Numbers, Representation and Manipulation**
+- 13.3.1 Format of binary floating-point real numbers (two's complement)
+- 13.3.2 Effects of changing mantissa vs exponent bit allocation
+- 13.3.3 Converting binary floating-point to denary and vice versa
+- 13.3.4 Normalising floating-point numbers (reasons for normalisation)
+- 13.3.5 Approximation, underflow, overflow, and rounding errors
 
 ---
 
-## file-organisation
-**Syllabus ref:** 13.2 — File organisation and access · A Level · Paper 3
+#### Chapter 14 — Communication and Internet Technologies
 
-- Show understanding of the methods of file organisation and select an appropriate method of file organisation and file access for a given problem.
-  *Notes:* serial, sequential (using a key field), random (using a record key).
-- Show understanding of methods of file access.
-  *Notes:* sequential access for serial and sequential files; direct access for sequential and random files.
-- Show understanding of hashing algorithms.
-  *Notes:* describe and use different hashing algorithms to read from and write data to a random/sequential file.
+**14.1 Protocols**
+- 14.1.1 Why protocols are essential for computer communication
+- 14.1.2 Protocol stack — each layer has its own functionality
+- 14.1.3 TCP/IP protocol suite — four layers (Application, Transport, Internet, Link), purpose and function
+- 14.1.4 Message sending from host to host over the internet
+- 14.1.5 Application layer protocols and purposes (HTTP, FTP, POP3, IMAP, SMTP, BitTorrent)
 
----
-
-## floating-point
-**Syllabus ref:** 13.3 — Floating-point numbers, representation and manipulation · A Level · Paper 3
-
-- Describe the format of binary floating-point real numbers.
-  *Notes:* use two's complement form; understand effects of changing the allocation of bits to mantissa and exponent.
-- Convert binary floating-point real numbers into denary and vice versa.
-- Normalise floating-point numbers.
-  *Notes:* understand the reasons for normalisation.
-- Show understanding of the consequences of a binary representation only being an approximation to the real number it represents (in certain cases).
-  *Notes:* understand how underflow and overflow can occur.
-- Show understanding that binary representations can give rise to rounding errors.
+**14.2 Circuit Switching and Packet Switching**
+- 14.2.1 Circuit switching (benefits, drawbacks, applicability)
+- 14.2.2 Packet switching (benefits, drawbacks, applicability)
+- 14.2.3 Router function in packet switching
+- 14.2.4 How packet switching passes messages across a network including the internet
 
 ---
 
-## protocols
-**Syllabus ref:** 14.1 — Protocols · A Level · Paper 3
+#### Chapter 15 — Hardware and Virtual Machines
 
-- Show understanding of why a protocol is essential for communication between computers.
-- Show understanding of how protocol implementation can be viewed as a stack, where each layer has its own functionality.
-- Show understanding of the TCP/IP protocol suite.
-  *Notes:* four layers (Application, Transport, Internet, Link); purpose and function of each layer; application when a message is sent from one host to another on the internet.
-- Show understanding of protocols (HTTP, FTP, POP3, IMAP, SMTP, BitTorrent) and their purposes.
-  *Notes:* BitTorrent protocol provides peer-to-peer file sharing.
+**15.1 Processors, Parallel Processing and Virtual Machines**
+- 15.1.1 RISC vs CISC processors (differences, interrupt handling)
+- 15.1.2 Pipelining and registers in RISC processors
+- 15.1.3 Four basic computer architectures (SISD, SIMD, MISD, MIMD)
+- 15.1.4 Massively parallel computers
+- 15.1.5 Virtual machines (concept, examples, benefits, limitations)
 
----
-
-## switching
-**Syllabus ref:** 14.2 — Circuit switching, packet switching · A Level · Paper 3
-
-- Show understanding of circuit switching.
-  *Notes:* benefits, drawbacks and where it is applicable.
-- Show understanding of packet switching.
-  *Notes:* benefits, drawbacks and where it is applicable; show understanding of the function of a router in packet switching; explain how packet switching is used to pass messages across a network, including the internet.
+**15.2 Boolean Algebra and Logic Circuits**
+- 15.2.1 Truth tables for logic circuits including half adders and full adders
+- 15.2.2 Flip-flops — SR and JK (logic circuit, truth table, role as data storage)
+- 15.2.3 Boolean algebra and De Morgan's laws
+- 15.2.4 Simplifying logic circuits/expressions using Boolean algebra
+- 15.2.5 Karnaugh maps (K-maps) — benefits and solving logic problems
 
 ---
 
-## processors-vm
-**Syllabus ref:** 15.1 — Processors, Parallel Processing and Virtual Machines · A Level · Paper 3
+#### Chapter 16 — System Software
 
-- Show understanding of Reduced Instruction Set Computers (RISC) and Complex Instruction Set Computers (CISC) processors.
-  *Notes:* differences between RISC and CISC; interrupt handling on CISC and RISC processors.
-- Show understanding of the importance/use of pipelining and registers in RISC processors.
-- Show understanding of the four basic computer architectures: SISD, SIMD, MISD, MIMD.
-- Show understanding of the characteristics of massively parallel computers.
-- Show understanding of the concept of a virtual machine.
-  *Notes:* examples of the role of virtual machines; benefits and limitations of virtual machines.
+**16.1 Purposes of an Operating System (OS)**
+- 16.1.1 How an OS maximises resource use
+- 16.1.2 User interface hiding hardware complexity
+- 16.1.3 Process management (multi-tasking, process states: running/ready/blocked)
+- 16.1.4 Scheduling routines (round robin, shortest job first, first come first served, shortest remaining time)
+- 16.1.5 Kernel as interrupt handler and low-level scheduling
+- 16.1.6 Virtual memory, paging, and segmentation (concepts, differences, page replacement, disk thrashing)
 
----
-
-## boolean-algebra
-**Syllabus ref:** 15.2 — Boolean Algebra and Logic Circuits · A Level · Paper 3
-
-- Produce truth tables for logic circuits including half adders and full adders.
-  *Notes:* may include logic gates with more than two inputs.
-- Show understanding of a flip-flop (SR, JK).
-  *Notes:* draw a logic circuit and derive a truth table for a flip-flop; understand the role of flip-flops as data storage elements.
-- Show understanding of Boolean algebra.
-  *Notes:* understand De Morgan's laws; perform Boolean algebra using De Morgan's laws; simplify a logic circuit/expression using Boolean algebra.
-- Show understanding of Karnaugh maps (K-map).
-  *Notes:* benefits of using Karnaugh maps; solve logic problems using Karnaugh maps.
+**16.2 Translation Software**
+- 16.2.1 How an interpreter executes programs without a translated version
+- 16.2.2 Stages of compilation (lexical analysis, syntax analysis, code generation, optimisation)
+- 16.2.3 Grammar representation (syntax diagrams, Backus-Naur Form / BNF)
+- 16.2.4 Reverse Polish Notation (RPN) for expression evaluation
 
 ---
 
-## os-purposes
-**Syllabus ref:** 16.1 — Purposes of an Operating System (OS) · A Level · Paper 3
+#### Chapter 17 — Security
 
-- Show understanding of how an OS can maximise the use of resources.
-- Describe the ways in which the user interface hides the complexities of the hardware from the user.
-- Show understanding of process management.
-  *Notes:* multi-tasking and a process; process states — running, ready and blocked; need for scheduling and function/benefits of different scheduling routines (round robin, shortest job first, first come first served, shortest remaining time); how the kernel acts as an interrupt handler; how interrupt handling manages low-level scheduling.
-- Show understanding of virtual memory, paging and segmentation for memory management.
-  *Notes:* concepts of paging, virtual memory and segmentation; difference between paging and segmentation; how pages can be replaced; how disk thrashing can occur.
-
----
-
-## translation-software
-**Syllabus ref:** 16.2 — Translation Software · A Level · Paper 3
-
-- Show understanding of how an interpreter can execute programs without producing a translated version.
-- Show understanding of the various stages in the compilation of a program.
-  *Notes:* lexical analysis, syntax analysis, code generation and optimisation.
-- Show understanding of how the grammar of a language can be expressed using syntax diagrams or Backus-Naur Form (BNF) notation.
-- Show understanding of how Reverse Polish Notation (RPN) can be used to carry out the evaluation of expressions.
+**17.1 Encryption, Encryption Protocols and Digital Certificates**
+- 17.1.1 How encryption works (public key, private key, plain text, cipher text)
+- 17.1.2 Symmetric key cryptography vs asymmetric key cryptography
+- 17.1.3 Sending a private message (public to individual/organisation)
+- 17.1.4 Sending a verified message to the public
+- 17.1.5 Quantum cryptography (purpose, benefits, drawbacks)
+- 17.1.6 SSL/TLS (purpose, use in client-server communication, appropriate situations)
+- 17.1.7 Digital certificates (acquisition, use in producing digital signatures)
 
 ---
 
-## encryption-certificates
-**Syllabus ref:** 17.1 — Encryption, Encryption Protocols and Digital Certificates · A Level · Paper 3
+#### Chapter 18 — Artificial Intelligence (AI)
 
-- Show understanding of how encryption works.
-  *Notes:* public key, private key, plain text, cipher text, encryption, symmetric key cryptography and asymmetric key cryptography; how the keys can be used to send a private message from the public to an individual/organisation; how the keys can be used to send a verified message to the public; how data is encrypted and decrypted using symmetric and asymmetric cryptography; purpose, benefits and drawbacks of quantum cryptography.
-- Show awareness of the Secure Socket Layer (SSL) / Transport Layer Security (TLS).
-  *Notes:* purpose of SSL/TLS; use of SSL/TLS in client-server communication; situations where the use of SSL/TLS would be appropriate.
-- Show understanding of digital certification.
-  *Notes:* how a digital certificate is acquired; how a digital certificate is used to produce digital signatures.
-
----
-
-## artificial-intelligence
-**Syllabus ref:** 18.1 — Artificial Intelligence (AI) · A Level · Paper 3
-
-- Show understanding of how graphs can be used to aid AI.
-  *Notes:* purpose and structure of a graph; use A* and Dijkstra's algorithms to perform searches on a graph. Candidates will not be required to write algorithms to set up, access, or perform searches on graphs.
-- Show understanding of how artificial neural networks have helped with machine learning.
-- Show understanding of Deep Learning, Machine Learning and Reinforcement Learning and the reasons for using these methods.
-  *Notes:* understand machine learning categories — supervised learning, unsupervised learning.
-- Show understanding of back propagation of errors and regression methods in machine learning.
+**18.1 Artificial Intelligence**
+- 18.1.1 Graphs in AI (purpose, structure, A* and Dijkstra's algorithms for graph searches)
+- 18.1.2 Artificial neural networks and machine learning
+- 18.1.3 Deep Learning, Machine Learning, Reinforcement Learning — reasons for use
+- 18.1.4 Machine learning categories (supervised learning, unsupervised learning)
+- 18.1.5 Back propagation of errors and regression methods
 
 ---
 
-## algorithms-alevel
-**Syllabus ref:** 19.1 — Algorithms (A Level) · A Level · Paper 4
+#### Chapter 19 — Computational Thinking and Problem-Solving
 
-- Show understanding of linear and binary searching methods.
-  *Notes:* write an algorithm to implement a linear search; write an algorithm to implement a binary search; conditions necessary for the use of a binary search; how the performance of a binary search varies according to the number of data items.
-- Show understanding of insertion sort and bubble sort methods.
-  *Notes:* write an algorithm to implement an insertion sort; write an algorithm to implement a bubble sort; performance of a sorting routine may depend on the initial order of the data and the number of data items.
-- Show understanding of and use Abstract Data Types (ADT).
-  *Notes:* write algorithms to find an item in: linked list, binary tree; write algorithms to insert an item into: stack, queue, linked list, binary tree; write algorithms to delete an item from: stack, queue, linked list; understand that a graph is an example of an ADT; describe the key features of a graph and justify its use for a given situation. Candidates will not be required to write code for a graph structure.
-- Show how it is possible for ADTs to be implemented from another ADT.
-  *Notes:* describe the following ADTs and demonstrate how they can be implemented from appropriate built-in types or other ADTs: stack, queue, linked list, dictionary, binary tree.
-- Show understanding that different algorithms which perform the same task can be compared by using criteria (e.g. time taken to complete the task and memory used).
-  *Notes:* including use of Big O notation to specify time and space complexity.
+**19.1 Algorithms**
+- 19.1.1 Linear search — understanding and algorithm
+- 19.1.2 Binary search — understanding, algorithm, conditions for use, performance variation
+- 19.1.3 Insertion sort — understanding and algorithm
+- 19.1.4 Bubble sort — understanding and algorithm (performance depending on data order)
+- 19.1.5 ADTs — finding items in linked list and binary tree
+- 19.1.6 ADTs — inserting into stack, queue, linked list, binary tree
+- 19.1.7 ADTs — deleting from stack, queue, linked list
+- 19.1.8 Graphs as ADTs (key features, justification — no code required)
+- 19.1.9 Implementing ADTs from other ADTs (stack, queue, linked list, dictionary, binary tree)
+- 19.1.10 Comparing algorithms (Big O notation — time and space complexity)
 
----
-
-## recursion
-**Syllabus ref:** 19.2 — Recursion · A Level · Paper 4
-
-- Show understanding of recursion.
-  *Notes:* essential features of recursion; how recursion is expressed in a programming language; write and trace recursive algorithms; when the use of recursion is beneficial.
-- Show awareness of what a compiler has to do to translate recursive programming code.
-  *Notes:* use of stacks and unwinding.
+**19.2 Recursion**
+- 19.2.1 Recursion — essential features
+- 19.2.2 How recursion is expressed in a programming language
+- 19.2.3 Writing and tracing recursive algorithms
+- 19.2.4 When recursion is beneficial
+- 19.2.5 What a compiler does to translate recursive code (stacks and unwinding)
 
 ---
 
-## programming-paradigms
-**Syllabus ref:** 20.1 — Programming Paradigms · A Level · Paper 4 (OOP/Imperative) · Paper 3 (Low-level/Declarative theory only)
+#### Chapter 20 — Further Programming
 
-- Understand what is meant by a programming paradigm.
-- Show understanding of the characteristics of a number of programming paradigms:
-  - **Low-level:** understanding of and ability to write low-level code that uses various addressing modes — immediate, direct, indirect, indexed and relative.
-  - **Imperative (Procedural):** assumed knowledge and understanding of Structured Programming (see AS 11.3); understanding of and ability to write imperative (procedural) programming code that uses variables, constructs, procedures and functions (see AS 11.x).
-  - **Object Oriented (OOP):** terminology (objects, properties/attributes, methods, classes, inheritance, polymorphism, containment/aggregation, encapsulation, getters, setters, instances); solve a problem by designing appropriate classes; write code that demonstrates the use of OOP.
-  - **Declarative:** solve a problem by writing appropriate facts and rules based on supplied information; write code that can satisfy a goal using facts and rules.
+**20.1 Programming Paradigms**
+- 20.1.1 What a programming paradigm is
+- 20.1.2 Low-level programming (addressing modes: immediate, direct, indirect, indexed, relative)
+- 20.1.3 Imperative/Procedural programming (variables, constructs, procedures, functions)
+- 20.1.4 Object-Oriented Programming (OOP) terminology (objects, properties/attributes, methods, classes, inheritance, polymorphism, containment/aggregation, encapsulation, getters, setters, instances)
+- 20.1.5 Designing appropriate classes to solve a problem
+- 20.1.6 Writing OOP code
+- 20.1.7 Declarative programming (facts, rules, satisfying a goal)
+- 20.1.8 Writing declarative code
 
-*Note:* Paper 4 Practical does NOT assess low-level or declarative programming.
-
----
-
-## file-processing-exceptions
-**Syllabus ref:** 20.2 — File Processing and Exception Handling · A Level · Paper 4
-
-- Write code to perform file-processing operations.
-  *Notes:* open (read, write, append mode) and close a file; read a record from a file and write a record to a file; perform file-processing operations on serial, sequential, random files.
-- Show understanding of an exception and the importance of exception handling.
-  *Notes:* know when it is appropriate to use exception handling; write program code to use exception handling.
+**20.2 File Processing and Exception Handling**
+- 20.2.1 File processing operations (open in read/write/append mode, close)
+- 20.2.2 Reading and writing records to/from files
+- 20.2.3 File processing on serial, sequential, and random files
+- 20.2.4 Exceptions and exception handling — importance and appropriate use
+- 20.2.5 Writing program code using exception handling
 
 ---
 

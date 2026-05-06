@@ -5,7 +5,7 @@ Analyse all 9618 exam papers and map questions to the syllabus structure. Create
 
 Run: `/paper-analyser [paper] [year]` — e.g. `/paper-analyser 1 2024`
 
-The skill reads the QP and MS PDFs for the specified paper and year, maps every sub-question to a syllabus slug, and writes the output files listed below. Run once per paper per year; process all four papers for a year before moving to the next year.
+The skill reads the QP and MS markdown files for the specified paper and year, maps every sub-question to a syllabus slug, and writes the output files listed below. Run once per paper per year; process all four papers for a year before moving to the next year.
 
 ## Paper Overview
 
@@ -20,34 +20,25 @@ The skill reads the QP and MS PDFs for the specified paper and year, maps every 
 
 ## Files to Process
 
-The skill discovers PDFs automatically. Place files in `resources/pdfs/` using this naming convention:
+Source markdown files are in `resources/md/past-papers/paper [N]/[year]/`.
 
 ### Input Files
-| Paper | Pattern |
-|-------|---------|
-| Paper 1 QP | `resources/pdfs/9618_p1_[series]_qp_[variant].pdf` |
-| Paper 1 MS | `resources/pdfs/9618_p1_[series]_ms_[variant].pdf` |
-| Paper 2 QP | `resources/pdfs/9618_p2_[series]_qp_[variant].pdf` |
-| Paper 2 MS | `resources/pdfs/9618_p2_[series]_ms_[variant].pdf` |
-| Paper 3 QP | `resources/pdfs/9618_p3_[series]_qp_[variant].pdf` |
-| Paper 3 MS | `resources/pdfs/9618_p3_[series]_ms_[variant].pdf` |
-| Paper 4 QP | `resources/pdfs/9618_p4_[series]_qp_[variant].pdf` |
-| Paper 4 MS | `resources/pdfs/9618_p4_[series]_ms_[variant].pdf` |
-
-Series codes: `s` = May/June, `w` = Oct/Nov. Variant: `11`, `12`, `13`, etc.
-Example: `9618_p1_s24_qp_11.pdf` = Paper 1, May/June 2024, variant 11.
+File naming: `9618_{series}{year2digit}_{type}_{variant}.md`
+- Series: `s` = May/June · `w` = Oct/Nov
+- Type: `qp` = question paper · `ms` = marking scheme
+- Example: `9618_s24_qp_11.md` = May/June 2024, variant 11
 
 ### Output Files (Per Paper Per Year)
 | File | Description |
 |------|-------------|
-| `planning/markdown/paper[N]_[year]_questions.md` | Question mapping table |
-| `planning/markdown/paper[N]_[year]_answers.md` | Marking scheme content by syllabus |
+| `resources/md/past-papers/paper [N]/[year]/questions.md` | Question mapping table |
+| `resources/md/past-papers/paper [N]/[year]/answers.md` | Marking scheme content by syllabus |
 
 ---
 
 ## Output File Structure
 
-### Questions File (`paper[N]_[year]_questions.md`)
+### Questions File (`questions.md`)
 Question mapping table with columns:
 - Paper (e.g., S25 V1)
 - Question (e.g., Q1)
@@ -60,7 +51,7 @@ Question mapping table with columns:
 - Difficulty (AO1, AO2, AO3)
 - Description (one-sentence summary)
 
-### Answers File (`paper[N]_[year]_answers.md`)
+### Answers File (`answers.md`)
 Marking scheme content organised by syllabus structure:
 - Topic → Sub-topic → Sub-sub-topic
 - Contains key answers, expected responses, and mark allocations
@@ -190,14 +181,14 @@ Marking scheme content organised by syllabus structure:
 
 All steps are handled by `/paper-analyser [paper] [year]`. For reference:
 
-1. Discover QP and MS PDFs for the paper/year in `resources/pdfs/`
+1. Discover QP and MS markdown files in `resources/md/past-papers/paper [N]/[year]/`
 2. Extract question structure (Q#, alineas, sub-alineas, marks) from each QP
 3. Extract mark-scheme content from each MS
 4. Map each sub-question to a syllabus slug and sub-topic
 5. Assess AO1/AO2/AO3 difficulty and write a one-sentence description
 6. **Deduplicate answers**: merge questions with similar/identical answers across variants
-7. Write `planning/markdown/paper[N]_[year]_questions.md`
-8. Write `planning/markdown/paper[N]_[year]_answers.md` organised by syllabus
+7. Write `planning/past-papers/paper[N]/[year]/questions.md`
+8. Write `planning/past-papers/paper[N]/[year]/answers.md` organised by syllabus
 9. Update this file (year checklist + Completed Files table)
 
 ---
@@ -205,11 +196,11 @@ All steps are handled by `/paper-analyser [paper] [year]`. For reference:
 ## Years to Process
 
 ### Paper 1 (AS Theory)
-- [ ] 2025 (S25)
-- [ ] 2024 (W24, S24)
-- [ ] 2023 (W23, S23)
-- [ ] 2022 (W22, S22)
-- [ ] 2021 (W21, S21)
+- [x] 2025 (S25, W25)
+- [x] 2024 (S24, W24)
+- [x] 2023 (S23, W23)
+- [x] 2022 (S22, W22)
+- [x] 2021 (W21, S21)
 - [ ] 2020 (W20, S20)
 
 ### Paper 2 (AS Practical)
@@ -243,7 +234,11 @@ All steps are handled by `/paper-analyser [paper] [year]`. For reference:
 ### Paper 1 (AS Theory)
 | Year | Questions File | Answers File |
 |------|---------------|--------------|
-| — | — | — |
+| 2025 (S25, W25) | `resources/md/past-papers/paper 1/2025/questions.md` | `resources/md/past-papers/paper 1/2025/answers.md` |
+| 2024 (S24, W24) | `resources/md/past-papers/paper 1/2024/questions.md` | `resources/md/past-papers/paper 1/2024/answers.md` |
+| 2023 (S23, W23) | `resources/md/past-papers/paper 1/2023/questions.md` | `resources/md/past-papers/paper 1/2023/answers.md` |
+| 2022 (S22, W22) | `resources/md/past-papers/paper 1/2022/questions.md` | `resources/md/past-papers/paper 1/2022/answers.md` |
+| 2021 (S21, W21) | `resources/md/past-papers/paper 1/2021/questions.md` | `resources/md/past-papers/paper 1/2021/answers.md` |
 
 ### Paper 2 (AS Practical)
 | Year | Questions File | Answers File |
@@ -265,11 +260,7 @@ All steps are handled by `/paper-analyser [paper] [year]`. For reference:
 ## Master Consolidated Files (Target)
 | File | Description |
 |------|-------------|
-| `planning/markdown/paper1_master_questions.md` | All Paper 1 questions aggregated by topic/sub-topic (all years) |
-| `planning/markdown/paper1_master_answers.md` | All Paper 1 answers deduplicated and consolidated by topic |
-| `planning/markdown/paper2_master_questions.md` | All Paper 2 questions aggregated by topic/sub-topic (all years) |
-| `planning/markdown/paper2_master_answers.md` | All Paper 2 answers deduplicated and consolidated by topic |
-| `planning/markdown/paper3_master_questions.md` | All Paper 3 questions aggregated by topic/sub-topic (all years) |
-| `planning/markdown/paper3_master_answers.md` | All Paper 3 answers deduplicated and consolidated by topic |
-| `planning/markdown/paper4_master_questions.md` | All Paper 4 questions aggregated by topic/sub-topic (all years) |
-| `planning/markdown/paper4_master_answers.md` | All Paper 4 answers deduplicated and consolidated by topic |
+| `resources/md/past-papers/master_paper_1.md` | All Paper 1 questions and answers aggregated by topic/sub-topic (all years) |
+| `resources/md/past-papers/master_paper_2` | All Paper 2 questions and answers aggregated by topic/sub-topic (all years) |
+| `resources/md/past-papers/master_paper_3` | All Paper 3 questions and answers aggregated by topic/sub-topic (all years) |
+| `resources/md/past-papers/master_paper_4` | All Paper 4 questions and answers aggregated by topic/sub-topic (all years) |

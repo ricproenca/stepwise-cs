@@ -1,0 +1,42 @@
+<svg viewBox="0 0 480 200" role="img" xmlns="http://www.w3.org/2000/svg"
+     style="font-family:'Open Sans',sans-serif; width:100%; max-width:600px;">
+  <title>Comparison table template</title>
+  <desc>3-column comparison table with header row and two data rows. Adapt column headers, row labels, and cell content.</desc>
+
+  <!-- Column widths: 120 + 180 + 180 = 480 -->
+
+  <!-- Header row -->
+  <rect x="0"   y="0" width="120" height="44" rx="0" fill="#133844"/>
+  <rect x="120" y="0" width="180" height="44" rx="0" fill="#133844"/>
+  <rect x="300" y="0" width="180" height="44" rx="0" fill="#133844"/>
+  <text x="60"  y="27" text-anchor="middle" font-size="13" fill="#D1F9F1" font-weight="700">Feature</text>
+  <text x="210" y="27" text-anchor="middle" font-size="13" fill="#D1F9F1" font-weight="700">Option A</text>
+  <text x="390" y="27" text-anchor="middle" font-size="13" fill="#D1F9F1" font-weight="700">Option B</text>
+
+  <!-- Row 1 (white) -->
+  <rect x="0"   y="44" width="120" height="44" fill="#FFFFFF" stroke="#ECEEF1" stroke-width="1"/>
+  <rect x="120" y="44" width="180" height="44" fill="#FFFFFF" stroke="#ECEEF1" stroke-width="1"/>
+  <rect x="300" y="44" width="180" height="44" fill="#FFFFFF" stroke="#ECEEF1" stroke-width="1"/>
+  <text x="60"  y="71" text-anchor="middle" font-size="12" fill="#546072" font-weight="600">Row 1 label</text>
+  <text x="210" y="71" text-anchor="middle" font-size="12" fill="#232830">Value A1</text>
+  <text x="390" y="71" text-anchor="middle" font-size="12" fill="#232830">Value B1</text>
+
+  <!-- Row 2 (tinted) -->
+  <rect x="0"   y="88" width="120" height="44" fill="#ECEEF1" stroke="#ECEEF1" stroke-width="1"/>
+  <rect x="120" y="88" width="180" height="44" fill="#ECEEF1" stroke="#ECEEF1" stroke-width="1"/>
+  <rect x="300" y="88" width="180" height="44" fill="#ECEEF1" stroke="#ECEEF1" stroke-width="1"/>
+  <text x="60"  y="115" text-anchor="middle" font-size="12" fill="#546072" font-weight="600">Row 2 label</text>
+  <text x="210" y="115" text-anchor="middle" font-size="12" fill="#232830">Value A2</text>
+  <text x="390" y="115" text-anchor="middle" font-size="12" fill="#232830">Value B2</text>
+
+  <!-- Row 3 (white) -->
+  <rect x="0"   y="132" width="120" height="44" fill="#FFFFFF" stroke="#ECEEF1" stroke-width="1"/>
+  <rect x="120" y="132" width="180" height="44" fill="#FFFFFF" stroke="#ECEEF1" stroke-width="1"/>
+  <rect x="300" y="132" width="180" height="44" fill="#FFFFFF" stroke="#ECEEF1" stroke-width="1"/>
+  <text x="60"  y="159" text-anchor="middle" font-size="12" fill="#546072" font-weight="600">Row 3 label</text>
+  <text x="210" y="159" text-anchor="middle" font-size="12" fill="#232830">Value A3</text>
+  <text x="390" y="159" text-anchor="middle" font-size="12" fill="#232830">Value B3</text>
+
+  <!-- Outer border -->
+  <rect x="0" y="0" width="480" height="176" fill="none" stroke="#B5BDC8" stroke-width="1"/>
+</svg>

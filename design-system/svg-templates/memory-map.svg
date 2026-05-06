@@ -1,0 +1,48 @@
+<svg viewBox="0 0 320 280" role="img" xmlns="http://www.w3.org/2000/svg"
+     style="font-family:'Open Sans',sans-serif; width:100%; max-width:400px;">
+  <title>Memory map template</title>
+  <desc>Vertical memory map showing 4 labelled segments with address annotations. Adapt segment heights, labels, and address ranges to the specific example.</desc>
+
+  <!-- Segment 1 (top — OS/Reserved) -->
+  <rect x="60" y="16" width="160" height="44" rx="0"
+        fill="#133844" stroke="#133844" stroke-width="1.5"/>
+  <text x="140" y="43" text-anchor="middle" font-size="12"
+        fill="#D1F9F1" font-weight="600">Segment A label</text>
+  <!-- Address annotation right -->
+  <line x1="220" y1="16"  x2="250" y2="16"  stroke="#B5BDC8" stroke-width="1"/>
+  <line x1="220" y1="60"  x2="250" y2="60"  stroke="#B5BDC8" stroke-width="1"/>
+  <text x="255" y="20"  font-size="10" fill="#546072">0xFF00</text>
+  <text x="255" y="60"  font-size="10" fill="#546072">0xFEFF</text>
+
+  <!-- Segment 2 -->
+  <rect x="60" y="60" width="160" height="64" rx="0"
+        fill="#D1F9F1" stroke="#133844" stroke-width="1.5"/>
+  <text x="140" y="96" text-anchor="middle" font-size="12"
+        fill="#133844" font-weight="600">Segment B label</text>
+  <line x1="220" y1="124" x2="250" y2="124" stroke="#B5BDC8" stroke-width="1"/>
+  <text x="255" y="126" font-size="10" fill="#546072">0xFBFF</text>
+
+  <!-- Segment 3 -->
+  <rect x="60" y="124" width="160" height="80" rx="0"
+        fill="#ECEEF1" stroke="#B5BDC8" stroke-width="1.5"/>
+  <text x="140" y="168" text-anchor="middle" font-size="12"
+        fill="#546072" font-weight="600">Segment C label</text>
+  <line x1="220" y1="204" x2="250" y2="204" stroke="#B5BDC8" stroke-width="1"/>
+  <text x="255" y="206" font-size="10" fill="#546072">0xF000</text>
+
+  <!-- Segment 4 (bottom) -->
+  <rect x="60" y="204" width="160" height="44" rx="0"
+        fill="#D1F9F1" stroke="#133844" stroke-width="1.5"/>
+  <text x="140" y="231" text-anchor="middle" font-size="12"
+        fill="#133844" font-weight="600">Segment D label</text>
+  <line x1="220" y1="248" x2="250" y2="248" stroke="#B5BDC8" stroke-width="1"/>
+  <text x="255" y="250" font-size="10" fill="#546072">0x0000</text>
+
+  <!-- Outer border -->
+  <rect x="60" y="16" width="160" height="232" fill="none"
+        stroke="#133844" stroke-width="2"/>
+
+  <!-- Address label header -->
+  <text x="140" y="272" text-anchor="middle" font-size="11"
+        fill="#546072">Memory addresses (high → low)</text>
+</svg>
