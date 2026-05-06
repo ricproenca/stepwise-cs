@@ -88,12 +88,12 @@ Write a one-sentence description per sub-question summarising what it asks (used
 ## Step 4 — Write the questions file
 
 ```!
-mkdir -p "planning/past-papers/paper$paper/$year"
+mkdir -p "resources/md/past-papers/paper $paper/$year"
 ```
 
 → File format: `.claude/skills/references/output-templates.md` — "paper-analyser — questions file"
 
-Output path: `planning/past-papers/paper$paper/$year/questions.md`
+Output path: `resources/md/past-papers/paper $paper/$year/questions.md`
 
 ---
 
@@ -101,7 +101,7 @@ Output path: `planning/past-papers/paper$paper/$year/questions.md`
 
 → File format: `.claude/skills/references/output-templates.md` — "paper-analyser — answers file"
 
-Output path: `planning/past-papers/paper$paper/$year/answers.md`
+Output path: `resources/md/past-papers/paper $paper/$year/answers.md`
 
 Organise by syllabus structure, not question number. Apply deduplication across variants as described in the template.
 
@@ -115,7 +115,7 @@ Read `planning/papers_plan_9618.md` and update for Paper $paper and year $year:
 2. Append or update the Completed Files table row:
 
 ```
-| $year | `planning/past-papers/paper$paper/$year/questions.md` | `planning/past-papers/paper$paper/$year/answers.md` |
+| $year | `resources/md/past-papers/paper $paper/$year/questions.md` | `resources/md/past-papers/paper $paper/$year/answers.md` |
 ```
 
 Use the Edit tool with sufficient surrounding context to make each change unique.
@@ -125,8 +125,8 @@ Use the Edit tool with sufficient surrounding context to make each change unique
 ## Quality Gate
 
 Before stopping, confirm:
-- [ ] `planning/past-papers/paper$paper/$year/questions.md` written
-- [ ] `planning/past-papers/paper$paper/$year/answers.md` written
+- [ ] `resources/md/past-papers/paper $paper/$year/questions.md` written
+- [ ] `resources/md/past-papers/paper $paper/$year/answers.md` written
 - [ ] All discovered QP/MS pairs processed (none silently skipped)
 - [ ] Every sub-question in the QPs has a row in the questions file
 - [ ] Every row in the questions file has a matching answer entry
@@ -146,4 +146,4 @@ Report to the user:
 4. Any sub-questions that could not be mapped to a slug
 5. Deduplication summary: how many answer entries were merged
 
-Ask the user to review `planning/past-papers/paper$paper/$year/questions.md` before running the next paper.
+Ask the user to review `resources/md/past-papers/paper $paper/$year/questions.md` before running the next paper.

@@ -31,8 +31,8 @@ File naming: `9618_{series}{year2digit}_{type}_{variant}.md`
 ### Output Files (Per Paper Per Year)
 | File | Description |
 |------|-------------|
-| `planning/past-papers/paper[N]/[year]/questions.md` | Question mapping table |
-| `planning/past-papers/paper[N]/[year]/answers.md` | Marking scheme content by syllabus |
+| `resources/md/past-papers/paper [N]/[year]/questions.md` | Question mapping table |
+| `resources/md/past-papers/paper [N]/[year]/answers.md` | Marking scheme content by syllabus |
 
 ---
 
@@ -196,11 +196,11 @@ All steps are handled by `/paper-analyser [paper] [year]`. For reference:
 ## Years to Process
 
 ### Paper 1 (AS Theory)
-- [ ] 2025 (S25)
-- [ ] 2024 (W24, S24)
-- [ ] 2023 (W23, S23)
-- [ ] 2022 (W22, S22)
-- [ ] 2021 (W21, S21)
+- [x] 2025 (S25, W25)
+- [x] 2024 (S24, W24)
+- [x] 2023 (S23, W23)
+- [x] 2022 (S22, W22)
+- [x] 2021 (W21, S21)
 - [ ] 2020 (W20, S20)
 
 ### Paper 2 (AS Practical)
@@ -234,7 +234,11 @@ All steps are handled by `/paper-analyser [paper] [year]`. For reference:
 ### Paper 1 (AS Theory)
 | Year | Questions File | Answers File |
 |------|---------------|--------------|
-| — | — | — |
+| 2025 (S25, W25) | `resources/md/past-papers/paper 1/2025/questions.md` | `resources/md/past-papers/paper 1/2025/answers.md` |
+| 2024 (S24, W24) | `resources/md/past-papers/paper 1/2024/questions.md` | `resources/md/past-papers/paper 1/2024/answers.md` |
+| 2023 (S23, W23) | `resources/md/past-papers/paper 1/2023/questions.md` | `resources/md/past-papers/paper 1/2023/answers.md` |
+| 2022 (S22, W22) | `resources/md/past-papers/paper 1/2022/questions.md` | `resources/md/past-papers/paper 1/2022/answers.md` |
+| 2021 (S21, W21) | `resources/md/past-papers/paper 1/2021/questions.md` | `resources/md/past-papers/paper 1/2021/answers.md` |
 
 ### Paper 2 (AS Practical)
 | Year | Questions File | Answers File |
@@ -256,11 +260,7 @@ All steps are handled by `/paper-analyser [paper] [year]`. For reference:
 ## Master Consolidated Files (Target)
 | File | Description |
 |------|-------------|
-| `planning/past-papers/paper1/master_questions.md` | All Paper 1 questions aggregated by topic/sub-topic (all years) |
-| `planning/past-papers/paper1/master_answers.md` | All Paper 1 answers deduplicated and consolidated by topic |
-| `planning/past-papers/paper2/master_questions.md` | All Paper 2 questions aggregated by topic/sub-topic (all years) |
-| `planning/past-papers/paper2/master_answers.md` | All Paper 2 answers deduplicated and consolidated by topic |
-| `planning/past-papers/paper3/master_questions.md` | All Paper 3 questions aggregated by topic/sub-topic (all years) |
-| `planning/past-papers/paper3/master_answers.md` | All Paper 3 answers deduplicated and consolidated by topic |
-| `planning/past-papers/paper4/master_questions.md` | All Paper 4 questions aggregated by topic/sub-topic (all years) |
-| `planning/past-papers/paper4/master_answers.md` | All Paper 4 answers deduplicated and consolidated by topic |
+| `resources/md/past-papers/master_paper_1.md` | All Paper 1 questions and answers aggregated by topic/sub-topic (all years) |
+| `resources/md/past-papers/master_paper_2` | All Paper 2 questions and answers aggregated by topic/sub-topic (all years) |
+| `resources/md/past-papers/master_paper_3` | All Paper 3 questions and answers aggregated by topic/sub-topic (all years) |
+| `resources/md/past-papers/master_paper_4` | All Paper 4 questions and answers aggregated by topic/sub-topic (all years) |
