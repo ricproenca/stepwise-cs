@@ -315,3 +315,134 @@ A student claims: "BCD wastes memory because it uses more bits than binary to re
 
 ### Examiner Tip
 Part (b): the question asks for the minimum bits, so 7 bits is technically correct for 95, but in practice 8-bit bytes are used — accept either with justification. Part (c): the application must be specific enough to explain why BCD's properties are advantageous, not simply that BCD "is used in clocks."
+
+---
+
+## Question 13
+**Syllabus Ref:** 1.1.1
+**Marks:** 1
+**Difficulty:** Easy
+**Command Word:** State
+**Type:** past-paper
+
+State the difference between a tebibyte and a terabyte.
+
+### Model Answer
+- A tebibyte is 2⁴⁰ bytes (binary prefix); a terabyte is 10¹² bytes (decimal/SI prefix). [1]
+
+### Examiner Tip
+[Past Paper — S22/11 Q1(a)] The mark requires either the numerical difference (2⁴⁰ vs 10¹²) or the system difference (binary vs decimal prefix). "Tebibyte is bigger" without a reason scores 0.
+
+---
+
+## Question 14
+**Syllabus Ref:** 1.1.2
+**Marks:** 1
+**Difficulty:** Easy
+**Command Word:** State
+**Type:** past-paper
+
+State the number of unique binary values that can be represented using 16 bits.
+
+### Model Answer
+- 2¹⁶ = 65 536 [1]
+
+### Examiner Tip
+[Past Paper — S23/12 Q4(a)] The formula is 2^n for n bits. Accept 65 536 or 65536. Do not confuse with the maximum value representable (65 535 = 2¹⁶ − 1).
+
+---
+
+## Question 15
+**Syllabus Ref:** 1.1.2
+**Marks:** 2
+**Difficulty:** Medium
+**Command Word:** Convert
+**Type:** past-paper
+
+Convert the hexadecimal number A04 to denary. Show your working. [2]
+
+### Model Answer
+- Working: (10 × 256) + (0 × 16) + 4 = 2560 + 0 + 4 [1]
+- Answer: 2564 [1]
+
+### Examiner Tip
+[Past Paper — S23/12 Q4(c)] A in hex = 10 in denary. Column weights for a 3-digit hex number are 256 (16²), 16 (16¹), 1 (16⁰). Show each multiplication to earn the working mark.
+
+---
+
+## Question 16
+**Syllabus Ref:** 1.1.2
+**Marks:** 2
+**Difficulty:** Medium
+**Command Word:** Convert
+**Type:** past-paper
+
+Convert the denary number 251 to hexadecimal. Show your working. [2]
+
+### Model Answer
+- Working: 251 ÷ 16 = 15 remainder 11; 15 = F, 11 = B [1]
+- Answer: FB [1]
+
+### Examiner Tip
+[Past Paper — S22/11 Q1(c)] Use repeated division: 251 ÷ 16 = 15 r 11. 15 → F, 11 → B. Alternatively verify: 15 × 16 + 11 = 251 ✓. Show the division to earn the working mark.
+
+---
+
+## Question 17
+**Syllabus Ref:** 1.1.3
+**Marks:** 2
+**Difficulty:** Medium
+**Command Word:** Give
+**Type:** past-paper
+
+Give the 8-bit one's complement representation of −120. Show your working. [2]
+
+### Model Answer
+- Working: +120 in binary = 0111 1000; invert all bits [1]
+- Answer: 1000 0111 [1]
+
+### Examiner Tip
+[Past Paper — S23/12 Q4(b)] One's complement negates by inverting every bit. Unlike two's complement, do NOT add 1 after inverting. Show +120 in binary first to earn the working mark.
+
+---
+
+## Question 18
+**Syllabus Ref:** 1.1.5
+**Marks:** 2
+**Difficulty:** Easy
+**Command Word:** State
+**Type:** past-paper
+
+State the number of characters represented by (a) ASCII and (b) extended ASCII.
+
+### Model Answer
+- (a) ASCII represents 128 characters (7 bits). [1]
+- (b) Extended ASCII represents 256 characters (8 bits). [1]
+
+### Examiner Tip
+[Past Paper — S21/12 Q6(a)] 2⁷ = 128 for ASCII; 2⁸ = 256 for extended ASCII. State both the count and the bit width for full credit.
+
+---
+
+## Question 19
+**Syllabus Ref:** 1.1.3
+**Marks:** 3
+**Difficulty:** Hard
+**Command Word:** Perform
+**Type:** past-paper
+
+Add the following three 8-bit binary integers using binary addition. Show your working and state whether overflow occurs. [3]
+
+```
+  10011110
+  01100001
++ 00011001
+```
+
+### Model Answer
+- Working: carries propagated correctly across all three operands [1]
+- Result: (1) 0001 1000 — carry beyond bit 7 noted [1]
+- Overflow occurs: the result 280 exceeds 255, the maximum representable in 8-bit unsigned binary. [1]
+
+### Examiner Tip
+[Past Paper — S24/11 Q7] Add the first two numbers then add the third. The final carry beyond bit 7 is the overflow indicator. Verify: 10011110 = 158, 01100001 = 97, 00011001 = 25; 158 + 97 + 25 = 280 = 1 0001 1000.

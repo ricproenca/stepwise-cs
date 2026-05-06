@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import QuestionCard from '../../../../components/QuestionCard';
 import QuestionFilters from '../../../../components/QuestionFilters';
 import ProgressBar from '../../../../components/ProgressBar';
@@ -96,15 +96,17 @@ export default function QuestionsPage() {
           <p className={styles.noResults}>No questions match the selected filters.</p>
         )}
 
-        {filtered.map(q => (
-          <QuestionCard
-            key={q.id}
-            question={q}
-            attempted={attempted.has(q.id)}
-            correct={correct.has(q.id)}
-            onAttempted={toggleAttempted}
-            onCorrect={toggleCorrect}
-          />
+        {filtered.map((q, index) => (
+          <Fragment key={q.id}>
+            <QuestionCard
+              question={q}
+              attempted={attempted.has(q.id)}
+              correct={correct.has(q.id)}
+              onAttempted={toggleAttempted}
+              onCorrect={toggleCorrect}
+            />
+            {index < filtered.length - 1 && <hr className={styles.separator} />}
+          </Fragment>
         ))}
       </div>
     </main>

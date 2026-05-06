@@ -15,7 +15,7 @@ export default function TopicCard({ topic }) {
           <span className={styles.tag}>Coming soon</span>
         ) : (
           <>
-            <Link href={`/topics/${topic.slug}`} className={styles.btn}>Notes</Link>
+            <Link href={`/topics/${topic.slug}`} className={`${styles.btn} ${styles.btnOutline}`}>Notes</Link>
             <Link href={`/topics/${topic.slug}/questions`} className={`${styles.btn} ${styles.btnOutline}`}>Questions</Link>
             <Link href={`/topics/${topic.slug}/glossary`} className={`${styles.btn} ${styles.btnOutline}`}>Glossary</Link>
           </>

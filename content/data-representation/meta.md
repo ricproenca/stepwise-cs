@@ -7,7 +7,7 @@
 - **Level:** AS
 - **Paper:** Paper 1
 - **Last Updated:** 2026-04-26
-- **Question Count:** 12
+- **Question Count:** 19
 - **Glossary Count:** 16
 - **Status:** draft
 

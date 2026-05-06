@@ -454,6 +454,8 @@ A **character set** is a defined mapping between binary codes and human-readable
 
 **Character groups are sequential:** digit codes 48–57, uppercase codes 65–90, and lowercase codes 97–122 are contiguous, which enables efficient range checks.
 
+**Storage:** Each character is stored as its unique 7-bit binary code. When text is stored, characters are encoded in sequence — for example, 'HOUSE' is stored as five consecutive ASCII codes (H = 72, O = 79, U = 85, S = 83, E = 69).
+
 **Limitation:** ASCII covers only English characters and cannot represent accented letters, non-Latin scripts, or symbols from other languages.
 
 ASCII covers the characters needed for English-language computing, but its 7-bit limit leaves no room for accented letters or non-Latin scripts. Extended ASCII adds one bit to accommodate Western European languages, though the extra 128 codes were never standardised.
@@ -490,7 +492,7 @@ Unicode was created to provide a universal character encoding standard covering 
 
 | Feature | ASCII | Extended ASCII | Unicode |
 |---|---|---|---|
-| Bits per character | 7 | 8 | 16–32 (variable) |
+| Bits per character | 7 | 8 | 8–32 (variable, by encoding) |
 | Number of characters | 128 | 256 | 143,000+ |
 | Language support | English only | Western European (partial) | All world languages |
 | Emoji support | No | No | Yes |

@@ -9,7 +9,7 @@
 }
 
 .card[data-difficulty="Easy"]   { border-left-color: var(--color-green); }
-.card[data-difficulty="Medium"] { border-left-color: var(--color-cambridge-warm-blue); }
+.card[data-difficulty="Medium"] { border-left-color: var(--color-crest); }
 .card[data-difficulty="Hard"]   { border-left-color: var(--color-cherry); }
 
 .header {
@@ -86,6 +86,8 @@
 
 .pre {
   background: var(--color-bg-subtle);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: var(--space-4) var(--space-5);
