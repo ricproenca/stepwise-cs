@@ -18,7 +18,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata = {
-  title: 'Cambridge 9618 CS — Revision',
+  title: 'Stepwise CS — Cambridge 9618 Revision',
   description: 'AS & A Level Computer Science (9618) revision notes, practice questions, and glossary.',
 };
 

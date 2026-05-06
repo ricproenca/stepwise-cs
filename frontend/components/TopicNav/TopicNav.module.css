@@ -3,6 +3,7 @@
   border-bottom: 2px solid var(--color-border);
   padding: 0 var(--space-8);
   display: flex;
+  justify-content: center;
 }
 
 .link {

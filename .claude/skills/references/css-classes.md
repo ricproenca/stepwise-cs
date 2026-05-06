@@ -19,7 +19,7 @@ All HTML pages must use classes from `design-system/components.css`. No inline s
 .examiner-tip
 .diagram-placeholder
 .table
-.nav-primary .nav-logo .nav-logo__main .nav-logo__sub .nav-links .nav-link
+.nav-primary .nav-links .nav-link
 .subnav .subnav-link
 .sidebar-nav .sidebar-nav__title
 .filter-tabs .filter-tab

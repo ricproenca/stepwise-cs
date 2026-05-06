@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import TopicCard from '../../../components/TopicCard';
-import Footer from '../../../components/Footer';
 import { chapters } from '../../../data/chapters';
 import styles from './page.module.css';
 
@@ -38,7 +37,6 @@ export default async function ChapterPage({ params }) {
         </div>
       </main>
 
-      <Footer topicLabel={`Chapter ${chapter.number} — ${chapter.title}`} />
     </>
   );
 }

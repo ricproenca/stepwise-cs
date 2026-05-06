@@ -3,7 +3,7 @@
   padding: 0 var(--space-8);
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 40px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -13,26 +13,24 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  text-decoration: none;
+  gap: var(--space-2);
   flex-shrink: 0;
+  text-decoration: none;
 }
 
-.logoMain {
-  display: block;
+.logoImg {
+  height: 30px;
+  width: 42px;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.logoText {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--fw-bold);
   color: var(--color-white);
-  line-height: 1.1;
-}
-
-.logoSub {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 10px;
-  color: var(--color-cambridge-blue);
-  line-height: 1.2;
+  white-space: nowrap;
 }
 
 /* ── BREADCRUMB ───────────────────────────────────────────── */

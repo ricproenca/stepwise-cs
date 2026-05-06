@@ -1,5 +1,4 @@
 import FilterTabs from '../components/FilterTabs';
-import Footer from '../components/Footer';
 import { chapters } from '../data/chapters';
 import styles from './page.module.css';
 
@@ -23,7 +22,6 @@ export default function HomePage() {
         <FilterTabs chapters={chapters} />
       </main>
 
-      <Footer />
     </>
   );
 }

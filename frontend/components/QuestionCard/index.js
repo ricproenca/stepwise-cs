@@ -18,7 +18,6 @@ export default function QuestionCard({ question, onAttempted, onCorrect, attempt
         <span className={styles.badgeOutline}>{question.command}</span>
         <span className={styles.badgeOutline}>{question.difficulty}</span>
         <span className={styles.tag}>{question.ref}</span>
-        {question.pastPaper && <span className={styles.badgeDark}>Past Paper</span>}
       </header>
 
       {question.textHtml ? (
